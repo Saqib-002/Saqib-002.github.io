@@ -1,0 +1,119 @@
+{
+  "personalInfo": {
+    "name": "SAQIB ALI SHAH",
+    "title": "SOFTWARE ENGINEER",
+    "socialLinks": {
+      "mail": {
+        "url": "mailto:youremail@example.com",
+        "label": "MAIL"
+      },
+      "linkedin": {
+        "url": "https://linkedin.com/in/saqibshah",
+        "label": "LINKEDIN"
+      },
+      "github": {
+        "url": "https://github.com/saqibshah",
+        "label": "GITHUB"
+      }
+    }
+  },
+  "summary": {
+    "profile": "Innovative Full Stack Developer with expertise in <span class=\"highlight\">JavaScript/TypeScript</span> and AI integration using <span class=\"highlight\">PyTorch, TensorFlow, and LangChain</span>. Passionate about building scalable applications that deliver exceptional user experiences and drive technological innovation through cutting-edge solutions."
+  },
+  "education": [
+    {
+      "degree": "BS in Computer Science",
+      "institute": "Institute of Space & Technology",
+      "timeline": "2020-2024",
+      "marks": "3.86",
+      "isGpa": true,
+      "total_marks": "4.00",
+      "award": "🏆 GOLD MEDAL"
+    },
+    {
+      "degree": "Certified Web Developer",
+      "institute": "Coursera",
+      "timeline": "2019",
+      "award": "Certificate of Completion"
+    }
+  ],
+  "skills": [
+    {
+      "category": "FRONTEND",
+      "items": ["React.js", "JavaScript", "TypeScript", "HTML5", "CSS3"]
+    },
+    {
+      "category": "BACKEND",
+      "items": ["Node.js", "Express.js", "Python", "Django", "SQL"]
+    },
+    {
+      "category": "AI/ML",
+      "items": ["PyTorch", "TensorFlow", "LangChain", "OpenCV", "Scikit-learn"]
+    },
+    {
+      "category": "TOOLS",
+      "items": ["Git", "Docker", "REST APIs", "Vite", "Webpack"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "AI/ML Engineer",
+      "company": "ABC Tech",
+      "timeline": "2022-2023",
+      "description": "Developed a cutting-edge AI-powered platform that efficiently analyzes and processes large volumes of data, enabling real-time insights and automation. Implemented and optimized machine learning models for natural language processing (NLP) and computer vision tasks."
+    },
+    {
+      "title": "Full Stack Developer Intern",
+      "company": "XYZ Solutions",
+      "timeline": "2021-2022",
+      "description": "Contributed to the development and maintenance of a client-facing web application. Designed and implemented new features using React.js and Node.js, and improved application performance by 20% through code optimization."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AI for Everyone",
+      "institute": "DeepLearning.ai",
+      "link": "https://www.coursera.org/verify/certificate-id"
+    },
+    {
+      "name": "Deep Learning Specialization",
+      "institute": "DeepLearning.ai",
+      "link": "https://www.coursera.org/verify/certificate-id"
+    },
+    {
+      "name": "AWS Certified Developer – Associate",
+      "institute": "DeepLearning.ai",
+      "link": "https://aws.amazon.com/certification/certified-developer-associate/"
+    }
+  ],
+  "projects": [
+    {
+      "name": "NASA Data Explorer",
+      "description": "Interactive data visualization platform built with React.js and Node.js, leveraging NASA's public API to display astronomical data.",
+      "techStack": ["React.js", "Node.js", "NASA API", "Chart.js"],
+      "liveLink": "#",
+      "githubLink": "https://github.com/saqibshah/nasa-data-explorer"
+    },
+    {
+      "name": "E-commerce Backend System",
+      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
+      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
+      "liveLink": "#",
+      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+    },
+    {
+      "name": "E-commerce Backend System",
+      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
+      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
+      "liveLink": "#",
+      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+    },
+    {
+      "name": "E-commerce Backend System",
+      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
+      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
+      "liveLink": "#",
+      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+    }
+  ]
+}
