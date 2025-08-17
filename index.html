@@ -20,54 +20,35 @@
     <main class="main-container">
       <div class="sub-container">
         <header class="animate-slide-in-up" style="--delay: 0s">
-          <div class="hud-panel">
-            <h1 id="name"></h1>
-            <h2 id="title"></h2>
-            <div class="hud-panel-social" id="social-links"></div>
+          <div class="hud-panel" id="info">
+            <img src="assets/pic.jpg" id="picture" alt="image">
+            <div>
+              <h1 id="name"></h1>
+              <h2 id="title"></h2>
+              <div class="hud-panel-social" id="social-links"></div>
+            </div>
           </div>
           <div class="launch-blog-container">
             <button class="launch-button">LAUNCH BLOG</button>
           </div>
         </header>
         <div class="container">
-          <div class="animate-slide-in-up" style="--delay: 0.2s">
+          <section class="animate-slide-in-up" id="profile" style="--delay: 0.2s">
             <div class="hud-panel summary">
-              <h3>Profile</h3>
+              <h3>&gt; saqib&#47;profile</h3>
               <p id="profile-summary"></p>
             </div>
-          </div>
-          <div class="animate-slide-in-up" style="--delay: 0.4s">
-            <div class="hud-panel education">
-              <h3>Education</h3>
-              <div id="education-list" class="education-items">
-              </div>
-            </div>
-          </div>
-          <div
-            class="animate-slide-in-up skills-matrix-container"
-            style="--delay: 0.6s"
-          >
-            <div class="hud-panel skills-matrix">
-              <h3>Skills Matrix</h3>
-              <div class="skills" id="skills-matrix"></div>
-            </div>
-          </div>
-          <div class="animate-slide-in-up" style="--delay: 0.8s">
+          </section>
+          <section class="animate-slide-in-up" id="experience" style="--delay: 0.8s">
             <div class="hud-panel experiences">
-              <h3>Experience</h3>
+              <h3>&gt; saqib&#47;experience</h3>
               <div class="experience-items" id="experience-list">
               </div>
             </div>
-          </div>
-          <div class="animate-slide-in-up" style="--delay: 1s">
-            <div class="hud-panel certifications">
-              <h3>Certifications</h3>
-              <div class="certifications-list" id="certifications-list">
-              </div>
-            </div>
-          </div>
-          <div
-            class="animate-slide-in-up projects-container"
+          </section>
+          <section
+            class="animate-slide-in-up"
+            id="projects"
             style="--delay: 1.2s"
           >
             <div class="hud-panel projects">
@@ -75,7 +56,33 @@
               <div class="projects-list" id="projects-list">
               </div>
             </div>
-          </div>
+          </section>
+          <section
+            class="animate-slide-in-up"
+            style="--delay: 0.6s"
+            id="skills-matrix-section"
+          >
+            <div class="hud-panel skills-matrix">
+              <h3>&gt; saqib&#47;skills</h3>
+              <div class="skills" id="skills-matrix"></div>
+            </div>
+          </section>
+          <section class="animate-slide-in-up" id="education" style="--delay: 0.4s">
+            <div class="hud-panel education">
+              <h3>&gt; saqib&#47;education</h3>
+              <div id="education-list" class="education-items">
+              </div>
+            </div>
+          </section>
+          
+          <section class="animate-slide-in-up" id="certificate" style="--delay: 1s">
+            <div class="hud-panel certifications">
+              <h3>&gt; saqib&#47;certifications</h3>
+              <div class="certifications-list" id="certifications-list">
+              </div>
+            </div>
+          </section>
+          
         </div>
       </div>
     </main>

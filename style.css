@@ -65,6 +65,18 @@ header {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
+#info{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+#picture{
+  width: 7.8125rem;
+  height: 7.8125rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--body-color);
+}
 #name {
   font-family: Orbitron, "sans-serif";
   color: #56b0bb;
@@ -113,6 +125,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-self: self-end;
 }
 
 .launch-button {
@@ -138,8 +151,26 @@ header {
 }
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(12, minmax(0px, 1fr));
   gap: 2rem;
+}
+#profile{
+  grid-column: span 12;
+}
+#experience{
+  grid-column: span 4;
+}
+#projects{
+  grid-column: span 8;
+}
+#skills-matrix-section{
+  grid-column: span 9;
+}
+#education{
+  grid-column: span 3;
+}
+#certificate{
+  grid-column: span 12;
 }
 .summary h3 {
   font-size: 1.25rem;
@@ -201,9 +232,6 @@ header {
   border: 1px solid #217346;
   border-radius: 99999px;
   width: max-content;
-}
-.skills-matrix-container {
-  grid-column: span 2;
 }
 .skills-matrix > h3 {
   font-size: 1.25rem;
@@ -286,6 +314,7 @@ header {
 }
 .experience-description{
     color: var(--body-color);
+    text-align: justify;
 }
 .certifications{
     padding: 1.5rem;
@@ -298,25 +327,30 @@ header {
 }
 #certifications-list{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 }
 .certification-item{
     padding: 1rem;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .certification-item h4{
     color: white;
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
 }
 .certification-item p{
     color: #94a1b2;
     font-weight: 300;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
 }
 .certification-item a{
   color: #94a1b2;
@@ -333,9 +367,6 @@ header {
   background-color: #94a1b2;
   color: black;
 }
-.projects-container{
-    grid-column: span 2;
-}
 .projects h3{
     color:var(--accent-500);
     font-size: 1.25rem;
@@ -346,11 +377,15 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    text-align: justify;
 }
 .project-item{
-    padding: 1.5rem
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.project-item > h4{
+.project-item h4{
     color: white;
     font-weight: 700;
     font-size: 1.125rem;
@@ -360,7 +395,7 @@ header {
     position: relative;
     overflow: hidden;
 }
-.project-item > p{
+.project-item p{
     color:var(--body-color);
     font-size: 0.875rem;
     line-height: 1.625rem;

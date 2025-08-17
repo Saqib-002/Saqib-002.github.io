@@ -111,8 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
             class="hud-panel certification-item animate-slide-in-up"
             style="--delay: ${delay}s"
           >
-            <h4>${cert.name}</h4>
-            <p>${cert.institute}</p>
+          <div>
+          <h4>${cert.name}</h4>
+          <p>${cert.institute}</p>
+          </div>
             <a href="${cert.link}" target="_blank" rel="noopener noreferrer nofollow">See Credentials</a>
           </div>
         `;
@@ -125,8 +127,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     .join("");
                 projectsList.innerHTML += `
           <div class="hud-panel project-item animate-slide-in-up" style="--delay: ${delay}s">
-            <h4>${project.name}</h4>
-            <p>${project.description}</p>
+          <div>
+          <h4>${project.name}</h4>
+          <p>${project.description}</p>
+          </div>
             <div class="project-tech">${techTags}</div>
             <div class="project-hover-overlay">
               <a href="${project.liveLink}" class="view-link" target="_blank">
