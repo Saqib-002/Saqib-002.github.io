@@ -7,6 +7,26 @@ document.addEventListener("DOMContentLoaded", () => {
             return res.json();
         })
         .then((data) => {
+            try {
+                init();
+                animate();
+            } catch (e) {
+                console.error("Three.js animation error:", e);
+                // Fallback if Three.js fails to initialize
+                const fallbackSymbol = document.createElement("div");
+                fallbackSymbol.style.position = "fixed";
+                fallbackSymbol.style.top = "50%";
+                fallbackSymbol.style.left = "50%";
+                fallbackSymbol.style.transform = "translate(-50%, -50%)";
+                fallbackSymbol.style.fontSize = "100px";
+                fallbackSymbol.style.color = "rgba(74, 144, 226, 0.2)";
+                fallbackSymbol.style.zIndex = "-1";
+                fallbackSymbol.textContent = "</>";
+
+                document
+                    .getElementById("canvas-container")
+                    .appendChild(fallbackSymbol);
+            }
             // get necessary tags
             document.getElementById("name").textContent =
                 data.personalInfo.name.toUpperCase();
