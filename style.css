@@ -296,12 +296,12 @@ header {
   font-size: 1.125rem;
   line-height: 1.75rem;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Space Mono", monospace;
 }
 .experience-institute{
     color: #94a1b2;
     font-weight: 500;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Space Mono", monospace;
     margin-bottom: 0.5rem;
 }
 .experience-timeline{
@@ -309,7 +309,7 @@ header {
     font-size: 0.875rem;
     line-height: 1rem;
     font-weight: 300;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Space Mono", monospace;
     margin-bottom: 0.5rem;
 }
 .experience-description{
@@ -343,14 +343,14 @@ header {
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Space Mono", monospace;
 }
 .certification-item p{
     color: #94a1b2;
     font-weight: 300;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Space Mono", monospace;
 }
 .certification-item a{
   color: #94a1b2;
@@ -390,7 +390,7 @@ header {
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.75rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Space Mono", monospace;
     margin-bottom: 0.75rem;
     position: relative;
     overflow: hidden;
