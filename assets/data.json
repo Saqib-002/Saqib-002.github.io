@@ -4,116 +4,185 @@
     "title": "SOFTWARE ENGINEER",
     "socialLinks": {
       "mail": {
-        "url": "mailto:youremail@example.com",
+        "url": "mailto:saqibshah2882@gmail.com",
         "label": "MAIL"
       },
       "linkedin": {
-        "url": "https://linkedin.com/in/saqibshah",
+        "url": "https://www.linkedin.com/in/saqibshah172",
         "label": "LINKEDIN"
       },
       "github": {
-        "url": "https://github.com/saqibshah",
+        "url": "https://github.com/Saqib-002",
         "label": "GITHUB"
       }
     }
   },
   "summary": {
-    "profile": "Innovative Full Stack Developer with expertise in <span class=\"highlight\">JavaScript/TypeScript</span> and AI integration using <span class=\"highlight\">PyTorch, TensorFlow, and LangChain</span>. Passionate about building scalable applications that deliver exceptional user experiences and drive technological innovation through cutting-edge solutions."
+    "profile": "Software Engineer with a proven track record of architecting scalable full-stack systems and high-performance Agentic RAG workflows. Specialized in engineering intelligent infrastructure, such as B2B lead platforms and secure natural language database interfaces, using <span class=\"highlight\">FastAPI</span>, <span class=\"highlight\">React</span>, and <span class=\"highlight\">Gemini Vertex AI</span>. Focused on transforming complex data bottlenecks into production-ready, AI-driven products that deliver measurable cost savings and sub-second performance."
   },
   "education": [
     {
       "degree": "BS in Computer Science",
       "institute": "Institute of Space & Technology",
       "timeline": "2020-2024",
-      "marks": "3.86",
+      "marks": "3.93",
       "isGpa": true,
       "total_marks": "4.00",
       "award": "🏆 GOLD MEDAL"
     },
     {
-      "degree": "Certified Web Developer",
-      "institute": "Coursera",
-      "timeline": "2019",
-      "award": "Certificate of Completion"
+      "degree": "HSSC (Pre Engineering)",
+      "institute": "KRL Model College For Boys",
+      "timeline": "2018-2020"
     }
   ],
   "skills": [
     {
+      "category": "LANGUAGES",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "HTML5",
+        "CSS3",
+        "Go",
+        "SQL"
+      ]
+    },
+    {
       "category": "FRONTEND",
-      "items": ["React.js", "JavaScript", "TypeScript", "HTML5", "CSS3"]
+      "items": [
+        "React",
+        "Next.js",
+        "Vite",
+        "Tailwind CSS",
+        "Bootstrap",
+        "Material-UI",
+        "Ant Design",
+        "Redux"
+      ]
     },
     {
-      "category": "BACKEND",
-      "items": ["Node.js", "Express.js", "Python", "Django", "SQL"]
+      "category": "BACKEND & CLOUD",
+      "items": [
+        "Node.js",
+        "Express.js",
+        "Python",
+        "Docker",
+        "SQL",
+        "FastAPI",
+        "Flask",
+        "AWS",
+        "Google Cloud Platform (GCP)"
+      ]
     },
     {
-      "category": "AI/ML",
-      "items": ["PyTorch", "TensorFlow", "LangChain", "OpenCV", "Scikit-learn"]
+      "category": "AI & MACHINE LEARNING",
+      "items": [
+        "PyTorch",
+        "LangChain",
+        "Gemini Vertex AI",
+        "LangGraph",
+        "Scikit-learn",
+        "RAG Pipelines"
+      ]
     },
     {
-      "category": "TOOLS",
-      "items": ["Git", "Docker", "REST APIs", "Vite", "Webpack"]
+      "category": "DATABASES",
+      "items": [
+        "PostgreSQL",
+        "MongoDB",
+        "Supabase",
+        "Weaviate",
+        "Redis",
+        "Pinecone"
+      ]
     }
   ],
   "experience": [
     {
-      "title": "AI/ML Engineer",
-      "company": "ABC Tech",
-      "timeline": "2022-2023",
-      "description": "Developed a cutting-edge AI-powered platform that efficiently analyzes and processes large volumes of data, enabling real-time insights and automation. Implemented and optimized machine learning models for natural language processing (NLP) and computer vision tasks."
+      "title": "Software Engineer",
+      "company": "Modern Intelligent Solutions",
+      "timeline": "Jul 2024-Dec 2025",
+      "description": "Architected 'Imagini,' a high-performance B2B leads platform housing millions of records, featuring streaming upload pipelines and a credit-based access system. Engineered a multi-agent RAG framework using LangGraph and Gemini to navigate 1.5M Arabic documents with hierarchical workflows. Developed a secure natural language database interface for SWCC and an RFM-based customer segmentation engine for premium airport services."
     },
     {
-      "title": "Full Stack Developer Intern",
-      "company": "XYZ Solutions",
-      "timeline": "2021-2022",
-      "description": "Contributed to the development and maintenance of a client-facing web application. Designed and implemented new features using React.js and Node.js, and improved application performance by 20% through code optimization."
+      "title": "Software Engineer",
+      "company": "Voilabs",
+      "timeline": "Nov 2023 - Feb 2024",
+      "description": "Fine-tuned DONUT transformer models for OCR-free extraction of French bill data, optimizing for mobile via ONNX conversion. Integrated transformer-based ML models into Next.js applications and built robust data processing pipelines using Python, Pandas, and NumPy, improving use-case accuracy by 25%."
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "Ksoft",
+      "timeline": "Aug 2023 - Sep 2023",
+      "description": "Implemented real-time object detection solutions using YOLO. Designed intuitive user interfaces using Figma and contributed to mobile application development using Kotlin."
     }
   ],
   "certifications": [
     {
-      "name": "AI for Everyone",
-      "institute": "DeepLearning.ai",
-      "link": "https://www.coursera.org/verify/certificate-id"
+      "name": "Generative AI Fundamentals",
+      "institute": "Google",
+      "link": "https://www.skills.google/public_profiles/920e75a0-fc95-4931-b878-2604cf798720/badges/10400886?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
     },
     {
-      "name": "Deep Learning Specialization",
-      "institute": "DeepLearning.ai",
-      "link": "https://www.coursera.org/verify/certificate-id"
+      "name": "AI For Everyone",
+      "institute": "Coursera",
+      "link": "https://www.coursera.org/account/accomplishments/certificate/TLMESMBMLRUE"
     },
     {
-      "name": "AWS Certified Developer – Associate",
-      "institute": "DeepLearning.ai",
-      "link": "https://aws.amazon.com/certification/certified-developer-associate/"
+      "name": "Pandas",
+      "institute": "Kaggle",
+      "link": "https://www.kaggle.com/learn/certification/saqibalishah/pandas"
+    },
+    {
+      "name": "Applied Software Engineering Fundamentals",
+      "institute": "Coursera",
+      "link": "https://www.coursera.org/account/accomplishments/specialization/KJZ1C2AYL3FG"
+    },
+    {
+      "name": "Linear Algebra for Machine Learning and Data Science",
+      "institute": "Coursera",
+      "link": "https://www.coursera.org/account/accomplishments/verify/BRQ99N33TQUE"
+    },
+    {
+      "name": "Calculus for Machine Learning and Data Science",
+      "institute": "Coursera",
+      "link": "https://www.coursera.org/account/accomplishments/verify/9CS2JNDPRLCF"
+    },
+    {
+      "name": "Backend Development & DevOps",
+      "institute": "Boot.dev",
+      "link": "https://www.boot.dev/u/favoritemobile49"
     }
   ],
   "projects": [
     {
-      "name": "NASA Data Explorer",
-      "description": "Interactive data visualization platform built with React.js and Node.js, leveraging NASA's public API to display astronomical data.",
-      "techStack": ["React.js", "Node.js", "NASA API", "Chart.js"],
+      "name": "Mandumah Multi-Doc Agent",
+      "description": "An agentic RAG system designed to navigate 1.5M Arabic academic documents using a hierarchical meta-agent architecture and graph-based traversal. Optimized for complex linguistic nuances with automated summarization tools.",
+      "techStack": ["LlamaIndex", "Gemini Vertex AI", "FastAPI", "Python"],
+      "images": ["assets/media/MIS/mandumah/intro.png"],
       "liveLink": "#",
       "githubLink": "https://github.com/saqibshah/nasa-data-explorer"
     },
     {
-      "name": "E-commerce Backend System",
-      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
-      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
+      "name": "High-Scale Email Verification System",
+      "description": "Multi-layered validation pipeline utilizing DNS resolution, SMTP probing, and heuristics to reduce verification costs by 90%. Supports concurrent processing of hundreds of thousands of emails.",
+      "techStack": ["Python", "GCP", "Docker", "Celery", "FastAPI"],
       "liveLink": "#",
       "githubLink": "https://github.com/saqibshah/e-commerce-backend"
     },
     {
-      "name": "E-commerce Backend System",
+      "name": "ThunderJaw Restaurant POS",
       "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
-      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
+      "techStack": ["Electron", "React", "TypeScript", "PostgreSQL", "Knex"],
       "liveLink": "#",
       "githubLink": "https://github.com/saqibshah/e-commerce-backend"
     },
     {
-      "name": "E-commerce Backend System",
-      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
-      "techStack": ["Python", "Django", "PostgreSQL", "REST APIs"],
-      "liveLink": "#",
-      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+      "name": "B2B Leads Platform (Imagini)",
+      "description": "Architected a scalable platform managing millions of Saudi-focused leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
+      "techStack": ["React", "FastAPI", "PostgreSQL", "Redis", "Celery"]
     }
   ]
 }
