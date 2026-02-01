@@ -23,12 +23,23 @@
         font-size: 3rem;
     }
 }
+@media (max-width: 832px) {
+    .project-link-btn span {
+        display: none;
+    }
+}
 @media screen and (max-width: 768px) {
     #experience {
-        grid-column: span 6;
+        grid-column: span 12;
     }
     #projects {
-        grid-column: span 6;
+        grid-column: span 12;
+    }
+    #skills-matrix-section {
+        grid-column: span 12;
+    }
+    #education {
+        grid-column: span 12;
     }
     header {
         margin-bottom: 2rem;
@@ -49,18 +60,6 @@
     }
 }
 @media screen and (max-width: 640px) {
-    #experience {
-        grid-column: span 12;
-    }
-    #projects {
-        grid-column: span 12;
-    }
-    #skills-matrix-section {
-        grid-column: span 12;
-    }
-    #education {
-        grid-column: span 12;
-    }
     .launch-button{
         padding: 0.5rem 1rem;
         font-size: 1rem;
@@ -72,9 +71,6 @@
     #title {
         font-size: 1rem;
         line-height: 1.5rem;
-    }
-    .project-hover-overlay{
-        flex-direction: column;
     }
 }
 @media screen and (max-width: 480px) {

@@ -160,29 +160,102 @@
     {
       "name": "Mandumah Multi-Doc Agent",
       "description": "An agentic RAG system designed to navigate 1.5M Arabic academic documents using a hierarchical meta-agent architecture and graph-based traversal. Optimized for complex linguistic nuances with automated summarization tools.",
-      "techStack": ["LlamaIndex", "Gemini Vertex AI", "FastAPI", "Python"],
-      "images": ["assets/media/MIS/mandumah/intro.png"],
-      "liveLink": "#",
-      "githubLink": "https://github.com/saqibshah/nasa-data-explorer"
+      "techStack": [
+        "LlamaIndex",
+        "Gemini Vertex AI",
+        "FastAPI",
+        "Python",
+        "Docker"
+      ],
+      "images": [
+        "assets/media/MIS/mandumah/intro.png",
+        "assets/media/MIS/mandumah/initial_view.png",
+        "assets/media/MIS/mandumah/chat_sample.png"
+      ],
+      "details": {
+        "description": "This project involved developing an advanced agentic RAG system for a major Saudi Arabian academic platform to navigate a corpus of 1.5 million documents. It focuses on extracting insights from unstructured Arabic textual data using a hierarchical meta-agent architecture.",
+        "points": [
+          "Architecture: Implemented a hierarchical meta-agent using graph-based traversal to orchestrate document-level agents.",
+          "Technical Innovation: Engineered tool-calling mechanisms for real-time Arabic summarization and query answering.",
+          "Scaling: Optimized performance for large-scale Arabic text, handling morphological complexity and right-to-left scripting."
+        ]
+      }
     },
     {
       "name": "High-Scale Email Verification System",
       "description": "Multi-layered validation pipeline utilizing DNS resolution, SMTP probing, and heuristics to reduce verification costs by 90%. Supports concurrent processing of hundreds of thousands of emails.",
-      "techStack": ["Python", "GCP", "Docker", "Celery", "FastAPI"],
-      "liveLink": "#",
-      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+      "techStack": [
+        "Python (asyncio)",
+        "GCP",
+        "Docker",
+        "Celery",
+        "FastAPI",
+        "Redis"
+      ],
+      "images": [
+        "assets/media/MIS/verifier/dashboard.png",
+        "assets/media/MIS/verifier/verifier.png",
+        "assets/media/MIS/verifier/guesser.png",
+        "assets/media/MIS/verifier/stats.png",
+        "assets/media/MIS/verifier/instancese.png"
+      ],
+      "details": {
+        "description": "Designed as a cost-effective alternative to commercial services, this system processes hundreds of thousands of email addresses with extreme concurrency. It utilizes a multi-layered validation pipeline to ensure high deliverability for large-scale cold outreach campaigns.",
+        "points": [
+          "Cost Efficiency: Built a high-concurrency pipeline that reduced verification costs by 90% compared to commercial services.",
+          "Verification Pipeline: Developed multi-layered checks including DNS resolution, SMTP probing, and deliverability heuristics.",
+          "Scale: Leveraged asynchronous workers and distributed task queues to process hundreds of thousands of emails concurrently.",
+          "Feature Addition: Created an email-guessing module to generate and validate probable corporate email permutations."
+        ]
+      }
     },
     {
       "name": "ThunderJaw Restaurant POS",
-      "description": "A robust and scalable e-commerce backend built with Python (Django) and a PostgreSQL database. Implemented user authentication, product management, and a secure payment gateway.",
-      "techStack": ["Electron", "React", "TypeScript", "PostgreSQL", "Knex"],
-      "liveLink": "#",
-      "githubLink": "https://github.com/saqibshah/e-commerce-backend"
+      "description": "Developed a high-performance desktop POS system using Electron and React 19, streamlining restaurant operations through real-time order tracking and kitchen management. I engineered a robust architecture featuring Role-Based Access Control, automated PostgreSQL migrations with Knex.js, and multi-language support.",
+      "techStack": [
+        "Electron",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Knex",
+        "Tailwind CSS",
+        "Shadcn"
+      ],
+      "details": {
+        "description": "ThunderJaw is a high-performance, cross-platform desktop application designed to streamline complex restaurant operations, including real-time order tracking and kitchen management. The system integrates inventory control and financial reporting into a unified interface, bridging the gap between core system logic and the user experience via real-time IPC.",
+        "points": [
+          "System Architecture: Developed a cross-platform desktop application using Electron and React 19, utilizing TypeScript for robust type safety.",
+          "Database Management: Leveraged Knex.js with PostgreSQL to handle advanced relational data, automated migrations, and seeding.",
+          "Security & Access: Implemented a secure authentication system featuring role-based access control (RBAC) to manage worker permissions and logistics.",
+          "Technical Features: Integrated multi-language support (i18next), real-time IPC handlers, and Excel exporting for comprehensive business reporting."
+        ]
+      }
     },
     {
       "name": "B2B Leads Platform (Imagini)",
-      "description": "Architected a scalable platform managing millions of Saudi-focused leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
-      "techStack": ["React", "FastAPI", "PostgreSQL", "Redis", "Celery"]
+      "description": "Architected a scalable platform managing millions of leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
+      "techStack": ["React", "FastAPI", "PostgreSQL", "Redis", "Celery"],
+      "images": [
+        "assets/media/MIS/imagini/admin_dashboard.png",
+        "assets/media/MIS/imagini/admin_data.png",
+        "assets/media/MIS/imagini/admin_data_2.png",
+        "assets/media/MIS/imagini/admin_data_3.png",
+        "assets/media/MIS/imagini/admin_user.png",
+        "assets/media/MIS/imagini/create_new_user.png",
+        "assets/media/MIS/imagini/job_and_activity.png",
+        "assets/media/MIS/imagini/user_details_1.png",
+        "assets/media/MIS/imagini/user_details_2.png",
+        "assets/media/MIS/imagini/user_side.png"
+      ],
+      "details": {
+        "description": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline.",
+        "points": [
+          "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
+          "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
+          "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
+          "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
+        ]
+      }
     }
   ]
 }

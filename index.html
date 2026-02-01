@@ -88,6 +88,25 @@
         </div>
       </div>
     </main>
+    <div id="project-modal" class="modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content hud-panel">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-body">
+          <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track"></div>
+            <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
+            <button class="carousel-btn next" id="next-btn">&#10095;</button>
+            <div class="carousel-indicators" id="carousel-indicators"></div>
+          </div>
+          <div class="modal-text-content">
+            <h2 id="modal-title"></h2>
+            <div class="project-tech" id="modal-tech"></div>
+            <p id="modal-description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/script.js"></script>
     <script src="js/three-animation.js"></script>
   </body>
