@@ -223,6 +223,15 @@
         "Tailwind CSS",
         "Shadcn"
       ],
+      "images": [
+        "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png",
+        "assets/media/MIS/thunderJaw_restaurant/configurations.png",
+        "assets/media/MIS/thunderJaw_restaurant/kitchen_view.png",
+        "assets/media/MIS/thunderJaw_restaurant/manage_orders.png",
+        "assets/media/MIS/thunderJaw_restaurant/menu_management.png",
+        "assets/media/MIS/thunderJaw_restaurant/Reports.png",
+        "assets/media/MIS/thunderJaw_restaurant/taking_order.png"
+      ],
       "details": {
         "description": "ThunderJaw is a high-performance, cross-platform desktop application designed to streamline complex restaurant operations, including real-time order tracking and kitchen management. The system integrates inventory control and financial reporting into a unified interface, bridging the gap between core system logic and the user experience via real-time IPC.",
         "points": [
