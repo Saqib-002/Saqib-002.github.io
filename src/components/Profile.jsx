@@ -1,5 +1,4 @@
-import React from 'react';
-import './Profile.css';
+import '../assets/styles/Profile.css';
 
 export default function Profile({ summary }) {
   if (!summary || !summary.profile) return null;

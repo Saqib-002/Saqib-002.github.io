@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Carousel.css';
+import { useState, useEffect } from 'react';
+import '../assets/styles/Carousel.css';
 
 export default function Carousel({ images, projectName }) {
   const [currentSlide, setCurrentSlide] = useState(0);

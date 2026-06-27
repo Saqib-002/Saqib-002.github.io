@@ -1,5 +1,5 @@
 import ProjectCard from './ProjectCard';
-import './Projects.css';
+import '../assets/styles/Projects.css';
 
 export default function Projects({ projects, onOpenModal, onViewAll }) {
   if (!projects) return null;

@@ -9,6 +9,8 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import ProjectModal from './components/ProjectModal';
 import AllProjectsModal from './components/AllProjectsModal';
+import PageNav from './components/PageNav';
+import MobileNav from './components/MobileNav';
 import portfolioData from './data/data.json';
 
 export default function App() {
@@ -37,6 +39,12 @@ export default function App() {
     <>
       {/* 3D Wireframe Canvas Background */}
       <BackgroundCanvas />
+
+      {/* Fixed section navigator */}
+      <PageNav />
+
+      {/* Mobile bottom navigation bar */}
+      <MobileNav />
 
       {/* Main Dashboard Layout */}
       <main className="main-container">

@@ -1,5 +1,4 @@
-import React from 'react';
-import './Education.css';
+import '../assets/styles/Education.css';
 
 export default function Education({ education }) {
   if (!education) return null;

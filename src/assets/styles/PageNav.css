@@ -1,0 +1,86 @@
+/* =====================
+   PAGE NAV — fixed right-side dot navigator
+   ===================== */
+
+.page-nav {
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+/* A group wraps a single nav dot */
+.page-nav__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Each dot button */
+.page-nav__dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  outline: none;
+}
+
+/* The actual circle pip */
+.page-nav__dot-pip {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(86, 176, 187, 0.4);
+  border: 1px solid rgba(86, 176, 187, 0.6);
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.page-nav__dot:hover .page-nav__dot-pip,
+.page-nav__dot--active .page-nav__dot-pip {
+  background: #56b0bb;
+  border-color: #56b0bb;
+  transform: scale(1.4);
+}
+
+.page-nav__dot--active .page-nav__dot-pip {
+  background: var(--accent-100);
+  border-color: var(--accent-100);
+  box-shadow: 0 0 6px rgba(255, 115, 0, 0.6);
+}
+
+/* Label — hidden by default, slides in on hover */
+.page-nav__label {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  color: #94a1b2;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  pointer-events: none;
+  /* label sits to the LEFT of the dot */
+  order: -1;
+}
+
+.page-nav__dot:hover .page-nav__label {
+  opacity: 1;
+  transform: translateX(0);
+  color: #c9d1d9;
+}
+
+/* Hide on small screens where it would overlap content */
+@media screen and (max-width: 768px) {
+  .page-nav {
+    display: none;
+  }
+}

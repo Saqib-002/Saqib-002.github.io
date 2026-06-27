@@ -1,4 +1,4 @@
-import './ProjectCard.css';
+import '../assets/styles/ProjectCard.css';
 
 /**
  * Unified project card.

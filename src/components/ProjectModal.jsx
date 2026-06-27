@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Carousel from './Carousel';
-import './ProjectModal.css';
+import '../assets/styles/ProjectModal.css';
 
 export default function ProjectModal({ isOpen, project, onClose }) {
   // Store the active project to allow fade-out animations to complete with visible data

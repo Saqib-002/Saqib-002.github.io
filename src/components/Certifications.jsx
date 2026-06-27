@@ -1,5 +1,4 @@
-import React from 'react';
-import './Certifications.css';
+import '../assets/styles/Certifications.css';
 
 export default function Certifications({ certifications }) {
   if (!certifications) return null;

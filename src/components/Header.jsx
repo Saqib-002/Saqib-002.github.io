@@ -1,5 +1,4 @@
-import React from 'react';
-import './Header.css';
+import '../assets/styles/Header.css';
 
 export default function Header({ personalInfo }) {
   if (!personalInfo) return null;

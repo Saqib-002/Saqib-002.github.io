@@ -1,5 +1,4 @@
-import React from 'react';
-import './Experience.css';
+import '../assets/styles/Experience.css';
 
 export default function Experience({ experience }) {
   if (!experience) return null;

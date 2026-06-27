@@ -1,5 +1,4 @@
-import React from 'react';
-import './Skills.css';
+import '../assets/styles/Skills.css';
 
 export default function Skills({ skills }) {
   if (!skills) return null;
