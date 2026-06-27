@@ -1,0 +1,54 @@
+/* =====================
+   EXPERIENCE
+   ===================== */
+.experiences > h3 {
+  color: var(--accent-500);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+#experience-list {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-item {
+  padding: 1.5rem;
+}
+
+.experience-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.experience-title > h4 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: white;
+  font-family: "Space Mono", monospace;
+}
+
+.experience-institute {
+  color: #94a1b2;
+  font-weight: 500;
+  font-family: "Space Mono", monospace;
+  margin-bottom: 0.5rem;
+}
+
+.experience-timeline {
+  color: #94a1b2;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 300;
+  font-family: "Space Mono", monospace;
+  margin-bottom: 0.5rem;
+}
+
+.experience-description {
+  color: var(--body-color);
+  text-align: justify;
+}

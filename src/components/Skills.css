@@ -1,0 +1,31 @@
+/* =====================
+   SKILLS MATRIX
+   ===================== */
+.skills-matrix > h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-500);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+}
+
+.skills-cat h4 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: var(--accent-500);
+  letter-spacing: 0.025rem;
+  margin-bottom: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

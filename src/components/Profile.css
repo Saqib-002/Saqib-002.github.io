@@ -1,0 +1,21 @@
+/* =====================
+   PROFILE / SUMMARY
+   ===================== */
+.summary h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--accent-500);
+}
+
+.summary p {
+  color: var(--body-color);
+  line-height: 1.625;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.summary span {
+  color: white;
+  font-weight: 700;
+}

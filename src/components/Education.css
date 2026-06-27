@@ -1,0 +1,56 @@
+/* =====================
+   EDUCATION
+   ===================== */
+#education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education {
+  padding: 1.5rem;
+}
+
+.education h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--accent-500);
+}
+
+.education-title {
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.education-institute {
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.education-timeline {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.education-metric-highlight {
+  color: var(--accent-500);
+  font-weight: 700;
+}
+
+.education-gold-badge {
+  color: #217346;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #217346;
+  border-radius: 99999px;
+  width: max-content;
+}

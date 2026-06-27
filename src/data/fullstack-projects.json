@@ -1,0 +1,28 @@
+[
+  {
+    "name": "B2B Leads Platform (Imagini)",
+    "description": "Architected a scalable platform managing millions of leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
+    "techStack": ["React", "FastAPI", "PostgreSQL", "Redis", "Celery"],
+    "images": [
+      "assets/media/MIS/imagini/admin_dashboard.png",
+      "assets/media/MIS/imagini/admin_data.png",
+      "assets/media/MIS/imagini/admin_data_2.png",
+      "assets/media/MIS/imagini/admin_data_3.png",
+      "assets/media/MIS/imagini/admin_user.png",
+      "assets/media/MIS/imagini/create_new_user.png",
+      "assets/media/MIS/imagini/job_and_activity.png",
+      "assets/media/MIS/imagini/user_details_1.png",
+      "assets/media/MIS/imagini/user_details_2.png",
+      "assets/media/MIS/imagini/user_side.png"
+    ],
+    "details": {
+      "description": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline.",
+      "points": [
+        "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
+        "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
+        "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
+        "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
+      ]
+    }
+  }
+]

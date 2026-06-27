@@ -1,113 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title></title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <title>Saqib Ali Shah | Software Engineer</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   </head>
   <body>
-    <div class="bg-container" id="canvas-container">
-    </div>
-    <main class="main-container">
-      <div class="sub-container">
-        <header class="animate-slide-in-up" style="--delay: 0s">
-          <div class="hud-panel" id="info">
-            <img src="assets/pic.jpg" id="picture" alt="image">
-            <div>
-              <h1 id="name"></h1>
-              <h2 id="title"></h2>
-              <div class="hud-panel-social" id="social-links"></div>
-            </div>
-          </div>
-          <div class="launch-blog-container">
-            <a class="launch-button" href="assets/resume.pdf" target="_blank" download="Saqib_Ali_Shah_Resume.pdf">RESUME</a>
-          </div>
-        </header>
-        <div class="container">
-          <section class="animate-slide-in-up" id="profile" style="--delay: 0.2s">
-            <div class="hud-panel summary">
-              <h3>&gt; saqib&#47;profile</h3>
-              <p id="profile-summary"></p>
-            </div>
-          </section>
-          <section class="animate-slide-in-up" id="experience" style="--delay: 0.4s">
-            <div class="hud-panel experiences">
-              <h3>&gt; saqib&#47;experience</h3>
-              <div class="experience-items" id="experience-list">
-              </div>
-            </div>
-          </section>
-          <section
-            class="animate-slide-in-up"
-            id="projects"
-            style="--delay: 0.6s"
-          >
-            <div class="hud-panel projects">
-              <h3>&gt; saqib&#47;projects</h3>
-              <div class="projects-list" id="projects-list">
-              </div>
-            </div>
-          </section>
-          <section
-            class="animate-slide-in-up"
-            style="--delay: 0.8s"
-            id="skills-matrix-section"
-          >
-            <div class="hud-panel skills-matrix">
-              <h3>&gt; saqib&#47;skills</h3>
-              <div class="skills" id="skills-matrix"></div>
-            </div>
-          </section>
-          <section class="animate-slide-in-up" id="education" style="--delay: 1s">
-            <div class="hud-panel education">
-              <h3>&gt; saqib&#47;education</h3>
-              <div id="education-list" class="education-items">
-              </div>
-            </div>
-          </section>
-          
-          <section class="animate-slide-in-up" id="certificate" style="--delay: 1.2s">
-            <div class="hud-panel certifications">
-              <h3>&gt; saqib&#47;certifications</h3>
-              <div class="certifications-list" id="certifications-list">
-              </div>
-            </div>
-          </section>
-          
-        </div>
-      </div>
-    </main>
-    <div id="project-modal" class="modal">
-      <div class="modal-backdrop"></div>
-      <div class="modal-content hud-panel">
-        <button class="modal-close" id="modal-close">&times;</button>
-        <div class="modal-body">
-          <div class="carousel-container">
-            <div class="carousel-track" id="carousel-track"></div>
-            <button class="carousel-btn prev" id="prev-btn">&#10094;</button>
-            <button class="carousel-btn next" id="next-btn">&#10095;</button>
-            <div class="carousel-indicators" id="carousel-indicators"></div>
-          </div>
-          <div class="modal-text-content">
-            <h2 id="modal-title"></h2>
-            <div class="project-tech" id="modal-tech"></div>
-            <p id="modal-description"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="js/script.js"></script>
-    <script src="js/three-animation.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

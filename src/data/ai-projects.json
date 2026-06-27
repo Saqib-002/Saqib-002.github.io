@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Mandumah Multi-Doc Agent",
+    "description": "An agentic RAG system designed to navigate 1.5M Arabic academic documents using a hierarchical meta-agent architecture and graph-based traversal. Optimized for complex linguistic nuances with automated summarization tools.",
+    "techStack": ["LlamaIndex", "Gemini Vertex AI", "FastAPI", "Python", "Docker"],
+    "images": [
+      "assets/media/MIS/mandumah/intro.png",
+      "assets/media/MIS/mandumah/initial_view.png",
+      "assets/media/MIS/mandumah/chat_sample.png"
+    ],
+    "details": {
+      "description": "This project involved developing an advanced agentic RAG system for a major Saudi Arabian academic platform to navigate a corpus of 1.5 million documents. It focuses on extracting insights from unstructured Arabic textual data using a hierarchical meta-agent architecture.",
+      "points": [
+        "Architecture: Implemented a hierarchical meta-agent using graph-based traversal to orchestrate document-level agents.",
+        "Technical Innovation: Engineered tool-calling mechanisms for real-time Arabic summarization and query answering.",
+        "Scaling: Optimized performance for large-scale Arabic text, handling morphological complexity and right-to-left scripting."
+      ]
+    }
+  },
+  {
+    "name": "High-Scale Email Verification System",
+    "description": "Multi-layered validation pipeline utilizing DNS resolution, SMTP probing, and heuristics to reduce verification costs by 90%. Supports concurrent processing of hundreds of thousands of emails.",
+    "techStack": ["Python (asyncio)", "GCP", "Docker", "Celery", "FastAPI", "Redis"],
+    "images": [
+      "assets/media/MIS/verifier/dashboard.png",
+      "assets/media/MIS/verifier/verifier.png",
+      "assets/media/MIS/verifier/guesser.png",
+      "assets/media/MIS/verifier/stats.png"
+    ],
+    "details": {
+      "description": "Designed as a cost-effective alternative to commercial services, this system processes hundreds of thousands of email addresses with extreme concurrency. It utilizes a multi-layered validation pipeline to ensure high deliverability for large-scale cold outreach campaigns.",
+      "points": [
+        "Cost Efficiency: Built a high-concurrency pipeline that reduced verification costs by 90% compared to commercial services.",
+        "Verification Pipeline: Developed multi-layered checks including DNS resolution, SMTP probing, and deliverability heuristics.",
+        "Scale: Leveraged asynchronous workers and distributed task queues to process hundreds of thousands of emails concurrently.",
+        "Feature Addition: Created an email-guessing module to generate and validate probable corporate email permutations."
+      ]
+    }
+  }
+]

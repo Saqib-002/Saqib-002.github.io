@@ -1,0 +1,180 @@
+/* =====================
+   GLOBAL / RESET STYLES
+   ===================== */
+:root {
+  --accent-100: #ff7300;
+  --accent-500: #e34c26;
+  --body-color: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, "sans-serif";
+  background: #0d1117;
+  color: #c9d1d9;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #56b0bb;
+  border-radius: 5px;
+  border: 2px solid #0d1117;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-500);
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #56b0bb #0d1117;
+}
+
+/* =====================
+   LAYOUT
+   ===================== */
+.main-container {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.sub-container {
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.bg-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  background-image: linear-gradient(to bottom right, #0d1117, #161b22);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0px, 1fr));
+  gap: 2rem;
+}
+
+.container > section {
+  display: flex;
+}
+
+.container > section > .hud-panel {
+  width: 100%;
+}
+
+/* =====================
+   SHARED HUD PANEL
+   ===================== */
+.hud-panel {
+  background: rgba(14, 21, 29, 0.7);
+  border: 1px solid #2d3846;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  padding: 2rem;
+}
+
+.hud-panel:hover {
+  border-color: #4b6b8b;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* =====================
+   SHARED ANIMATION
+   ===================== */
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out var(--delay, 0s) 1 forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   SHARED SKILL TAG
+   ===================== */
+.skill-tag {
+  background: rgba(45, 56, 70, 0.5);
+  border: 1px solid #3d4a5b;
+  color: #c9d1d9;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  width: max-content;
+}
+
+.skill-tag:hover {
+  background: #3d4a5b;
+  color: #fff;
+}
+
+.tech-more {
+  background: rgba(86, 176, 187, 0.1);
+  border-color: rgba(86, 176, 187, 0.3);
+  color: #56b0bb;
+}
+
+/* =====================
+   GRID COLUMN SPANS
+   ===================== */
+#profile            { grid-column: span 12; }
+#experience         { grid-column: span 4; }
+#projects           { grid-column: span 8; }
+#skills-matrix-section { grid-column: span 9; }
+#education          { grid-column: span 3; }
+#certificate        { grid-column: span 12; }
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media screen and (max-width: 1200px) {
+  #experience         { grid-column: span 5; }
+  #projects           { grid-column: span 7; }
+  #skills-matrix-section { grid-column: span 8; }
+  #education          { grid-column: span 4; }
+}
+
+@media screen and (max-width: 1024px) {
+  #skills-matrix-section { grid-column: span 6; }
+  #education          { grid-column: span 6; }
+}
+
+@media screen and (max-width: 768px) {
+  #experience         { grid-column: span 12; }
+  #projects           { grid-column: span 12; }
+  #skills-matrix-section { grid-column: span 12; }
+  #education          { grid-column: span 12; }
+  .container          { gap: 1.5rem; }
+}

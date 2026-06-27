@@ -1,0 +1,61 @@
+/* =====================
+   CERTIFICATIONS
+   ===================== */
+.certifications {
+  padding: 1.5rem;
+}
+
+.certifications h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--accent-500);
+  margin-bottom: 1rem;
+}
+
+#certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.certification-item {
+  padding: 1rem;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.certification-item h4 {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Space Mono", monospace;
+}
+
+.certification-item p {
+  color: #94a1b2;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-family: "Space Mono", monospace;
+}
+
+.certification-item a {
+  color: #94a1b2;
+  border: 1px solid #94a1b2;
+  padding: 0.5rem 1rem;
+  display: block;
+  width: max-content;
+  text-decoration: none;
+  border-radius: 99999px;
+  margin-top: 1rem;
+  transition: color, background-color 0.3s ease;
+}
+
+.certification-item a:hover {
+  background-color: #94a1b2;
+  color: black;
+}
