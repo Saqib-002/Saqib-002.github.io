@@ -13,7 +13,7 @@ export default function Experience({ experience }) {
             return (
               <div
                 key={index}
-                className="experience-item hud-panel animate-slide-in-up"
+                className="experience-item animate-slide-in-up"
                 style={{ '--delay': `${delay}s` }}
               >
                 <div className="experience-title">

@@ -4,17 +4,20 @@
 header {
   display: grid;
   gap: 2rem;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   margin-bottom: 3rem;
 }
 
+
 #info {
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
 #picture {
+  flex-shrink: 0;
   width: 7.8125rem;
   height: 7.8125rem;
   border-radius: 50%;
@@ -25,7 +28,8 @@ header {
 #name {
   font-family: Orbitron, "sans-serif";
   color: #56b0bb;
-  font-size: 3.75rem;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  overflow-wrap: anywhere;
   line-height: 1;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -71,14 +75,16 @@ header {
   line-height: 1.25rem;
 }
 
-.launch-blog-container {
+.buttons-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   justify-self: self-end;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
 }
 
-.launch-button {
+.resume-button {
   background: linear-gradient(135deg, var(--accent-500), var(--accent-100));
   color: #fff;
   font-weight: 700;
@@ -96,7 +102,7 @@ header {
   text-decoration: none;
 }
 
-.launch-button:hover {
+.resume-button:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(255, 115, 0, 0.6);
 }
@@ -110,26 +116,100 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
-  #name { font-size: 3rem; }
+  #name {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  #name  { font-size: 2.5rem; }
-  #title { font-size: 1.2rem; line-height: 1.6rem; }
+  #name {
+    font-size: 2.5rem;
+  }
+  #title {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+  .buttons-container{
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+  }
 }
 
 @media screen and (max-width: 640px) {
-  .launch-button {
+  .resume-button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  #name  { font-size: 2rem; }
-  #title { font-size: 1rem; line-height: 1.5rem; }
+  #name {
+    font-size: 2rem;
+  }
+  #title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  #info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  #name {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    line-height: 1.25;
+  }
+  .buttons-container {
+    justify-self: stretch;
+    flex-wrap: wrap;
+  }
+  .buttons-container a {
+    flex: 1;
+    white-space: nowrap;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  #name    { font-size: 1.5rem; }
-  #title   { font-size: 1rem; line-height: 1.275rem; }
-  #picture { width: 5rem; height: 5rem; }
+  #name {
+    font-size: 1.5rem;
+  }
+
+  #title {
+    font-size: 1rem;
+    line-height: 1.275rem;
+  }
+
+  #picture {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.hero-statement {
+  color: #d1dce7;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: -0.5rem 0 1.5rem;
+}
+
+.hero-projects-link {
+  padding: 14px 20px;
+  border: 1px solid #56b0bb;
+  border-radius: 8px;
+  color: #9bd5dd;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.resume-button {
+  font-family: Inter, sans-serif;
+  font-size: .95rem;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 14px 20px;
+  box-shadow: none;
 }

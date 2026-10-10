@@ -12,7 +12,7 @@ export default function BackgroundCanvas() {
     let animationFrameId;
 
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     let windowHalfX = window.innerWidth / 2;
     let windowHalfY = window.innerHeight / 2;

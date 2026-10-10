@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 export const DESKTOP_NAV_ITEMS = [
   {
     id:         'info',
-    label:      'Header',
+    label:      'Info',
     scrollTo:   'info',
     observeIds: ['info'],
   },

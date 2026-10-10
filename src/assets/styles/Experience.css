@@ -15,8 +15,10 @@
 }
 
 .experience-item {
-  padding: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #2d3846;
 }
+.experience-item:last-child { border-bottom: 0; padding-bottom: 0; }
 
 .experience-title {
   display: flex;
@@ -50,5 +52,6 @@
 
 .experience-description {
   color: var(--body-color);
-  text-align: justify;
+  text-align: left;
+  line-height: 1.7;
 }

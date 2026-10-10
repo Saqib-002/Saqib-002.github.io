@@ -6,7 +6,7 @@ export default function Profile({ summary }) {
   return (
     <section className="animate-slide-in-up" id="profile" style={{ '--delay': '0.2s' }}>
       <div className="hud-panel summary">
-        <h3>&gt; saqib/profile</h3>
+        <h3>&gt; saqib/summary</h3>
         <p dangerouslySetInnerHTML={{ __html: summary.profile }} />
       </div>
     </section>

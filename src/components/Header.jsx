@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import '../assets/styles/Header.css';
 
 export default function Header({ personalInfo }) {
@@ -32,6 +33,7 @@ export default function Header({ personalInfo }) {
         <div>
           <h1 id="name">{name.toUpperCase()}</h1>
           <h2 id="title">{title.toUpperCase()}</h2>
+          <p className="hero-statement">I build full-stack products and AI systems.</p>
           <div className="hud-panel-social" id="social-links">
             {Object.entries(socialLinks).map(([platform, linkData]) => (
               <a
@@ -48,15 +50,15 @@ export default function Header({ personalInfo }) {
           </div>
         </div>
       </div>
-      <div className="launch-blog-container">
+      <div className="buttons-container">
+        <a className="hero-projects-link" href="#projects" onClick={e => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); }}>View Projects <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" /></a>
         <a
-          className="launch-button"
+          className="resume-button"
           href="assets/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          download="Saqib_Ali_Shah_Resume.pdf"
         >
-          RESUME
+          View resume
         </a>
       </div>
     </header>

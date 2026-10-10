@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import BackgroundCanvas from './components/BackgroundCanvas';
 import Header from './components/Header';
 import Profile from './components/Profile';
@@ -23,17 +23,17 @@ export default function App() {
     setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-  };
+  }, []);
 
   const handleOpenAllProjects = () => {
     setIsAllProjectsOpen(true);
   };
 
-  const handleCloseAllProjects = () => {
+  const handleCloseAllProjects = useCallback(() => {
     setIsAllProjectsOpen(false);
-  };
+  }, []);
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function App() {
       <BackgroundCanvas />
 
       {/* Fixed section navigator */}
-      <PageNav />
+      <div inert={isModalOpen || isAllProjectsOpen}><PageNav />
 
       {/* Mobile bottom navigation bar */}
       <MobileNav />
@@ -64,7 +64,7 @@ export default function App() {
             <Certifications certifications={portfolioData.certifications} />
           </div>
         </div>
-      </main>
+      </main></div>
 
       {/* Detail View Project Modal */}
       <ProjectModal
@@ -75,6 +75,8 @@ export default function App() {
 
       {/* All Projects Modal with Category Tabs */}
       <AllProjectsModal
+        key={isAllProjectsOpen ? 'open' : 'closed'}
+        isDetailOpen={isModalOpen}
         isOpen={isAllProjectsOpen}
         onClose={handleCloseAllProjects}
         onOpenProject={handleOpenModal}

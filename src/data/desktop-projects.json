@@ -2,24 +2,81 @@
   {
     "name": "ThunderJaw Restaurant POS",
     "description": "Developed a high-performance desktop POS system using Electron and React 19, streamlining restaurant operations through real-time order tracking and kitchen management. Engineered a robust architecture featuring Role-Based Access Control, automated PostgreSQL migrations with Knex.js, and multi-language support.",
-    "techStack": ["Electron", "React", "TypeScript", "PostgreSQL", "Knex", "Tailwind CSS", "Shadcn"],
-    "images": [
-      "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png",
-      "assets/media/MIS/thunderJaw_restaurant/configurations.png",
-      "assets/media/MIS/thunderJaw_restaurant/kitchen_view.png",
-      "assets/media/MIS/thunderJaw_restaurant/manage_orders.png",
-      "assets/media/MIS/thunderJaw_restaurant/menu_management.png",
-      "assets/media/MIS/thunderJaw_restaurant/Reports.png",
-      "assets/media/MIS/thunderJaw_restaurant/taking_order.png"
+    "techStack": [
+      "Electron",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Knex",
+      "Tailwind CSS",
+      "Shadcn"
     ],
     "details": {
-      "description": "ThunderJaw is a high-performance, cross-platform desktop application designed to streamline complex restaurant operations, including real-time order tracking and kitchen management. The system integrates inventory control and financial reporting into a unified interface.",
-      "points": [
-        "System Architecture: Developed a cross-platform desktop application using Electron and React 19, utilizing TypeScript for robust type safety.",
-        "Database Management: Leveraged Knex.js with PostgreSQL to handle advanced relational data, automated migrations, and seeding.",
-        "Security & Access: Implemented a secure authentication system featuring role-based access control (RBAC) to manage worker permissions and logistics.",
-        "Technical Features: Integrated multi-language support (i18next), real-time IPC handlers, and Excel exporting for comprehensive business reporting."
+      "blocks": [
+        {
+          "type": "gallery",
+          "caption": "ThunderJaw Restaurant POS",
+          "images": [
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png",
+              "alt": "ThunderJaw Restaurant POS — Add products while taking an order",
+              "caption": "Add products while taking an order"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/configurations.png",
+              "alt": "ThunderJaw Restaurant POS — System configuration",
+              "caption": "System configuration"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/kitchen_view.png",
+              "alt": "ThunderJaw Restaurant POS — Kitchen view",
+              "caption": "Kitchen view"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/manage_orders.png",
+              "alt": "ThunderJaw Restaurant POS — Order management",
+              "caption": "Order management"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/menu_management.png",
+              "alt": "ThunderJaw Restaurant POS — Menu management",
+              "caption": "Menu management"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/Reports.png",
+              "alt": "ThunderJaw Restaurant POS — Reports",
+              "caption": "Reports"
+            },
+            {
+              "src": "assets/media/MIS/thunderJaw_restaurant/taking_order.png",
+              "alt": "ThunderJaw Restaurant POS — Take an order",
+              "caption": "Take an order"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "ThunderJaw is a high-performance, cross-platform desktop application designed to streamline complex restaurant operations, including real-time order tracking and kitchen management. The system integrates inventory control and financial reporting into a unified interface."
+        },
+        {
+          "type": "heading",
+          "text": "Project highlights"
+        },
+        {
+          "type": "list",
+          "items": [
+            "System Architecture: Developed a cross-platform desktop application using Electron and React 19, utilizing TypeScript for robust type safety.",
+            "Database Management: Leveraged Knex.js with PostgreSQL to handle advanced relational data, automated migrations, and seeding.",
+            "Security & Access: Implemented a secure authentication system featuring role-based access control (RBAC) to manage worker permissions and logistics.",
+            "Technical Features: Integrated multi-language support (i18next), real-time IPC handlers, and Excel exporting for comprehensive business reporting."
+          ]
+        }
       ]
-    }
+    },
+    "coverImage": "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png"
   }
 ]

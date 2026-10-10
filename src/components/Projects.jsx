@@ -13,7 +13,6 @@ export default function Projects({ projects, onOpenModal, onViewAll }) {
             <ProjectCard
               key={index}
               project={project}
-              index={index}
               onOpenModal={onOpenModal}
             />
           ))}

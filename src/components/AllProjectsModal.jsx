@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
+import useModal from '../hooks/useModal';
 import aiProjects from '../data/ai-projects.json';
 import fullstackProjects from '../data/fullstack-projects.json';
 import desktopProjects from '../data/desktop-projects.json';
 import ProjectCard from './ProjectCard';
 import '../assets/styles/AllProjectsModal.css';
+import { X } from 'lucide-react';
 
 const CATEGORIES = [
   {
@@ -51,37 +53,22 @@ const PROJECT_DATA = {
   desktop: desktopProjects,
 };
 
-export default function AllProjectsModal({ isOpen, onClose, onOpenProject }) {
+export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen }) {
   const [activeCategory, setActiveCategory] = useState('all');
-
-  // Lock body scroll when open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  // Reset category each time the modal opens
-  useEffect(() => {
-    if (isOpen) setActiveCategory('all');
-  }, [isOpen]);
+  const ref = useRef(null);
+  useModal(isOpen, onClose, ref);
 
   const projects = PROJECT_DATA[activeCategory] || [];
 
   return (
-    <div className={`modal all-projects-modal ${isOpen ? 'active' : ''}`}>
+    <div className={`modal all-projects-modal ${isOpen ? 'active' : ''}`} inert={!isOpen || isDetailOpen} aria-hidden={!isOpen || isDetailOpen}>
       <div className="modal-backdrop" onClick={onClose}></div>
 
-      <div className="modal-content hud-panel all-projects-modal-content">
+      <div className="modal-content hud-panel all-projects-modal-content" ref={ref} role="dialog" aria-modal="true" aria-labelledby="all-projects-title" tabIndex={-1}>
         {/* Header */}
         <div className="all-projects-modal-header">
-          <h2 className="all-projects-modal-title">&gt; saqib/all-projects</h2>
-          <button className="modal-close" onClick={onClose}>&times;</button>
+          <h2 className="all-projects-modal-title" id="all-projects-title">All projects</h2>
+          <button className="modal-close" onClick={onClose} aria-label="Close all projects"><X size={18} strokeWidth={4} aria-hidden="true"/></button>
         </div>
 
         {/* Category Tabs */}
@@ -91,6 +78,7 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject }) {
               key={cat.id}
               className={`all-projects-tab ${activeCategory === cat.id ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat.id)}
+              aria-pressed={activeCategory === cat.id}
             >
               <span className="tab-icon">{cat.icon}</span>
               <span>{cat.label}</span>

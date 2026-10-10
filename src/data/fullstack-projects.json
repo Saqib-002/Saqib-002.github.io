@@ -2,27 +2,94 @@
   {
     "name": "B2B Leads Platform (Imagini)",
     "description": "Architected a scalable platform managing millions of leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
-    "techStack": ["React", "FastAPI", "PostgreSQL", "Redis", "Celery"],
-    "images": [
-      "assets/media/MIS/imagini/admin_dashboard.png",
-      "assets/media/MIS/imagini/admin_data.png",
-      "assets/media/MIS/imagini/admin_data_2.png",
-      "assets/media/MIS/imagini/admin_data_3.png",
-      "assets/media/MIS/imagini/admin_user.png",
-      "assets/media/MIS/imagini/create_new_user.png",
-      "assets/media/MIS/imagini/job_and_activity.png",
-      "assets/media/MIS/imagini/user_details_1.png",
-      "assets/media/MIS/imagini/user_details_2.png",
-      "assets/media/MIS/imagini/user_side.png"
+    "techStack": [
+      "React",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery"
     ],
     "details": {
-      "description": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline.",
-      "points": [
-        "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
-        "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
-        "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
-        "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
+      "blocks": [
+        {
+          "type": "gallery",
+          "caption": "B2B Leads Platform (Imagini)",
+          "images": [
+            {
+              "src": "assets/media/MIS/imagini/admin_dashboard.png",
+              "alt": "B2B Leads Platform (Imagini) — Admin dashboard",
+              "caption": "Admin dashboard"
+            },
+            {
+              "src": "assets/media/MIS/imagini/admin_data.png",
+              "alt": "B2B Leads Platform (Imagini) — Lead data management",
+              "caption": "Lead data management"
+            },
+            {
+              "src": "assets/media/MIS/imagini/admin_data_2.png",
+              "alt": "B2B Leads Platform (Imagini) — Lead data management — additional view",
+              "caption": "Lead data management — additional view"
+            },
+            {
+              "src": "assets/media/MIS/imagini/admin_data_3.png",
+              "alt": "B2B Leads Platform (Imagini) — Lead data management — detail view",
+              "caption": "Lead data management — detail view"
+            },
+            {
+              "src": "assets/media/MIS/imagini/admin_user.png",
+              "alt": "B2B Leads Platform (Imagini) — User management",
+              "caption": "User management"
+            },
+            {
+              "src": "assets/media/MIS/imagini/create_new_user.png",
+              "alt": "B2B Leads Platform (Imagini) — Create a new user",
+              "caption": "Create a new user"
+            },
+            {
+              "src": "assets/media/MIS/imagini/job_and_activity.png",
+              "alt": "B2B Leads Platform (Imagini) — Jobs and activity",
+              "caption": "Jobs and activity"
+            },
+            {
+              "src": "assets/media/MIS/imagini/user_details_1.png",
+              "alt": "B2B Leads Platform (Imagini) — User details",
+              "caption": "User details"
+            },
+            {
+              "src": "assets/media/MIS/imagini/user_details_2.png",
+              "alt": "B2B Leads Platform (Imagini) — User details — additional view",
+              "caption": "User details — additional view"
+            },
+            {
+              "src": "assets/media/MIS/imagini/user_side.png",
+              "alt": "B2B Leads Platform (Imagini) — User dashboard",
+              "caption": "User dashboard"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline."
+        },
+        {
+          "type": "heading",
+          "text": "Project highlights"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
+            "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
+            "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
+            "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
+          ]
+        }
       ]
-    }
+    },
+    "coverImage": "assets/media/MIS/imagini/admin_dashboard.png"
   }
 ]

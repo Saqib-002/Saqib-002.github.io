@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6, p {
 .hud-panel:hover {
   border-color: #4b6b8b;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+
 }
 
 /* =====================
@@ -125,10 +125,12 @@ h1, h2, h3, h4, h5, h6, p {
    SHARED SKILL TAG
    ===================== */
 .skill-tag {
+  max-width: 100%;
+  overflow-wrap: anywhere;
   background: rgba(45, 56, 70, 0.5);
   border: 1px solid #3d4a5b;
   color: #c9d1d9;
-  font-size: 11px;
+  font-size: 12px;
   padding: 4px 10px;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -172,9 +174,23 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media screen and (max-width: 768px) {
+  .main-container { padding: 1.25rem; }
+  .hud-panel { padding: 1.25rem; }
+  .project-card, .modal-content { padding: 0; }
+  #profile { order: 0; }
+  #projects { order: 1; }
+  #experience { order: 2; }
+  #skills-matrix-section { order: 3; }
+  #education { order: 4; }
+  #certificate { order: 5; }
   #experience         { grid-column: span 12; }
   #projects           { grid-column: span 12; }
   #skills-matrix-section { grid-column: span 12; }
   #education          { grid-column: span 12; }
   .container          { gap: 1.5rem; }
+}
+
+:focus-visible { outline: 2px solid #83d2de; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
