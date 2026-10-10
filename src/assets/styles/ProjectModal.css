@@ -39,6 +39,11 @@
 }
 
 .modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
     flex-shrink: 0;
     width: 44px;
     height: 44px;
@@ -48,6 +53,11 @@
     color: #fff;
     font-size: 26px;
     cursor: pointer
+}
+
+.modal-close svg {
+    display: block;
+    flex-shrink: 0;
 }
 
 .modal-close:hover {
