@@ -3,54 +3,72 @@ import useModal from '../hooks/useModal';
 import aiProjects from '../data/ai-projects.json';
 import fullstackProjects from '../data/fullstack-projects.json';
 import desktopProjects from '../data/desktop-projects.json';
+import appProjects from '../data/app-projects.json';
+import landingProjects from '../data/landing-pages.json';
 import ProjectCard from './ProjectCard';
 import '../assets/styles/AllProjectsModal.css';
-import { X } from 'lucide-react';
+import { Bot, Layers, Menu, Monitor, Palette, Smartphone, X } from 'lucide-react';
 
 const CATEGORIES = [
   {
     id: 'all',
     label: 'All',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
-      </svg>
+      <Menu />
     ),
   },
   {
     id: 'ai',
     label: 'AI & ML',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A8.001 8.001 0 0 1 4.07 11H5a1 1 0 0 1 0 2h-.93A8.001 8.001 0 0 1 11 19.93zm0-3.86A4 4 0 1 1 12 6a4 4 0 0 1 1 7.07zM12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-      </svg>
+      <Bot />
     ),
   },
   {
     id: 'fullstack',
     label: 'Full Stack',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z" />
-      </svg>
+      <Layers />
     ),
   },
   {
     id: 'desktop',
     label: 'Desktop',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20 3H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h6v2H7v2h10v-2h-3v-2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 13H4V5h16v11z" />
-      </svg>
+      <Monitor />
+    ),
+  },
+  {
+    id: 'app',
+    label: 'Apps',
+    icon: (
+      <Smartphone />
+    ),
+  },
+  {
+    id: 'landing',
+    label: 'Langin Pages',
+    icon: (
+      <Palette />
     ),
   },
 ];
 
+const seenProjectNames = new Set();
+const allProjects = [...aiProjects, ...fullstackProjects, ...desktopProjects].filter((project) => {
+  const name = project.name.trim().toLowerCase();
+  if (seenProjectNames.has(name)) return false;
+  seenProjectNames.add(name);
+  return true;
+});
+
 const PROJECT_DATA = {
-  all: [...aiProjects, ...fullstackProjects, ...desktopProjects],
+  all: allProjects,
   ai: aiProjects,
   fullstack: fullstackProjects,
   desktop: desktopProjects,
+  app: appProjects,
+  landing: landingProjects
 };
 
 export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {

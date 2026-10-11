@@ -53,4 +53,5 @@
 .experience-description {
   color: var(--body-color);
   line-height: 1.7;
+  text-align: justify;
 }

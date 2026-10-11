@@ -1,2 +1,222 @@
 [
+    {
+        "name": "ThunderJaw Restaurant POS",
+        "description": "Order-to-delivery system for a real restaurant: Electron POS with kitchen display and finance tools, a driver mobile app with live tracking and chat, and a custom API that also powers the restaurant's Alí Doner website and app.",
+        "techStack": [
+            "Electron",
+            "React",
+            "TypeScript",
+            "React Native",
+            "Expo",
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "Knex.js",
+            "WebSocket",
+            "Tailwind CSS",
+            "Codemagic"
+        ],
+        "coverImage": "assets/media/thunderjaw-pos/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/thunderjaw-pos/order-to-delivery-demo.mp4",
+                "title": "Order to delivery",
+                "caption": "An order created in the POS, assigned to a driver, tracked live and marked delivered from the app.",
+                "poster": "assets/media/thunderjaw-pos/order-to-delivery-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "ThunderJaw is a restaurant management system built for a real food business that runs dine-in, takeaway and delivery at the same time. It covers the full life of an order: taking it, cooking it, sending it out with a driver, tracking the delivery and closing it in the books."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The system has four parts: an Electron desktop POS, a CDN and backup server, a VPS API with WebSocket support, and a React Native app for drivers. The same API serves the restaurant's Alí Doner website and mobile app, so online orders arrive in the POS with no re-entry. It was built by a small team, and I worked across the architecture, backend, sync layer and driver app integration."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/thunderjaw-pos/pos-terminal.png",
+                    "previewSrc": "assets/media/thunderjaw-pos/pos-terminal-thumbnail.png",
+                    "alt": "POS order screen",
+                    "caption": "POS terminal with menu, variants and the current order",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Orders came in from the counter, the website, the app and delivery platforms like Glovo and Uber Eats, with no single place to see them all. The website and app are a separate project of mine, Alí Doner, built on this same backend. Drivers had no digital workflow, so assignments and status updates were handled by hand. Delivery results never made it back into the POS automatically. And the owners had no clear view of cash, payroll, purchases or fleet costs. Off-the-shelf POS tools either skipped delivery or couldn't handle custom driver dispatch."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "One order queue for every channel. Local, web, app and third-party orders show up in the same place, with ticket prefixes so staff know the source at a glance.",
+                        "Kitchen display with color-coded timers that change as orders get older, based on configurable thresholds.",
+                        "Delivery board with a live map of driver locations.",
+                        "One-click driver assignment, synced to the driver's phone.",
+                        "Driver app with a mapped route, distance and ETA, per-order chat with the restaurant, and one-tap Delivered or Cancelled.",
+                        "Delivery results sync back to the POS on their own, including payment status and delivery time.",
+                        "Menu management with variants, complement groups, set menus and allergens.",
+                        "Role-based permissions per module and per function for admin, kitchen, manager and staff.",
+                        "Finance tools for cash and card reports, worker payroll, vehicle maintenance, supplier purchases, expenses and cash-outs.",
+                        "English and Spanish interface, and a first-run wizard that connects the POS to its PostgreSQL database with no hardcoded config."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Desktop POS",
+                    "images": [
+                        {
+                            "src": "assets/media/thunderjaw-pos/kitchen-display.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/kitchen-display-thumbnail.png",
+                            "alt": "Kitchen display system",
+                            "caption": "Kitchen display with priority timers"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/delivery-board.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/delivery-board-thumbnail.png",
+                            "alt": "Delivery board with live driver map",
+                            "caption": "Delivery board and live driver map"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/finance.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/finance-thumbnail.png",
+                            "alt": "Financial reports",
+                            "caption": "Financial reports"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How the pieces fit together"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Desktop POS: Electron, React and TypeScript with a local PostgreSQL database managed by Knex migrations.",
+                        "VPS API: Express and WebSocket server that sits between the POS and the driver app. It handles driver and admin auth, live location, delivery chat and web order intake, and it also serves the Alí Doner website and mobile app.",
+                        "CDN and backup server: handles image uploads and runs automated database and image backups.",
+                        "Driver app: Expo and React Native, with background location tracking and push notifications."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sync is polling-based, with no message broker. The POS pushes driver profiles and assignments to the VPS on every change, then checks the VPS every 10 seconds for delivery updates and new web orders. Driver locations travel over WebSocket and are broadcast to every connected client. Two PostgreSQL databases (POS and VPS) with 30+ tables share matching migration sets, with soft deletes and audit timestamps throughout."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/thunderjaw-pos/architecture.png",
+                    "previewSrc": "assets/media/thunderjaw-pos/architecture-thumbnail.png",
+                    "alt": "System architecture diagram",
+                    "caption": "POS, VPS, CDN server and driver app",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "Driver app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Order list that refreshes every 5 seconds, with an unread chat badge and a full item summary.",
+                        "Route drawn on a native map using the Google Routes API v2, with distance and ETA.",
+                        "Background location tracking that ignores small movements under 8 meters, so a parked driver doesn't flood the server.",
+                        "Push notifications for new assignments and chat messages.",
+                        "Built and shipped through EAS and Codemagic."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Driver app",
+                    "images": [
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-orders.png",
+                            "alt": "Driver order list",
+                            "caption": "Assigned orders"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-route.png",
+                            "alt": "Route map with distance and ETA",
+                            "caption": "Route, distance and ETA"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-chat.png",
+                            "alt": "Delivery chat",
+                            "caption": "Chat with the restaurant"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Backend and reliability"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Separate auth for drivers, admins and web customers. Admin WebSockets must authenticate within 8 seconds of connecting.",
+                        "Customer push notifications through Expo on every order status change.",
+                        "Per-order delivery chat saved to PostgreSQL and broadcast live.",
+                        "Database dumps with pg_dump every 30 minutes, and a daily image archive at 2 AM.",
+                        "Backup pruning that keeps the 8 newest dumps plus the latest dump from each of the last 2 days.",
+                        "Structured logging with Winston, using a separate log file per job."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This was a team project. These are the areas where I did the most work:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the two-way sync between the POS and the VPS, including the polling loops and the sync manager.",
+                        "Built the CDN and backup server: scheduled pg_dump jobs, backup pruning, and image sync to the VPS.",
+                        "Designed and built VPS API routes, including the WebSocket server with its auth handshake, location broadcast and chat storage.",
+                        "Designed the database schemas and Knex migrations for both the POS and VPS databases.",
+                        "Integrated the driver app: background location with drift filtering, push registration and Google Routes API v2 routing.",
+                        "Built the role-based permission system in the POS.",
+                        "Built the finance views for workers, vehicles, purchases, expenses, incomes and cash-outs."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Web and app orders go straight into the kitchen queue with no re-entry.",
+                        "Drivers went from no digital tools to a full mobile workflow: assignment, route, chat and delivery confirmation.",
+                        "Backups every 30 minutes cap the worst-case data loss at about 30 minutes.",
+                        "Payroll, purchases, fleet and expense tracking moved from spreadsheets into the POS.",
+                        "Ticket prefixes (local, W-, A-, platform) tell kitchen and delivery staff where each order came from."
+                    ]
+                },
+                {
+                    "type": "video",
+                    "src": "assets/media/thunderjaw-pos/order-to-delivery-demo.mp4",
+                    "title": "Order to delivery",
+                    "caption": "From a new order in the POS to a confirmed delivery on the driver's phone.",
+                    "poster": "assets/media/thunderjaw-pos/order-to-delivery-demo-preview.png"
+                }
+            ]
+        }
+    }
 ]

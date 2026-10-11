@@ -1,3 +1,5 @@
+import FallbackVideo from './FallbackVideo';
+import FallbackImage from './FallbackImage';
 import { useRef, useState } from 'react';
 import { X, Play, Film } from 'lucide-react';
 import useModal from '../hooks/useModal';
@@ -22,7 +24,7 @@ export default function VideoModal({ project, onClose }) {
       <div className="video-library">
         <section className="video-stage" aria-label="Selected video">
           <div className="video-screen">
-            {selected && <video key={selectedIndex} controls playsInline preload="metadata" src={selected.src} poster={selected.poster}
+            {selected && <FallbackVideo key={selectedIndex} controls playsInline preload="metadata" src={selected.src} poster={selected.poster}
               aria-label={selected.title || `Video ${selectedIndex + 1}`} onError={() => setFailed(true)} />}
             {!selected && <p>No videos available.</p>}
           </div>
@@ -37,7 +39,7 @@ export default function VideoModal({ project, onClose }) {
           <div className="video-playlist-items">{videos.map((video, index) => <button key={index} type="button"
             className={`video-playlist-item ${selectedIndex === index ? 'is-selected' : ''}`} aria-pressed={selectedIndex === index}
             onClick={() => { if (index !== selectedIndex) { setSelectedIndex(index); setFailed(false); } }}>
-            <span className="video-thumbnail">{video.poster ? <img src={video.poster} alt="" loading="lazy" /> : <Film size={24} aria-hidden="true" />}<span className="video-thumbnail-play"><Play size={12} aria-hidden="true" /></span></span>
+            <span className="video-thumbnail">{video.poster ? <FallbackImage src={video.poster} alt="" loading="lazy" /> : <Film size={24} aria-hidden="true" />}<span className="video-thumbnail-play"><Play size={12} aria-hidden="true" /></span></span>
             <span className="video-item-info"><span className="video-item-number">{selectedIndex === index ? 'SELECTED' : `VIDEO ${String(index + 1).padStart(2, '0')}`}</span><span className="video-item-title">{video.title || `Video ${index + 1}`}</span></span>
           </button>)}</div>
         </aside>

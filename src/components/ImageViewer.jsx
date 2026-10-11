@@ -1,3 +1,4 @@
+import FallbackImage from './FallbackImage';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ZoomIn, ZoomOut } from 'lucide-react';
@@ -60,7 +61,7 @@ export default function ImageViewer({ image, onClose }) {
           onPointerDown={startDrag} onPointerMove={moveDrag}
           onPointerUp={endDrag} onPointerCancel={endDrag} onLostPointerCapture={endDrag}>
           <div className="image-viewer-canvas" style={{ width: Math.max(viewport.width, width + 32), height: Math.max(viewport.height, height + 32) }}>
-            <img src={image.src} alt={image.alt || image.caption || 'Project screenshot'}
+            <FallbackImage src={image.src} alt={image.alt || image.caption || 'Project screenshot'}
               draggable={false}
               onLoad={event => setNaturalSize({ width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight })}
               style={naturalSize.width ? { width, height } : undefined} />

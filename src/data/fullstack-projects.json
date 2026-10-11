@@ -416,5 +416,483 @@
                 }
             ]
         }
+    },
+    {
+        "name": "ThunderJaw Restaurant POS",
+        "description": "Order-to-delivery system for a real restaurant: Electron POS with kitchen display and finance tools, a driver mobile app with live tracking and chat, and a custom API that also powers the restaurant's Alí Doner website and app.",
+        "techStack": [
+            "Electron",
+            "React",
+            "TypeScript",
+            "React Native",
+            "Expo",
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "Knex.js",
+            "WebSocket",
+            "Tailwind CSS",
+            "Codemagic"
+        ],
+        "coverImage": "assets/media/thunderjaw-pos/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/thunderjaw-pos/order-to-delivery-demo.mp4",
+                "title": "Order to delivery",
+                "caption": "An order created in the POS, assigned to a driver, tracked live and marked delivered from the app.",
+                "poster": "assets/media/thunderjaw-pos/order-to-delivery-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "ThunderJaw is a restaurant management system built for a real food business that runs dine-in, takeaway and delivery at the same time. It covers the full life of an order: taking it, cooking it, sending it out with a driver, tracking the delivery and closing it in the books."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The system has four parts: an Electron desktop POS, a CDN and backup server, a VPS API with WebSocket support, and a React Native app for drivers. The same API serves the restaurant's Alí Doner website and mobile app, so online orders arrive in the POS with no re-entry. It was built by a small team, and I worked across the architecture, backend, sync layer and driver app integration."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/thunderjaw-pos/pos-terminal.png",
+                    "previewSrc": "assets/media/thunderjaw-pos/pos-terminal-thumbnail.png",
+                    "alt": "POS order screen",
+                    "caption": "POS terminal with menu, variants and the current order",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Orders came in from the counter, the website, the app and delivery platforms like Glovo and Uber Eats, with no single place to see them all. The website and app are a separate project of mine, Alí Doner, built on this same backend. Drivers had no digital workflow, so assignments and status updates were handled by hand. Delivery results never made it back into the POS automatically. And the owners had no clear view of cash, payroll, purchases or fleet costs. Off-the-shelf POS tools either skipped delivery or couldn't handle custom driver dispatch."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "One order queue for every channel. Local, web, app and third-party orders show up in the same place, with ticket prefixes so staff know the source at a glance.",
+                        "Kitchen display with color-coded timers that change as orders get older, based on configurable thresholds.",
+                        "Delivery board with a live map of driver locations.",
+                        "One-click driver assignment, synced to the driver's phone.",
+                        "Driver app with a mapped route, distance and ETA, per-order chat with the restaurant, and one-tap Delivered or Cancelled.",
+                        "Delivery results sync back to the POS on their own, including payment status and delivery time.",
+                        "Menu management with variants, complement groups, set menus and allergens.",
+                        "Role-based permissions per module and per function for admin, kitchen, manager and staff.",
+                        "Finance tools for cash and card reports, worker payroll, vehicle maintenance, supplier purchases, expenses and cash-outs.",
+                        "English and Spanish interface, and a first-run wizard that connects the POS to its PostgreSQL database with no hardcoded config."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Desktop POS",
+                    "images": [
+                        {
+                            "src": "assets/media/thunderjaw-pos/kitchen-display.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/kitchen-display-thumbnail.png",
+                            "alt": "Kitchen display system",
+                            "caption": "Kitchen display with priority timers"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/delivery-board.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/delivery-board-thumbnail.png",
+                            "alt": "Delivery board with live driver map",
+                            "caption": "Delivery board and live driver map"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/finance.png",
+                            "previewSrc": "assets/media/thunderjaw-pos/finance-thumbnail.png",
+                            "alt": "Financial reports",
+                            "caption": "Financial reports"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How the pieces fit together"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Desktop POS: Electron, React and TypeScript with a local PostgreSQL database managed by Knex migrations.",
+                        "VPS API: Express and WebSocket server that sits between the POS and the driver app. It handles driver and admin auth, live location, delivery chat and web order intake, and it also serves the Alí Doner website and mobile app.",
+                        "CDN and backup server: handles image uploads and runs automated database and image backups.",
+                        "Driver app: Expo and React Native, with background location tracking and push notifications."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sync is polling-based, with no message broker. The POS pushes driver profiles and assignments to the VPS on every change, then checks the VPS every 10 seconds for delivery updates and new web orders. Driver locations travel over WebSocket and are broadcast to every connected client. Two PostgreSQL databases (POS and VPS) with 30+ tables share matching migration sets, with soft deletes and audit timestamps throughout."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/thunderjaw-pos/architecture.png",
+                    "previewSrc": "assets/media/thunderjaw-pos/architecture-thumbnail.png",
+                    "alt": "System architecture diagram",
+                    "caption": "POS, VPS, CDN server and driver app",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "Driver app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Order list that refreshes every 5 seconds, with an unread chat badge and a full item summary.",
+                        "Route drawn on a native map using the Google Routes API v2, with distance and ETA.",
+                        "Background location tracking that ignores small movements under 8 meters, so a parked driver doesn't flood the server.",
+                        "Push notifications for new assignments and chat messages.",
+                        "Built and shipped through EAS and Codemagic."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Driver app",
+                    "images": [
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-orders.png",
+                            "alt": "Driver order list",
+                            "caption": "Assigned orders"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-route.png",
+                            "alt": "Route map with distance and ETA",
+                            "caption": "Route, distance and ETA"
+                        },
+                        {
+                            "src": "assets/media/thunderjaw-pos/driver-chat.png",
+                            "alt": "Delivery chat",
+                            "caption": "Chat with the restaurant"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Backend and reliability"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Separate auth for drivers, admins and web customers. Admin WebSockets must authenticate within 8 seconds of connecting.",
+                        "Customer push notifications through Expo on every order status change.",
+                        "Per-order delivery chat saved to PostgreSQL and broadcast live.",
+                        "Database dumps with pg_dump every 30 minutes, and a daily image archive at 2 AM.",
+                        "Backup pruning that keeps the 8 newest dumps plus the latest dump from each of the last 2 days.",
+                        "Structured logging with Winston, using a separate log file per job."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This was a team project. These are the areas where I did the most work:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the two-way sync between the POS and the VPS, including the polling loops and the sync manager.",
+                        "Built the CDN and backup server: scheduled pg_dump jobs, backup pruning, and image sync to the VPS.",
+                        "Designed and built VPS API routes, including the WebSocket server with its auth handshake, location broadcast and chat storage.",
+                        "Designed the database schemas and Knex migrations for both the POS and VPS databases.",
+                        "Integrated the driver app: background location with drift filtering, push registration and Google Routes API v2 routing.",
+                        "Built the role-based permission system in the POS.",
+                        "Built the finance views for workers, vehicles, purchases, expenses, incomes and cash-outs."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Web and app orders go straight into the kitchen queue with no re-entry.",
+                        "Drivers went from no digital tools to a full mobile workflow: assignment, route, chat and delivery confirmation.",
+                        "Backups every 30 minutes cap the worst-case data loss at about 30 minutes.",
+                        "Payroll, purchases, fleet and expense tracking moved from spreadsheets into the POS.",
+                        "Ticket prefixes (local, W-, A-, platform) tell kitchen and delivery staff where each order came from."
+                    ]
+                },
+                {
+                    "type": "video",
+                    "src": "assets/media/thunderjaw-pos/order-to-delivery-demo.mp4",
+                    "title": "Order to delivery",
+                    "caption": "From a new order in the POS to a confirmed delivery on the driver's phone.",
+                    "poster": "assets/media/thunderjaw-pos/order-to-delivery-demo-preview.png"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Alí Doner",
+        "description": "Direct ordering platform for a kebab restaurant in Spain: a Next.js website, an Expo mobile app and an admin CMS, running on the same backend as the restaurant's ThunderJaw POS.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "React Native",
+            "Expo",
+            "Tailwind CSS",
+            "BlockNote",
+            "Google Maps API",
+            "i18next",
+            "WebSocket",
+            "Codemagic",
+            "GitHub Actions"
+        ],
+        "liveLink": "https://alikebabrivas.es/",
+        "coverImage": "assets/media/Freelance/ali-doner/cover.png",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Ali Doner Kebab",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/ali-doner/home.png",
+                            "alt": "Home",
+                            "caption": "Home Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/home-2.png",
+                            "alt": "Home",
+                            "caption": "Home Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/menu.png",
+                            "alt": "Menu",
+                            "caption": "Menu Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/adding-product.png",
+                            "alt": "Adding Product",
+                            "caption": "Adding Product Modal"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/adding-product-2.png",
+                            "alt": "Adding Product",
+                            "caption": "Adding Product Modal"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/address-filling.png",
+                            "alt": "Filling Address",
+                            "caption": "Filling Address Modal"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/my-orders.png",
+                            "alt": "My Orders Page",
+                            "caption": "My Orders Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/support.png",
+                            "alt": "Support Page",
+                            "caption": "Support Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/admin-cms.png",
+                            "alt": "Admin CMS",
+                            "caption": "Admin CMS"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-1.png",
+                            "alt": "Menu & Order Placing Screen",
+                            "caption": "Menu & Order Placing Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-2.png",
+                            "alt": "Favourites, Profile & Initial Order Type Screen",
+                            "caption": "Favourites, Profile & Initial Order Type Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-3.png",
+                            "alt": "Adding Product Screen",
+                            "caption": "Adding Product Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-my-orders.png",
+                            "alt": "My Orders Screen",
+                            "caption": "My Orders Screen"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Alí Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Customers can browse the menu, order for delivery or pickup, customize items, save favorites, check past orders and message support in Spanish or English. The owner manages all of it from the admin panel without touching code. Everything runs on the same backend as the restaurant's ThunderJaw POS, so web and app orders land in the kitchen queue on their own."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/Freelance/ali-doner/home.png",
+                    "alt": "Alí Doner website home page",
+                    "caption": "Customer website",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The restaurant wanted its own ordering channel instead of depending on delivery marketplaces that take a commission. The owner also needed to change hero images, opening hours, FAQs, allergen info, announcements and legal pages without a developer. And the platform had to plug into the backend the restaurant's POS already used, so online orders would land in the kitchen queue on their own."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Other requirements: accept delivery orders only inside a defined zone (a polygon, not a simple radius), support Spanish and English throughout, and meet GDPR rules for a Spanish audience."
+                },
+                {
+                    "type": "heading",
+                    "text": "Customer website"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Menu with categories, subcategories, products, discount badges and allergen indicators. Category and search links work directly from the URL.",
+                        "Delivery or pickup chosen upfront. Delivery addresses are checked against the zone polygon with Google Maps, so out-of-range customers find out before they fill the cart.",
+                        "Cart with variants, complement groups, set menus, discounts and an IVA breakdown.",
+                        "Three-step checkout: address and contact, payment (cash or card on delivery), then a summary with legal consent.",
+                        "Accounts with email verification before ordering, silent token refresh, password reset, order history, saved favorites and profile settings.",
+                        "Dark and light themes with no flash on load, and an ES/EN language toggle.",
+                        "Legal, About, FAQ and allergen pages all render from the CMS, with nothing hardcoded."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Mobile app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Catalog with a category bar, search and favorite toggles.",
+                        "Product screen with variant selection and a complement builder, plus a combo builder for multi-page set menus.",
+                        "Cart saved on the device, with haptic feedback and the full IVA breakdown.",
+                        "Same three-step checkout as the web. The order payload is ported from the web version, so both channels send identical data.",
+                        "Delivery zone check through a server-side geocoding proxy, so the Google Maps key never reaches the client, followed by a polygon test on the device.",
+                        "Push notifications for order status, registered only after the customer gives marketing consent.",
+                        "One-tap reorder from history, in-app support messages and location-based address autofill.",
+                        "Built with EAS and Codemagic."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Mobile app",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-home.png",
+                            "alt": "Menu Screen",
+                            "caption": "Menu Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-product.png",
+                            "alt": "Product with variants and complements",
+                            "caption": "Add Product Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-checkout.png",
+                            "alt": "checkout Screen",
+                            "caption": "Checkout Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/ali-doner/app-my-orders.png",
+                            "alt": "My Orders Screen",
+                            "caption": "My Orders Screen"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Admin panel"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Dashboard with customer counts, open support tickets, unread messages, web and app order totals, pending orders and menu counts.",
+                        "CMS for the hero slider, footer and social links, Terms, Privacy Policy, FAQs, About, Contact and Allergen pages. Each field has side-by-side Spanish and English editors with a one-click translate button.",
+                        "Settings for the logo, restaurant name, opening hours, an announcement bar shown on the website and the app, app store links, and a maintenance mode switch.",
+                        "Customer list with filters for active, unverified and deleted accounts, plus search by name or email.",
+                        "Support inbox with threaded conversations, replies, open and resolved status, and a live unread badge over WebSocket."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/Freelance/ali-doner/admin-cms.png",
+                    "alt": "Admin CMS with bilingual editor",
+                    "caption": "Bilingual CMS editor with auto-translate",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "All three apps use one versioned REST API, the same VPS backend that powers the restaurant's ThunderJaw POS.",
+                        "Orders are tagged by source (web or app, delivery or pickup) and get W- or A- ticket numbers, so the kitchen sees where each one came from.",
+                        "Customers use access and refresh tokens. On mobile, simultaneous 401 errors share a single refresh request. Admin uses its own token and secret.",
+                        "Content flows from the admin into a site content table, and the web and mobile apps load it on start. The apps wait for the content before rendering, which is also how maintenance mode works."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built this with a partner and worked on these areas:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Admin panel architecture and every CMS page, including the BlockNote editor, the bilingual field design and the auto-translate flow.",
+                        "Admin dashboard stats and the support inbox with live unread badges.",
+                        "Website architecture: auth with silent refresh, cart pricing logic, delivery zone validation and the site content gate.",
+                        "The mobile cart and pricing engine, ported from the web so both send the same order format.",
+                        "Polygon-based delivery zone checks on web and mobile.",
+                        "The 3-step mobile checkout.",
+                        "Localization across all three apps.",
+                        "Push notification registration tied to GDPR consent.",
+                        "The theme system: dark and light with no flash on the web, dark-only on mobile."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Three production apps serving real customers of a live restaurant.",
+                        "The restaurant takes orders directly, with no marketplace commission.",
+                        "The owner edits every text, image and legal page in Spanish and English without a developer.",
+                        "Customers learn right away whether their address is in the delivery zone, so fewer orders get rejected after checkout.",
+                        "Web and app orders go straight into the ThunderJaw POS kitchen queue with no re-entry.",
+                        "GDPR covered end to end: email verification, consent-gated push tokens, account deletion and token invalidation on password change."
+                    ]
+                }
+            ]
+        }
     }
 ]

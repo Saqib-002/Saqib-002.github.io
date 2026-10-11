@@ -1,3 +1,4 @@
+import FallbackImage from './FallbackImage';
 import ProjectLinks from './ProjectLinks';
 import '../assets/styles/ProjectCard.css';
 import { ArrowRight } from 'lucide-react';
@@ -6,7 +7,7 @@ export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
   return <article className="hud-panel project-card">
     <div className="project-card-media">
     <button className="project-card-preview" onClick={() => onOpenModal(project)} aria-label={`View ${name}`}>
-      {coverImage ? <img src={coverImage} alt={name} className="project-card-img" loading="lazy" />
+      {coverImage ? <FallbackImage src={coverImage} alt={name} className="project-card-img" loading="lazy" />
         : <div className="project-img-placeholder"><span aria-hidden="true">&lt;/&gt;</span><span>{name}</span></div>}
     </button>
       <div className="project-card-links"><ProjectLinks project={project} compact onOpenVideos={onOpenVideos} /></div>

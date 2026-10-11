@@ -1,3 +1,4 @@
+import FallbackImage from './FallbackImage';
 import { ArrowUpRight } from 'lucide-react';
 import '../assets/styles/Header.css';
 
@@ -29,7 +30,7 @@ export default function Header({ personalInfo }) {
   return (
     <header className="animate-slide-in-up" style={{ '--delay': '0s' }}>
       <div className="hud-panel" id="info">
-        <img src="assets/pic.jpg" id="picture" alt={name} />
+        <FallbackImage src="assets/pic.jpg" id="picture" alt={name} />
         <div>
           <h1 id="name">{name.toUpperCase()}</h1>
           <h2 id="title">{title.toUpperCase()}</h2>

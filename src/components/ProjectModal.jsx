@@ -1,3 +1,4 @@
+import FallbackImage from './FallbackImage';
 import { useRef, useState, useCallback } from 'react';
 import ImageViewer from './ImageViewer';
 import Carousel from './Carousel';
@@ -17,7 +18,7 @@ function DetailBlock({ block, onEnlarge }) {
     }
     case 'image': return <figure className={`detail-image ${block.width === 'wide' ? 'detail-image-wide' : ''}`}>
       <button className="detail-image-enlarge" onClick={() => onEnlarge(block)} aria-label={`Enlarge ${block.alt || block.caption || 'project image'}`}>
-        <img src={block.previewSrc || block.src} alt={block.alt || block.caption || ''} loading="lazy" />
+        <FallbackImage src={block.previewSrc || block.src} alt={block.alt || block.caption || ''} loading="lazy" />
       </button>
       {block.caption && <figcaption>{block.caption}</figcaption>}
     </figure>;
