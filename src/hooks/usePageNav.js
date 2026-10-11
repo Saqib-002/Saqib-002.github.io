@@ -50,16 +50,16 @@ export const MOBILE_NAV_ITEMS = [
     observeIds: ['profile'],
   },
   {
-    id:         'experience',
-    label:      'Experience',
-    scrollTo:   'experience',
-    observeIds: ['experience'],
-  },
-  {
     id:         'projects',
     label:      'Projects',
     scrollTo:   'projects',
     observeIds: ['projects'],
+  },
+  {
+    id:         'experience',
+    label:      'Experience',
+    scrollTo:   'experience',
+    observeIds: ['experience'],
   },
   {
     id:         'skills-matrix-section',

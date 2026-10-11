@@ -9,6 +9,7 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import ProjectModal from './components/ProjectModal';
 import AllProjectsModal from './components/AllProjectsModal';
+import VideoModal from './components/VideoModal';
 import PageNav from './components/PageNav';
 import MobileNav from './components/MobileNav';
 import portfolioData from './data/data.json';
@@ -17,6 +18,12 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
+  const [videoProject, setVideoProject] = useState(null);
+  const handleCloseVideos = useCallback(() => setVideoProject(null), []);
+  const handleOpenVideos = (project) => {
+    document.querySelectorAll('video').forEach(video => video.pause());
+    setVideoProject(project);
+  };
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -41,7 +48,7 @@ export default function App() {
       <BackgroundCanvas />
 
       {/* Fixed section navigator */}
-      <div inert={isModalOpen || isAllProjectsOpen}><PageNav />
+      <div inert={isModalOpen || isAllProjectsOpen || !!videoProject}><PageNav />
 
       {/* Mobile bottom navigation bar */}
       <MobileNav />
@@ -58,6 +65,7 @@ export default function App() {
               projects={portfolioData.projects}
               onOpenModal={handleOpenModal}
               onViewAll={handleOpenAllProjects}
+              onOpenVideos={handleOpenVideos}
             />
             <Skills skills={portfolioData.skills} />
             <Education education={portfolioData.education} />
@@ -71,16 +79,20 @@ export default function App() {
         isOpen={isModalOpen}
         project={selectedProject}
         onClose={handleCloseModal}
+        onOpenVideos={handleOpenVideos}
+        isVideoOpen={!!videoProject}
       />
 
       {/* All Projects Modal with Category Tabs */}
       <AllProjectsModal
         key={isAllProjectsOpen ? 'open' : 'closed'}
-        isDetailOpen={isModalOpen}
+        isDetailOpen={isModalOpen || !!videoProject}
         isOpen={isAllProjectsOpen}
         onClose={handleCloseAllProjects}
         onOpenProject={handleOpenModal}
+        onOpenVideos={handleOpenVideos}
       />
+      {videoProject && <VideoModal project={videoProject} onClose={handleCloseVideos} />}
     </>
   );
 }

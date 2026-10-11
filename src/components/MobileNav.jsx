@@ -16,19 +16,19 @@ const ICONS = {
       <line x1="9" y1="21" x2="9" y2="9" />
     </svg>
   ),
+  projects: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+      <line x1="15" y1="9" x2="9" y2="15" />
+    </svg>
+  ),
   experience: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="7" width="20" height="14" rx="2" />
       <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
       <line x1="12" y1="12" x2="12" y2="16" />
       <line x1="10" y1="14" x2="14" y2="14" />
-    </svg>
-  ),
-  projects: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-      <line x1="15" y1="9" x2="9" y2="15" />
     </svg>
   ),
   'skills-matrix-section': (

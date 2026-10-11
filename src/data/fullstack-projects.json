@@ -1,95 +1,420 @@
 [
-  {
-    "name": "B2B Leads Platform (Imagini)",
-    "description": "Architected a scalable platform managing millions of leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
-    "techStack": [
-      "React",
-      "FastAPI",
-      "PostgreSQL",
-      "Redis",
-      "Celery"
-    ],
-    "details": {
-      "blocks": [
-        {
-          "type": "gallery",
-          "caption": "B2B Leads Platform (Imagini)",
-          "images": [
-            {
-              "src": "assets/media/MIS/imagini/admin_dashboard.png",
-              "alt": "B2B Leads Platform (Imagini) — Admin dashboard",
-              "caption": "Admin dashboard"
-            },
-            {
-              "src": "assets/media/MIS/imagini/admin_data.png",
-              "alt": "B2B Leads Platform (Imagini) — Lead data management",
-              "caption": "Lead data management"
-            },
-            {
-              "src": "assets/media/MIS/imagini/admin_data_2.png",
-              "alt": "B2B Leads Platform (Imagini) — Lead data management — additional view",
-              "caption": "Lead data management — additional view"
-            },
-            {
-              "src": "assets/media/MIS/imagini/admin_data_3.png",
-              "alt": "B2B Leads Platform (Imagini) — Lead data management — detail view",
-              "caption": "Lead data management — detail view"
-            },
-            {
-              "src": "assets/media/MIS/imagini/admin_user.png",
-              "alt": "B2B Leads Platform (Imagini) — User management",
-              "caption": "User management"
-            },
-            {
-              "src": "assets/media/MIS/imagini/create_new_user.png",
-              "alt": "B2B Leads Platform (Imagini) — Create a new user",
-              "caption": "Create a new user"
-            },
-            {
-              "src": "assets/media/MIS/imagini/job_and_activity.png",
-              "alt": "B2B Leads Platform (Imagini) — Jobs and activity",
-              "caption": "Jobs and activity"
-            },
-            {
-              "src": "assets/media/MIS/imagini/user_details_1.png",
-              "alt": "B2B Leads Platform (Imagini) — User details",
-              "caption": "User details"
-            },
-            {
-              "src": "assets/media/MIS/imagini/user_details_2.png",
-              "alt": "B2B Leads Platform (Imagini) — User details — additional view",
-              "caption": "User details — additional view"
-            },
-            {
-              "src": "assets/media/MIS/imagini/user_side.png",
-              "alt": "B2B Leads Platform (Imagini) — User dashboard",
-              "caption": "User dashboard"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Overview"
-        },
-        {
-          "type": "paragraph",
-          "text": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline."
-        },
-        {
-          "type": "heading",
-          "text": "Project highlights"
-        },
-        {
-          "type": "list",
-          "items": [
-            "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
-            "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
-            "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
-            "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
-          ]
+    {
+        "name": "Brothers Mart",
+        "description": "Trilingual e-commerce platform for a Spanish wholesale grocer: web store, iOS/Android app, admin dashboard and REST API, with Redsys payments, MRW shipping and PDF invoicing.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "React Native",
+            "Expo",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Redux Toolkit",
+            "Tailwind CSS",
+            "Docker",
+            "Puppeteer",
+            "Cloudinary",
+            "Codemagic",
+            "GitHub Actions"
+        ],
+        "coverImage": "assets/media/Freelance/brothers-mart/cover.png",
+        "liveLink": "https://mart.b-brothers.es",
+        "iosLink": "https://apps.apple.com/us/app/brothers-mart/id6783842077",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Mobile app screens",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/storefront.png",
+                            "alt": "Web home screen",
+                            "caption": "Web Home"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/catalog.png",
+                            "alt": "Web Catalog",
+                            "caption": "Web Explore and filters"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/product-page.png",
+                            "alt": "Web Product Page",
+                            "caption": "Web Product Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/cart-page.png",
+                            "alt": "Web Cart Page",
+                            "caption": "Web Cart Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/checkout.png",
+                            "alt": "Web Checkout",
+                            "caption": "Web Checkout Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/brands-page.png",
+                            "alt": "Web Brands Page",
+                            "caption": "Web Brands Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-1.png",
+                            "alt": "App Screens",
+                            "caption": "App Home, Explore & Favourite Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-2.png",
+                            "alt": "App Screens",
+                            "caption": "App Product, Cart & Order Status Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-3.png",
+                            "alt": "App Screens",
+                            "caption": "App Brands, Profile & FAQs Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
+                            "alt": "Admin Dashboard",
+                            "caption": "Admin Dashboard"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/general-platform-settings.png",
+                            "alt": "Admin General Settings",
+                            "caption": "Admin General Settings (Dark Theme)"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/multi-step-product-editor.png",
+                            "alt": "Admin Product Editor",
+                            "caption": "Admin Product Editor (Dark Theme)"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/cms.png",
+                            "alt": "CMS",
+                            "caption": "CMS (Dark Theme)"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Brothers Mart is a production e-commerce platform I built for a Spanish wholesale grocery business. Before this, they took orders by phone and wrote invoices by hand. Now customers can order from the web or a mobile app in English, Spanish or Portuguese, and the team runs everything from one admin panel."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The platform is four connected codebases: a Next.js storefront, an Expo/React Native app for iOS and Android, a Next.js admin panel, and a Node.js/Express API behind all three."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/Freelance/brothers-mart/storefront.png",
+                    "alt": "Brothers Mart web storefront",
+                    "caption": "Customer web storefront with URL-synced filters",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The business had no online catalog and no way to scale past phone orders. They needed a store that handled Spanish payment rules, local courier shipping, VAT (IVA) pricing and GDPR cookie consent, and an admin panel the team could run without calling a developer."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Trilingual catalog (EN/ES/PT). Every product name, slug, description and CMS block is stored per language, with locale-aware URLs.",
+                        "Redsys card payments on web and mobile, including server-to-server webhook verification and automatic refunds when an order is cancelled.",
+                        "MRW courier automation. Shipping labels are generated from the admin in one click, and customers get a public tracking page with a 4-step delivery timeline.",
+                        "IVA price engine. Products are priced with tax included or added on top, and customers can switch between Inc. IVA and Excl. IVA across the whole UI.",
+                        "Shipping cost calculator based on package dimensions, with provincial and national rates and a free-shipping threshold. It runs client-side, so checkout totals update instantly.",
+                        "Trilingual PDF invoices with IVA breakdown and coupon lines, generated automatically for every order.",
+                        "Guest cart and wishlist that survive reloads, then merge with the server cart on login.",
+                        "GDPR cookie consent with four categories. Nothing is written to local storage without the right consent."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Customer web app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Product catalog filtered by category, subcategory, brand, restaurant type and price, with all filter state kept in the URL so back/forward restores the exact view.",
+                        "4-step checkout: contact, shipping, billing, payment, with coupon validation and an IVA breakdown.",
+                        "Redux Toolkit store with a custom sync middleware that pushes cart and wishlist changes to the server and ignores rehydration actions.",
+                        "PWA support with a service worker and web app manifest."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Web storefront",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/catalog.png",
+                            "alt": "Product catalog with filters",
+                            "caption": "Catalog with filters"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/checkout.png",
+                            "alt": "Checkout page",
+                            "caption": "Checkout with IVA breakdown"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Mobile app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Built on Expo SDK 54 with file-based routing, NativeWind and Gluestack UI. Five tabs: Home, Explore, Cart, Wishlist, Profile.",
+                        "Explore screen with infinite scroll, multi-select filters, a price slider and debounced search.",
+                        "Guest cart saved to AsyncStorage, full server sync once logged in.",
+                        "Redsys checkout opens in an in-app browser and returns to the app through a deep link.",
+                        "Universal Links on iOS and intent filters on Android, so product links from the browser open straight in the app.",
+                        "Automated iOS pipeline on Codemagic: every push to main builds, signs and ships to TestFlight with no manual Xcode steps."
+                    ]
+                },
+                {
+                    "type": "gallery",
+                    "caption": "Mobile app screens",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-home.png",
+                            "alt": "App home screen",
+                            "caption": "Home"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-explore.png",
+                            "alt": "App explore screen with filters",
+                            "caption": "Explore and filters"
+                        },
+                        {
+                            "src": "assets/media/Freelance/brothers-mart/app-cart.png",
+                            "alt": "Order Cart",
+                            "caption": "Order Cart"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Admin panel"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "17 sections covering products, categories, brands, coupons, orders, users, blogs, policies, reviews, subscribers and site content.",
+                        "Analytics dashboard with sales history, order status breakdown, revenue and customer KPIs, and low-stock alerts.",
+                        "One-click auto-translate on every multilingual field, using the Google Translate API. Long HTML content is split on tag boundaries and all languages are translated in parallel.",
+                        "Image uploads go straight to Cloudinary with backend-signed requests, so files never pass through the Next.js server.",
+                        "Rich text editing for blogs and policies, 11 color themes, and list pages that remember search, filters and pagination when you come back from an edit form.",
+                        "Zod validation with translated error messages."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
+                    "alt": "Admin analytics dashboard",
+                    "caption": "Admin dashboard with sales, orders and low-stock alerts",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "Backend API"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Express 5 and TypeScript, with 24 route modules and 17 Mongoose models.",
+                        "Order creation runs in a MongoDB transaction. It checks stock, deducts it, writes inventory logs, creates the order and updates coupon usage. If any step fails, everything rolls back.",
+                        "Full Redsys lifecycle: HMAC-SHA256 signed parameters, webhook verification, mobile redirect pages and refunds through the Redsys REST API.",
+                        "MRW SOAP integration for creating and cancelling shipments and downloading labels, which are then stored on Cloudinary.",
+                        "Puppeteer renders branded PDF invoices from HTML, using Chromium installed in the Docker image.",
+                        "Password reset with hashed 6-digit OTPs that expire after 10 minutes, with emails in the user's language.",
+                        "Role-aware login for the admin panel and the customer apps on shared JWT infrastructure.",
+                        "Multi-stage Docker build, deployed to a VPS with Docker Compose through GitHub Actions."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the trilingual data model and carried it through all 17 models and all four codebases.",
+                        "Built the full Redsys payment flow for web and mobile, including webhooks and refunds.",
+                        "Integrated the MRW SOAP API for shipments, labels and tracking.",
+                        "Wrote the Redux persistence middleware and the guest-to-account cart merge logic shared by web and mobile.",
+                        "Built the transactional order flow in MongoDB.",
+                        "Set up the Puppeteer invoice pipeline and the Docker image that runs it.",
+                        "Built the auto-translate Server Action and the reusable TranslateButton in the admin panel.",
+                        "Set up the Codemagic CI/CD pipeline for iOS, including scripts that patch Xcode signing settings.",
+                        "Built the GDPR cookie consent system and the client-side shipping calculator."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Took the business from phone orders to a working online store that sells across Spain in three languages.",
+                        "Orders now flow from checkout to payment to shipping label to live tracking without manual steps.",
+                        "Invoices generate automatically, which removed handwritten paperwork.",
+                        "The team manages products, orders, pricing, coupons and site content on their own, with no developer needed.",
+                        "iOS builds ship to TestFlight on every push to main."
+                    ]
+                }
+            ]
         }
-      ]
     },
-    "coverImage": "assets/media/MIS/imagini/admin_dashboard.png"
-  }
+    {
+        "name": "CarFig Buyer",
+        "description": "Used car marketplace app for iOS and Android with AI price predictions, comparable-vehicle charts and a Better Deals engine across 6M+ listings. I joined to fix and stabilize the production codebase.",
+        "techStack": [
+            "React Native",
+            "React",
+            "Zustand",
+            "Axios",
+            "Firebase",
+            "FlashList",
+            "Reanimated",
+            "React Navigation",
+            "Codemagic"
+        ],
+        "coverImage": "assets/media/Freelance/carfig-buyer/cover.png",
+        "liveLink": "https://carfig.com",
+        "appLink": "https://play.google.com/store/apps/details?id=com.carfig.buyerapp&hl=en",
+        "iosLink": "https://apps.apple.com/us/app/carfig/id6756115978",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "App screens",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/carfig-buyer/dealership-inventory-home-search-results.png",
+                            "alt": "Dealearship Inventory, Home & Search Results Screen",
+                            "caption": "Dealearship Inventory, Home & Search Result Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/carfig-buyer/cover.png",
+                            "alt": "Car detail with price chart & Dealerships Screen",
+                            "caption": "Car detail with price chart & Dealerships Screen"
+                        },
+                        {
+                            "src": "assets/media/Freelance/carfig-buyer/web-home.png",
+                            "alt": "Web Home Page",
+                            "caption": "Web Home Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/carfig-buyer/web-search-results.png",
+                            "alt": "Web Search Results Page",
+                            "caption": "Web Search Results Page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/carfig-buyer/car-details.png",
+                            "alt": "Web Car Details Page",
+                            "caption": "Web Car Details Page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "CarFig Buyer is a React Native app that helps people shop for used cars. It pulls in more than 6 million live listings from over 80,000 dealerships, and adds price analytics on top: a predicted fair price, a price-versus-mileage chart of similar cars, and a Better Deals list that finds cheaper matches nearby and nationwide."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I joined the team as a bug-fix and stabilization engineer on an existing codebase. My job was to track down broken behavior across state management, UI, and API integration, and fix it so the core features worked reliably."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Buying a used car is stressful, and most listing sites don't tell you whether a price is fair. CarFig gives buyers data to negotiate with. The app also works without an account, so people can search, save favorites and save searches from the first launch."
+                },
+                {
+                    "type": "heading",
+                    "text": "What the app does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Search with cascading Make, Model and Trim filters, plus year, price, mileage, condition and radius filters. Location comes from a zip code or device GPS.",
+                        "Smooth scrolling through large result sets with FlashList.",
+                        "Car detail screen with a photo carousel, full specs and a sticky header.",
+                        "AI price prediction for each vehicle.",
+                        "Comparable vehicle scatter chart that ranks the current car against similar listings.",
+                        "Better Deals list for cheaper matches within about 50 miles and nationwide.",
+                        "One-tap PDF export of a comparison, built by a server job and shared through the native share sheet.",
+                        "Favorites and saved searches for guests and signed-in users, migrated to the account on login.",
+                        "Email and Google sign-in, push notifications through Firebase, and deep links from carfig.com into the app."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "React Native 0.80 and React 19, with React Navigation for a three-level navigator. Zustand with AsyncStorage persistence runs seven stores for auth, filters, favorites, guest data, settings and remote config. Networking uses Axios against a REST API with 40+ endpoints. Firebase handles push notifications and Google sign-in, and Codemagic builds the iOS and Android releases."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I owned a long list of production bugs, found the root cause of each, and fixed them without rewriting the app."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Fixed the Favorites screen not updating right after add or remove. A stale closure in the Zustand subscription was the cause, so I reworked the optimistic update flow and the selectors.",
+                        "Fixed guest-to-account migration, which was silently failing on login. Missing awaits and unhandled rejections meant guest favorites and saved searches were lost. The import calls now finish before the app navigates.",
+                        "Fixed filters being silently dropped from search requests. Version, condition and drivetrain were missing from the params builder, so results ignored them.",
+                        "Fixed duplicate API calls in infinite scroll when users scrolled back up mid-load, with a loading guard and a correct last-page check.",
+                        "Fixed the PDF export modal hanging forever. The job ID wasn't passed from the start request into the progress polling loop.",
+                        "Fixed sticky header flicker on the car detail screen by stopping state updates on every scroll frame.",
+                        "Fixed the Deals/Analysis tab not defaulting to Analysis when no deals were found, and fixed wrong scroll offsets when switching tabs.",
+                        "Fixed overlapping toast and snackbar messages by auditing the error paths and standardizing which one shows where.",
+                        "Fixed random 401 errors caused by the auth interceptor sending the string \"null\" as the token after logout or on first launch."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Brought favorites, saved searches, filters and PDF export back to working order. These were core features that were broken in production.",
+                        "Guests who sign up no longer lose their saved cars and searches.",
+                        "Cut duplicate network requests in search and removed scroll jank on the detail screen.",
+                        "Removed a class of false 401 errors that were logging users out or breaking API calls."
+                    ]
+                }
+            ]
+        }
+    }
 ]

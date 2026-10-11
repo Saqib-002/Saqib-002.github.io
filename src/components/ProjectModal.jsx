@@ -5,6 +5,7 @@ import ProjectLinks from './ProjectLinks';
 import useModal from '../hooks/useModal';
 import '../assets/styles/ProjectModal.css';
 import { X } from 'lucide-react';
+import ProjectVideo from './ProjectVideo';
 
 function DetailBlock({ block, onEnlarge }) {
   switch (block.type) {
@@ -16,16 +17,18 @@ function DetailBlock({ block, onEnlarge }) {
     }
     case 'image': return <figure className={`detail-image ${block.width === 'wide' ? 'detail-image-wide' : ''}`}>
       <button className="detail-image-enlarge" onClick={() => onEnlarge(block)} aria-label={`Enlarge ${block.alt || block.caption || 'project image'}`}>
-        <img src={block.src} alt={block.alt || block.caption || ''} loading="lazy" />
+        <img src={block.previewSrc || block.src} alt={block.alt || block.caption || ''} loading="lazy" />
       </button>
       {block.caption && <figcaption>{block.caption}</figcaption>}
     </figure>;
     case 'gallery': return <Carousel images={block.images} projectName={block.caption || 'Project screenshots'} onEnlarge={onEnlarge} />;
+    case 'video': return block.src ? <ProjectVideo video={block} /> : null;
+    case 'videos': return (block.videos || []).filter(video => video.src).map((video, index) => <ProjectVideo key={index} video={video} />);
     default: return null;
   }
 }
 
-export default function ProjectModal({ isOpen, project, onClose }) {
+export default function ProjectModal({ isOpen, project, onClose, onOpenVideos, isVideoOpen }) {
   const ref = useRef(null);
   const [enlargedImage, setEnlargedImage] = useState(null);
   const closeImage = useCallback(() => setEnlargedImage(null), []);
@@ -33,7 +36,7 @@ export default function ProjectModal({ isOpen, project, onClose }) {
   if (!isOpen || !project) return null;
   const { name, techStack = [], details } = project;
   const blocks = details.blocks;
-  return <><div className="modal active" id="project-modal" inert={!!enlargedImage}>
+  return <><div className="modal active" id="project-modal" inert={!!enlargedImage || isVideoOpen}>
     <div className="modal-backdrop" onClick={onClose} />
     <div className="modal-content hud-panel" ref={ref} role="dialog" aria-modal="true" aria-labelledby="modal-title" tabIndex={-1}>
       <div className="project-modal-header">
@@ -46,7 +49,7 @@ export default function ProjectModal({ isOpen, project, onClose }) {
       <div className="project-modal-scroll">
         <div className="project-modal-meta">
           <div className="project-tech">{techStack.map(tag => <span key={tag} className="skill-tag">{tag}</span>)}</div>
-          <ProjectLinks project={project} compact />
+          <ProjectLinks project={project} compact onOpenVideos={onOpenVideos} />
         </div>
         <div className="project-detail-blocks">{blocks.map((block, index) => <DetailBlock key={index} block={block} onEnlarge={setEnlargedImage} />)}</div>
       </div>

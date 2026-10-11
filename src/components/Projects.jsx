@@ -1,7 +1,7 @@
 import ProjectCard from './ProjectCard';
 import '../assets/styles/Projects.css';
 
-export default function Projects({ projects, onOpenModal, onViewAll }) {
+export default function Projects({ projects, onOpenModal, onViewAll, onOpenVideos }) {
   if (!projects) return null;
 
   return (
@@ -14,6 +14,7 @@ export default function Projects({ projects, onOpenModal, onViewAll }) {
               key={index}
               project={project}
               onOpenModal={onOpenModal}
+              onOpenVideos={onOpenVideos}
             />
           ))}
         </div>

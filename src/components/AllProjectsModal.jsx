@@ -53,7 +53,7 @@ const PROJECT_DATA = {
   desktop: desktopProjects,
 };
 
-export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen }) {
+export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const ref = useRef(null);
   useModal(isOpen, onClose, ref);
@@ -101,6 +101,7 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDet
                   key={`${activeCategory}-${index}`}
                   project={project}
                   onOpenModal={onOpenProject}
+                  onOpenVideos={onOpenVideos}
                 />
               ))
             )}

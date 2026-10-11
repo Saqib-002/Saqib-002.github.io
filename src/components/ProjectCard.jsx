@@ -1,7 +1,7 @@
 import ProjectLinks from './ProjectLinks';
 import '../assets/styles/ProjectCard.css';
 import { ArrowRight } from 'lucide-react';
-export default function ProjectCard({ project, onOpenModal }) {
+export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
   const { name, description, techStack = [], coverImage } = project;
   return <article className="hud-panel project-card">
     <div className="project-card-media">
@@ -9,7 +9,7 @@ export default function ProjectCard({ project, onOpenModal }) {
       {coverImage ? <img src={coverImage} alt={name} className="project-card-img" loading="lazy" />
         : <div className="project-img-placeholder"><span aria-hidden="true">&lt;/&gt;</span><span>{name}</span></div>}
     </button>
-      <div className="project-card-links"><ProjectLinks project={project} compact /></div>
+      <div className="project-card-links"><ProjectLinks project={project} compact onOpenVideos={onOpenVideos} /></div>
     </div>
     <div className="project-card-body">
       <h4 className="project-card-title"><button onClick={() => onOpenModal(project)}>{name}</button></h4>

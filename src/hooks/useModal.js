@@ -11,7 +11,7 @@ export default function useModal(isOpen, onClose, ref) {
       document.body.style.overflow = 'hidden';
     }
     stack.push(dialog);
-    const elements = () => [...dialog.querySelectorAll('a[href],button:not([disabled]),[tabindex="0"]')].filter(el => el.getClientRects().length);
+    const elements = () => [...dialog.querySelectorAll('a[href],button:not([disabled]),video[controls],[tabindex="0"]')].filter(el => el.getClientRects().length);
     (elements()[0] || dialog).focus();
     const contain = event => {
       if (stack.at(-1) === dialog && !dialog.contains(event.target)) (elements()[0] || dialog).focus();
