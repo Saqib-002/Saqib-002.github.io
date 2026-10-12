@@ -1,0 +1,463 @@
+[
+    {
+        "name": "AI Cold Outreach Automation",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "Upload a lead list, and the system crawls each company's website and uses Gemini to write a personalized 3 or 7-email sequence, SMS follow-ups, and a lead score. Output is a CSV ready for any outreach tool.",
+        "techStack": [
+            "Python",
+            "Flask",
+            "LangChain",
+            "Gemini 2.5 Flash Lite",
+            "Pydantic",
+            "Node.js",
+            "TypeScript",
+            "Crawlee",
+            "PostgreSQL",
+            "Redis",
+            "HTMX",
+            "Tailwind CSS",
+            "Docker"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Personalized cold email works, but writing it by hand doesn't scale, and templates get ignored. I built a system that does the research and the writing. You upload a lead export from Apollo.io, and it visits each company's website, figures out what the business does, and writes a tailored email and SMS sequence for every lead. You get back one CSV with everything in it, ready to import."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built the whole thing solo: the Flask backend, the crawler service, the frontend, and the Docker setup."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Given a few hundred leads with only a name, title, company and website, how do you produce emails that mention each company's real situation, in minutes, with nobody editing each one? Most tools either give you generic copy or want a lot of manual input per lead."
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Each file runs through a crawl, enrich, generate pipeline:"
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "items": [
+                        "Read the CSV in small chunks, so memory stays flat whether the file has 200 rows or 20,000.",
+                        "Sort each lead into one of three groups: already in the database, website already cached, or new.",
+                        "Send new websites to the crawler service, which fetches up to 50 sites at once and pulls out a short description and the page's visible text.",
+                        "Cache crawl results in Redis so the same site is never fetched twice.",
+                        "Send the company context to Gemini, which returns the email sequence, SMS messages, and a 0 to 10 lead score with a short justification.",
+                        "Drop zero-score leads, save the rest to PostgreSQL, then export one enriched CSV."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Key features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Choose a 3-email or 7-email sequence. Every email comes in two versions, one fear-driven and one excitement-driven, each with its own subject line.",
+                        "A parallel SMS sequence is generated alongside the emails.",
+                        "Each client brand has its own system prompt and voice. Adding a brand is a config change, not a code change.",
+                        "Leads processed in earlier runs are detected and skipped, so there's no duplicate outreach and no wasted API calls.",
+                        "A crawl-only mode enriches a CSV with website context without calling the LLM.",
+                        "Live log stream and stats update in the browser while a file runs."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Under the hood"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Four services run in Docker Compose: a Flask API, a Node.js crawler, PostgreSQL, and Redis. The Flask side uses LangChain to call Gemini 2.5 Flash Lite and Pandas to read files in chunks. The crawler is a separate TypeScript service built on Crawlee. For each page it tries JSON-LD first, then Open Graph, then the meta description, then the visible text, and it always returns a result for every URL, even when a site is down or the URL is invalid."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The model has to return clean, typed data, not free text. I generate the Pydantic output schema at runtime, so the 3-email and 7-email versions share one definition instead of two copies that drift apart. When a batch call fails, the pipeline retries the batch, then smaller sub-batches, then one lead at a time, so one bad row doesn't sink the file."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For live feedback, logs and stats go through Redis pub/sub and reach the browser over Server-Sent Events. The frontend is server-rendered Jinja2 with HTMX and a little vanilla JavaScript for uploads and the log panel, with no React or Vue."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built this end to end as the only engineer."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the pipeline: chunked processing, crawl caching, deduplication, and the three-level retry strategy.",
+                        "Wrote the system prompts for each client brand and built the dual fear/excitement output, plus subject-line overrides after the LLM call as a safety net.",
+                        "Built the Node.js and TypeScript crawler with multi-step description extraction and error handling.",
+                        "Designed the Redis pub/sub and SSE setup behind the live logs and stats.",
+                        "Built the full HTMX frontend: drag-and-drop uploads with progress bars, log terminal, and stats panel.",
+                        "Wrote the Docker Compose setup with health checks and startup ordering."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A 200-lead file finishes in under 30 minutes, work that would take a copywriter about a full day.",
+                        "In 7-email mode, each lead gets 35 generated fields: 14 subject lines, 14 email bodies, and 7 SMS messages.",
+                        "Zero-score leads are removed before output, so low-quality contacts don't reach the outreach queue.",
+                        "Repeat runs on overlapping lists skip both the crawl and the LLM call for leads and sites already seen.",
+                        "One codebase serves multiple client brands, each with its own voice."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Large-Scale Data Extraction Engine",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "A Python tool that pulls 1M+ records out of a virtualized web table that only renders a few dozen rows at a time. It survives crashes, resumes where it stopped, and runs for hours without running out of memory.",
+        "techStack": [
+            "Python",
+            "Selenium",
+            "JavaScript",
+            "Chrome DevTools Protocol",
+            "pandas",
+            "BeautifulSoup"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A B2B data platform showed prospect data in a table with no public API and tight limits on exports. The business needed lead lists for outbound campaigns in the UAE, Saudi Arabia, Qatar and Pakistan, at a scale where exporting by hand would have taken months. I built a Python tool that automates the browser, reads the table as it renders, and writes clean, segmented CSVs."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built it solo. Along the way it went through two full rewrites of the extraction method, and the final version was 3 to 5 times faster than the first."
+                },
+                {
+                    "type": "heading",
+                    "text": "The hard parts"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A virtualized table. Rows are created and destroyed as you scroll, so at any moment only a small window exists in the page. Reading the page source misses most of the data.",
+                        "Long sessions. Runs lasted hours, and Chrome's memory grew until it crashed.",
+                        "Interruptions. Network drops and browser crashes were certain on a 500k-row query, and starting over each time wasn't an option.",
+                        "Scale. Single queries returned 500k to 800k rows."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How I solved it"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "My first version parsed page snapshots with BeautifulSoup and kept losing rows. I traced it to the virtual scroller unmounting rows off screen. The fix was to inject JavaScript into the live page and read the rows at the moment they exist, then scroll the table's own container (not the window) to force the next batch to render."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Crash recovery: after every batch, the scraper saves a small JSON checkpoint with the number of \"Load More\" clicks and the keys of the last batch. On restart, it replays the clicks to the same spot and continues. A crash costs at most one batch of about 100 records.",
+                        "No data loss: each batch is appended to a per-query CSV as soon as it's extracted.",
+                        "Deduplication: each lead is keyed by LinkedIn URL, with name plus company as a fallback. This stops the scroller's overlapping renders from creating duplicate rows.",
+                        "Memory control: on a schedule, the browser goes to a blank page, forces garbage collection through the Chrome DevTools Protocol, then reloads and restores its position. It's a full memory reset without restarting the script.",
+                        "Column mapping: at startup the scraper reads the table header and maps all 14 fields by name, so it keeps working if columns get reordered.",
+                        "It finds the right Chrome profile folder on macOS, Linux and Windows, with a command-line override."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Solo build, from diagnosis to final output."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Found why the first approach lost rows and replaced it with live JavaScript extraction.",
+                        "Designed the checkpoint and replay system for crash recovery.",
+                        "Tracked down the memory growth in 6+ hour sessions and built the garbage-collect and reload cycle.",
+                        "Built the dedup logic, incremental CSV writes, dynamic column mapping and cross-platform setup."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Extracted 1M+ records across the UAE, Saudi Arabia, Qatar and Pakistan, segmented by seniority (CXO, VP, Director, Manager, Senior, Owner) and company type.",
+                        "Single queries ran to roughly 500k to 800k rows.",
+                        "Each record carried up to 16 fields, including title, company, location, headcount, revenue band, industry and funding stage.",
+                        "The checkpoint system kept long runs recoverable, with no rows lost to crashes.",
+                        "Replaced what would have been months of manual exporting."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Shazia: Arabic Voice Agent on a Real Phone Line",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "An exploration into voice AI for the Gulf market. A phone agent that answers real calls in Gulf Arabic, holds a conversation, and books meetings in Google Calendar mid-call.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "Twilio",
+            "Gemini 2.5 Flash",
+            "Google Calendar API",
+            "Amazon Polly",
+            "ngrok",
+            "uv"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Most phone systems in the Gulf are still menu-driven IVRs: rigid scripts that don't understand what people say and don't sound like anyone from the region. I wanted to find out how far I could get with a phone agent that talks in a local Arabic dialect and can also do something useful, like book a meeting, while the caller is still on the line."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "So I built a working prototype for Modern Intelligent Solutions (MIS). It runs over a real phone call, not a web demo. I built it solo, and this page covers what I tried, what worked, and what I'd change next."
+                },
+                {
+                    "type": "heading",
+                    "text": "What I wanted to find out"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Can an LLM hold a natural phone conversation in Gulf Arabic, using the phrases a local would use?",
+                        "Can it take real action mid-call, not just talk?",
+                        "How little infrastructure does it take to get a working call end to end?"
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A caller dials in, or the agent dials out. Twilio turns the caller's speech into text and sends it to a FastAPI webhook. The server passes that text to Gemini 2.5 Flash along with the conversation so far. The reply goes back to Twilio as TwiML and is read to the caller in Arabic with an Amazon Polly voice. Then Twilio listens again, and the loop continues until the call ends."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The booking works through tool calling. I wrote a normal Python function, add_calendar_event, with typed arguments. The Gemini SDK turns that signature into a schema, and when a caller says something like \"book me a meeting Thursday at 3,\" the model pulls out the date, time and description and calls the function itself. The event lands in Google Calendar through a service account, and Shazia confirms it out loud."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What went into the persona"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A long Arabic system prompt that keeps replies in Saudi and Gulf dialect, with phrases like \"Ya Halla\" and \"Abshir.\"",
+                        "Language switching only when the caller asks for English or Urdu.",
+                        "Hard scoping: she only talks about MIS and its services, with no tangents and no competitor mentions.",
+                        "A chat session that lasts the whole call, so she remembers the caller's name and what they asked for earlier."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What worked"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Full end-to-end calls: greeting, multi-turn conversation, and a calendar event created without anyone touching it.",
+                        "Tool calling from a typed Python function was far simpler than I expected. No hand-written JSON schema needed.",
+                        "The dialer script starts a demo call with a single command."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What I'd change to take it further"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Replace the ngrok tunnel with a proper cloud deployment.",
+                        "Move from Twilio's turn-by-turn speech recognition to streaming audio, which should cut the pauses between turns.",
+                        "Swap the single shared calendar for per-client calendars or a CRM.",
+                        "Measure per-turn latency and booking success rate on a set of test calls, so I'm tuning with numbers, not by ear.",
+                        "Split the work into specialist agents (booking, FAQ, lead qualification) instead of one prompt doing everything."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Solo build, from architecture to docs."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the whole system: telephony webhook, LLM layer, and calendar tool.",
+                        "Built the Gemini tool-calling flow around a typed add_calendar_event function.",
+                        "Wrote the Arabic persona prompt, including dialect rules, tone, language-switching limits and brand scoping.",
+                        "Built the Twilio Gather and Say loop, including graceful handling of speech timeouts.",
+                        "Wrote the outbound dialer script for one-command demos.",
+                        "Documented the setup: Twilio webhooks, ngrok, calendar service account sharing, and environment variables."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Jeddah & Riyadh Real Estate Maps",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "Interactive maps of property sale prices, rents and plot sizes across 50+ neighborhoods in Jeddah and Riyadh, built to help a business pick a location. Satellite basemap, hand-drawn neighborhood boundaries, and every map exports as a standalone HTML file.",
+        "techStack": [
+            "Python",
+            "pandas",
+            "Folium",
+            "Leaflet.js",
+            "branca",
+            "Google Colab"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Saudi property transaction records are published as raw tables, so the patterns that matter, like which neighborhoods are expensive, where rent is a risk, and where the big plots are, are hard to see. I turned those records into interactive maps for Jeddah and the Al-Aarid district of Riyadh."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The question behind it: if you're opening a restaurant or a retail shop, where should you put it? A fine dining place needs a high-income, high-rent area. A cloud kitchen wants cheap rent. A drive-thru needs a big plot. I built it solo, from data cleaning to the neighborhood boundaries to the written analysis."
+                },
+                {
+                    "type": "heading",
+                    "text": "Three maps, three questions"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Sale price heatmap: where is property value concentrated? Each transaction is a heat point weighted by its sale price, on a blue to red scale. Prices ran from 75,000 to 160,000,000 SAR in Jeddah.",
+                        "Rental heatmap: how much does it cost to occupy a space? Same approach using average yearly rent. The coastal Al-Shati district stands out immediately as a premium outlier.",
+                        "Plot size scatter map (Jeddah): what format fits? Each property is a circle sized by plot area (75 to 9,758 sqm). Click one to see its area and price per sqm. Meter prices ran from 1,410 to 18,309 SAR."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "What the scatter map shows: large, sparse plots along the coast and compact, dense plots inland. That's the difference between a site for a drive-thru and a site for a small dine-in."
+                },
+                {
+                    "type": "heading",
+                    "text": "Under the hood"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The work runs in Google Colab notebooks using pandas and Folium. Real data is messy, and this was no exception: coordinates came as a single combined string, one neighborhood field held a coordinate instead of a name, prices came in several currency formats, and some counts were buried in free text. I wrote the cleaning steps for each of these before anything could be mapped."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Anonymous dots on a map aren't much use to someone choosing a neighborhood, so I drew boundaries for 50+ Jeddah districts and Al-Aarid by hand, up to 41 points each, and stored them in two reusable Python modules. Each boundary is shaded and labeled, so a hot spot can be tied to a name. I also wrote one parameterized map function that handles the basemap, polygons, heat layer and legend, and reused it across both cities and all three map types."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeddah maps sit on ESRI satellite imagery, so roads, coastline and buildings show behind the data. Riyadh uses OpenStreetMap. Every map exports as a single HTML file that opens in any browser, with no server."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Solo build, start to finish."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Collected and structured sale and rental records for both cities.",
+                        "Wrote the cleaning pipelines: coordinate parsing, malformed field fixes, currency stripping, and regex extraction from text fields.",
+                        "Hand-drew the neighborhood boundaries for 50+ districts.",
+                        "Built the reusable map function and the custom satellite tile layer.",
+                        "Wrote the location analysis that turns the patterns into advice for restaurant and retail operators."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What it shows"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Covers 50+ Jeddah neighborhoods and Al-Aarid in Riyadh.",
+                        "Maps roughly 660 sale and rental records, with meter prices spanning about 13x across Jeddah.",
+                        "Al-Shati shows an average rent far above every other district, which flags it as a high-risk, high-reward area.",
+                        "Together, the three maps let someone compare neighborhoods on wealth, rent risk and plot size in one place."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Limits and next steps"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The dataset is small, a few hundred records. It shows patterns, but it isn't enough for a market-wide conclusion.",
+                        "The next step is a larger dataset, a Riyadh scatter map, and a single dashboard with a neighborhood filter.",
+                        "The boundary files are already reusable, so a full Jeddah dashboard wouldn't need any coordinates redrawn."
+                    ]
+                }
+            ]
+        }
+    }
+]

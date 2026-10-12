@@ -69,7 +69,7 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 24px;
-    padding: 24px 32px;
+    padding: 12px 20px;
     border-bottom: 1px solid #2d3846;
     background: #101923;
     flex-shrink: 0
@@ -105,7 +105,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     border-bottom: 1px solid #2d3846;
     margin-bottom: 28px
 }
@@ -213,7 +213,7 @@
     }
 
     .project-modal-header {
-        padding: 16px 20px;
+        padding: 8px 16px;
         gap: 12px
     }
 

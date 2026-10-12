@@ -160,5 +160,740 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Dal Copilot",
+        "categories": [
+            "ai",
+            "fullstack"
+        ],
+        "description": "Bilingual Arabic/English AI assistant with three modes: chat, questions over your own PDF and Word files (RAG), and plain-language queries over SQLite databases. Streams answers live and supports full RTL.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "Elasticsearch",
+            "MongoDB",
+            "Redux Toolkit",
+            "Tailwind CSS",
+            "Docker"
+        ],
+        "coverImage": "assets/media/MIS/dal-copilot/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/MIS/dal-copilot/rag-demo.mp4",
+                "title": "Ask PDF",
+                "caption": "Uploading a document, asking a question in Arabic, and picking a file with @mention.",
+                "poster": "assets/media/MIS/dal-copilot/rag-demo-preview.png"
+            },
+            {
+                "src": "assets/media/MIS/dal-copilot/db-demo.mp4",
+                "title": "Ask DB",
+                "caption": "Asking a question in plain language and getting a table back.",
+                "poster": "assets/media/MIS/dal-copilot/db-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Screens",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/dal-copilot/architecture.png",
+                            "alt": "Dal Copilot system architecture diagram",
+                            "caption": "System architecture: Next.js frontend, FastAPI backend, Elasticsearch, MongoDB and the AI models"
+                        },
+                        {
+                            "src": "assets/media/MIS/dal-copilot/initial-eng.png",
+                            "alt": "Dal Copilot start screen in English",
+                            "caption": "Start screen in English"
+                        },
+                        {
+                            "src": "assets/media/MIS/dal-copilot/initial-arabic.png",
+                            "alt": "Dal Copilot start screen in Arabic with right-to-left layout",
+                            "caption": "Start screen in Arabic with full RTL layout"
+                        },
+                        {
+                            "src": "assets/media/MIS/dal-copilot/ai-chat.png",
+                            "alt": "AI chat mode answering a question",
+                            "caption": "AI chat with live streaming answers"
+                        },
+                        {
+                            "src": "assets/media/MIS/dal-copilot/chat-archive.png",
+                            "alt": "Chat library with saved sessions in English",
+                            "caption": "Chat library: search and reopen past sessions"
+                        },
+                        {
+                            "src": "assets/media/MIS/dal-copilot/chat-archive-ar.png",
+                            "alt": "Chat library with saved sessions in Arabic",
+                            "caption": "Chat library in Arabic"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Dal Copilot is an AI assistant for Arabic and English speaking teams. It has three modes in one interface: a general chat, a mode that answers questions from your own PDF and Word documents, and a mode that turns plain questions into SQL for your SQLite databases."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It's two codebases: a FastAPI backend that handles the AI work, search and document processing, and a Next.js frontend for the interface, login and chat history. I built both."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Teams sit on piles of reports, contracts and manuals, and keyword search doesn't understand what people are asking. General chatbots can't see private company documents. Non-technical staff can't query a database without SQL. And most AI tools are built for English first, with weak Arabic support and no proper right-to-left layout."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Dal Copilot puts all three in one place, in the user's own language."
+                },
+                {
+                    "type": "heading",
+                    "text": "The three modes"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Chat: a multi-turn assistant on Cohere's command-r-plus. Conversations are saved per user and per session in MongoDB, and replies stream in token by token.",
+                        "Ask PDF: users upload PDF or .docx files, which are cleaned, split into chunks and indexed in Elasticsearch. Questions use HyDE, where the model first writes a hypothetical answer and that text is used to find matching chunks. Follow-up questions are rewritten with earlier context before searching.",
+                        "Ask DB: users upload a SQLite file and ask in plain language. A LangChain SQL chain on OpenAI writes the query, runs it and shows the result in an interactive table."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "What else it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Live streaming with a stop button. Responses stream over Server-Sent Events, and each mode has a stop endpoint that cancels generation mid-answer.",
+                        "Full Arabic and English interface. One toggle flips the whole app between LTR and RTL. AI answers are parsed so Arabic and English sections each get the right direction, even inside one message.",
+                        "Arabic text preparation before indexing: language detection, diacritic removal, alef and teh marbuta normalization and reshaping, so Arabic embeddings stay clean and consistent.",
+                        "Per-user document isolation. Every chunk in Elasticsearch carries a user ID, and every search filters on it, so users never see each other's files.",
+                        "Chat library with search, pagination and a preview of each session. Opening one replays the whole conversation.",
+                        "Knowledge base panel listing each user's documents and databases, with delete that also removes the matching chunks from Elasticsearch.",
+                        "@mention file picker in Ask PDF. Typing @ opens a keyboard-friendly list of documents, and choosing one limits the search to that file."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Architecture"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The Next.js frontend streams from the FastAPI backend over SSE. The backend talks to Cohere for chat, OpenAI for SQL generation, Elasticsearch 8 for hybrid search (dense vectors plus BM25) and MongoDB for chat history, users and file records. Documents are embedded with a Hugging Face model on GPU. The backend runs in a multi-stage Docker image."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/dal-copilot/architecture.png",
+                    "alt": "System architecture diagram",
+                    "caption": "Frontend, backend, Elasticsearch, MongoDB and the LLMs",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built both the backend and the frontend. On the backend:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the FastAPI service: routing, service layers, config and Docker.",
+                        "Built the RAG pipeline end to end: ingestion, Arabic and English text cleaning, chunking, Elasticsearch indexing, HyDE, hybrid retrieval, history-aware retrieval, answer generation and streaming.",
+                        "Wrote a custom MongoDB chat history class that tracks history per user, per session and per mode.",
+                        "Built stop-able streaming with asyncio events.",
+                        "Built the Arabic text preparation pipeline.",
+                        "Tried several models (Qwen2, LLaMA 3.1 and Gemma2 on Ollama, GPT-4o and Cohere) before choosing Cohere command-r-plus for chat.",
+                        "Built the natural-language to SQL endpoint.",
+                        "Set up hybrid search with per-user metadata filters."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "On the frontend:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Built the Next.js 14 App Router app with server components, server actions and a clear client/server split.",
+                        "Built the three-mode chat with tab locking, so users can't switch modes mid-conversation.",
+                        "Handled SSE streams with ReadableStream and Redux updates for incremental messages.",
+                        "Designed the Redux store with six slices: AI messages, PDF messages, DB messages, files, user and localization.",
+                        "Built the sign-in flow with NextAuth, bcrypt, Zod validation and middleware route protection.",
+                        "Built the @mention file picker, the chat library with MongoDB aggregation, and the knowledge base panel.",
+                        "Built the English/Arabic toggle with RTL support and per-element text direction in Markdown answers."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Chat, document Q&A and database queries now live in one interface, in place of three separate tools.",
+                        "Arabic and mixed-language content is handled properly, with RTL layout and per-element direction.",
+                        "Users can reopen any past session and continue it, which suits longer research tasks.",
+                        "Users can stop a long answer at any time.",
+                        "Document isolation per user makes the system suitable for several departments sharing one deployment.",
+                        "The model layer can be swapped, and several providers were tested during development."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Al-Mandumah AI Research Agent",
+        "categories": [
+            "fullstack",
+            "ai"
+        ],
+        "description": "A bilingual Arabic/English research assistant for Al-Mandumah. Ask a question in plain language and get an answer with the document, page number, and exact passage it came from. Covers 547+ scholarly Arabic documents.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "Streamlit",
+            "LlamaIndex",
+            "Gemini 2.0 Flash",
+            "Vertex AI",
+            "Sentence Transformers",
+            "Tesseract OCR",
+            "Docker"
+        ],
+        "coverImage": "assets/media/MIS/mandumah/sources.png",
+        "liveLink": "",
+        "githubLink": "",
+        "videos": [
+            {
+                "src": "assets/media/MIS/mandumah/demo.mp4",
+                "title": "Project demo",
+                "caption": "Asking a question in Arabic and checking the cited sources.",
+                "poster": "assets/media/MIS/mandumah/demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Application screens",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/mandumah/initial-view.png",
+                            "alt": "Start Screen",
+                            "caption": "Start Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/mandumah/chat-sample.png",
+                            "alt": "Chat Sample",
+                            "caption": "Chat Sample"
+                        },
+                        {
+                            "src": "assets/media/MIS/mandumah/sources.png",
+                            "alt": "Expanded sources panel with page numbers and passages",
+                            "caption": "Paginated sources with page numbers"
+                        },
+                        {
+                            "src": "assets/media/MIS/mandumah/doc-source.png",
+                            "alt": "Sidebar showing API status and loaded documents",
+                            "caption": "System status and document list"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Al-Mandumah is one of the largest academic research databases in the Arab world. Researchers there had to open documents one by one and read through them to find an answer. I built a chat-based research agent that does that search for them. You ask in Arabic or English, and it replies with a cited answer in the same language."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Most AI search tools are built for English. Arabic needs multilingual models at every step: embedding, reranking, and generation.",
+                        "One big vector index across hundreds of documents loses precision and can't say which document an answer came from.",
+                        "Researchers can't use an answer they can't verify, so every response needed a document, a page, and a passage.",
+                        "Querying an LLM across the whole corpus on every question would be slow and expensive."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I used a two-tier agent setup on LlamaIndex. Every document gets its own ReAct agent with two tools: vector search for specific facts and a summary tool for overviews. A top-level agent sits above them. For each question, it picks the most relevant document agents (top 5 by embedding similarity, narrowed to 3 by a multilingual reranker) and only calls those."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "That cap means a query costs roughly the same whether the library holds 50 documents or 500."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/mandumah/architecture.png",
+                    "alt": "Architecture diagram of the two-tier agent pipeline",
+                    "caption": "Orchestration agent routing to per-document agents",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Key features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Bilingual chat with automatic RTL/LTR switching per message, including the input box.",
+                        "Sources panel on every answer: document name, page number, exact passage, relevance score, and a direct link to the original in the Al-Mandumah database.",
+                        "Resumable batch indexing with 12 parallel workers. If the server crashes mid-run, it picks up where it stopped.",
+                        "Indices and summaries saved to disk, so restarts load all agents without any LLM or embedding calls.",
+                        "REST API for queries, status, document listing, and file upload (.pdf, .docx, .txt) with background re-indexing.",
+                        "Docker Compose deployment with Arabic OCR, LibreOffice, and Poppler built in."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the only engineer on this. I designed and built everything from the indexing pipeline to the UI."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the two-tier agent architecture and wrote the system prompts that cap tool calls at 3, keep answers in the user's language, and force source attribution.",
+                        "Built a custom LlamaIndex retriever that reranks tool candidates with gte-multilingual-reranker-base before the orchestration agent chooses.",
+                        "Wrote a page-mapping step that turns character offsets into page numbers, so every chunk carries an accurate page citation.",
+                        "Built the parallel indexing pipeline: threaded agent building, process-based document parsing, and a checkpoint file for resuming. Fixed Docker multiprocessing issues by switching to spawn context and standalone worker functions.",
+                        "Picked the multilingual model stack: Vertex text-multilingual-embedding-002, the Alibaba reranker, and Gemini 2.0 Flash.",
+                        "Built the FastAPI backend with startup model loading, background upload handling, a 600s query timeout, and rotating logs.",
+                        "Built the Streamlit frontend: Arabic detection by Unicode range, per-message text direction, paginated sources, a live API status sidebar, and a paginated document list.",
+                        "Wrote the Dockerfile and Compose setup with persistent volumes."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Indexes and answers questions across 547+ Arabic documents, searchable in natural language for the first time.",
+                        "Live LLM calls per query are capped at 3 document agents, so cost and latency stay flat as the library grows.",
+                        "Restarts load every document agent from disk with no LLM or embedding calls.",
+                        "Arabic queries return Arabic results and English queries return English, with no translation step.",
+                        "Every answer links back to the exact page in the original document."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Python 3.11, FastAPI, Streamlit, LlamaIndex, Gemini 2.0 Flash and text-multilingual-embedding-002 on Vertex AI, gte-multilingual-reranker-base, unstructured, Tesseract (Arabic), Docker Compose."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Imagini",
+        "categories": [
+            "fullstack"
+        ],
+        "description": "A B2B lead intelligence platform in the vein of Apollo.io. Search a contact database with 12 stacking filters, then spend credits to unlock verified emails. Includes a full admin panel and audit trail.",
+        "techStack": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "SQLAlchemy",
+            "Docker",
+            "GitHub Actions"
+        ],
+        "coverImage": "assets/media/MIS/imagini/user-side.png",
+        "liveLink": "",
+        "githubLink": "",
+        "videos": [
+            {
+                "src": "assets/media/MIS/imagini/demo.mp4",
+                "title": "Project demo",
+                "caption": "Filtering leads, revealing an email with credits, and exporting results.",
+                "poster": "assets/media/MIS/imagini/demo-preview.png"
+            },
+            {
+                "src": "assets/media/MIS/imagini/admin-demo.mp4",
+                "title": "Admin panel walkthrough",
+                "caption": "Uploading a CSV, adjusting user credits, and checking the audit log.",
+                "poster": "assets/media/MIS/imagini/admin-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "User features",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/imagini/user-side.png",
+                            "alt": "User Panel",
+                            "caption": "User/Customer Panel"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-dashboard.png",
+                            "alt": "Admin Dashboard",
+                            "caption": "Admin Dashboard"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data-2.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data-3.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-user.png",
+                            "alt": "User Management Page",
+                            "caption": "User Management Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/create-new-user-admin.png",
+                            "alt": "Create User Modal",
+                            "caption": "Create User Modal"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/job-and-activity.png",
+                            "alt": "Audit Log Page",
+                            "caption": "Audit Log Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/user-details-admin.png",
+                            "alt": "User Details Page",
+                            "caption": "User Details Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/user-update-admin.png",
+                            "alt": "Update User Page",
+                            "caption": "Update User Page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Imagini is a lead intelligence platform for sales teams, recruiters, and growth people. You search a database of professional contacts, narrow it down by company, role, seniority, and revenue, and pay with credits only when you want a verified email. Admins control the data, the users, and the credits, and every action gets logged. I built the whole thing on my own, frontend to database."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Tools like Apollo and ZoomInfo are expensive and don't work well with a custom dataset.",
+                        "Teams with their own lead lists needed to load big CSVs and search them fast.",
+                        "Access had to be pay-per-use: free to browse, credits to reveal an email.",
+                        "Operators needed a record of every search, unlock, and export for billing and compliance.",
+                        "None of this could slow down as the dataset grew."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A React single-page app talks to an async FastAPI backend over JWT. Contacts, users, unlocks, and audit logs live in PostgreSQL. Redis powers the autocomplete. Everything runs in Docker Compose, with GitHub Actions for CI/CD."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/imagini/architecture.png",
+                    "alt": "Architecture diagram of the React frontend, FastAPI backend, PostgreSQL, and Redis",
+                    "caption": "React SPA, FastAPI, PostgreSQL, and Redis",
+                    "width": "wide"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The credit system is the core of the product. Leads show masked emails like j*****@example.com. Revealing one costs 1 credit, but only if the lead actually has an email. Leads without one are free. Every unlock is saved in a junction table, so nobody is ever charged twice for the same lead."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Filter sets are hashed and stored as a query ID. That ID drives pagination, export, and returning to a search without resubmitting any filters. Page cursors are encrypted, so users can't guess offsets."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Key features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "12 filters that stack: free-text, location, job title, seniority, role, email status, company, industry, HQ, headcount, and revenue.",
+                        "Instant autocomplete across 11 fields, backed by a Redis index. If Redis is down, it falls back to PostgreSQL.",
+                        "Credit-based email reveal, plus streaming CSV export that follows the same credit rules.",
+                        "Drag-and-drop column editor to reorder and hide any of 16 lead fields.",
+                        "Email verification on signup, with a 24-hour link and automatic re-send for unverified logins.",
+                        "Admin dashboard with KPI cards, a 30-day credit usage chart, and monthly exports.",
+                        "User management: add or subtract credits with a reason, toggle permissions, reset passwords.",
+                        "Data management: upload a CSV with a 5-row preview and column validation, then delete by file, by filter, or everything (typed confirmation required).",
+                        "Filterable audit log with structured metadata on every monetized and admin action."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sole developer. I designed the product logic and built both sides of it."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the credit economy: cost rules, idempotent unlocks, and an admin bypass.",
+                        "Built the Redis autocomplete using sorted sets and prefix range queries, with word-suffix indexing. Location fields split on commas so \"Riyadh\" ranks above \"Riyadh, Saudi Arabia\". New uploads index incrementally, and startup does a full refresh.",
+                        "Replaced row-by-row ORM inserts with asyncpg COPY through a temp staging table, so large CSV uploads don't hit HTTP timeouts.",
+                        "Built encrypted cursor pagination with Fernet, plus a client-side cursor stack for prev/next.",
+                        "Built search persistence: deterministic hashing of filter state into reusable query IDs.",
+                        "Designed the audit system: the action taxonomy, a JSONB metadata schema per action, and a rule that nullifies actor and target IDs on user deletion so history stays intact.",
+                        "Built all five admin pages, including the upload preview and guarded bulk-delete flows.",
+                        "Implemented email verification and role-based routing, with frontend guards that mirror the backend's get_current_user and get_current_admin dependencies.",
+                        "Wrote the schema, Alembic migrations, Docker Compose setup, and CI/CD pipeline."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Large CSV uploads finish without timeouts, using COPY instead of per-row inserts.",
+                        "Autocomplete lookups stay fast as the dataset grows, since Redis range queries scale logarithmically.",
+                        "Users are never billed twice for the same lead, on both reveal and export.",
+                        "Every monetized and admin action is logged, so billing can be reconciled from the audit log alone.",
+                        "CSV export streams row by row, so memory stays flat no matter how big the result set is.",
+                        "Paginating and exporting reuse a saved query ID instead of resending filters."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Frontend: React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui, React Router, Recharts, dnd-kit. Backend: Python 3.13, FastAPI, SQLAlchemy 2.0 (async), asyncpg, Alembic, Argon2, JWT. Data: PostgreSQL 15, Redis 7. Infra: Docker Compose, GitHub Actions."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Natural Language SQL Agent",
+        "categories": [
+            "fullstack",
+            "ai"
+        ],
+        "description": "Ask any database a question in English or Arabic and get a plain-language answer. An AI agent reads the schema, writes and checks the SQL, runs it, and replies in seconds. Built as a proof of concept for SWCC.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "Streamlit",
+            "LangGraph",
+            "LangChain",
+            "Gemini 2.0 Flash",
+            "Vertex AI",
+            "SQLAlchemy",
+            "Redis"
+        ],
+        "coverImage": "assets/media/MIS/sql-agent/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/MIS/sql-agent/demo.mp4",
+                "title": "Asking the database a question",
+                "caption": "Connect a database, ask in plain English, get an answer.",
+                "poster": "assets/media/MIS/sql-agent/demo-preview.png"
+            },
+            {
+                "src": "assets/media/MIS/sql-agent/arabic.mp4",
+                "title": "Arabic and RTL support",
+                "caption": "Same flow in Arabic, with the chat flipping to right-to-left automatically.",
+                "poster": "assets/media/MIS/sql-agent/arabic-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Application screens",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/sql-agent/db-connection.png",
+                            "alt": "Database connection popover",
+                            "caption": "Connecting a database with a URI"
+                        },
+                        {
+                            "src": "assets/media/MIS/sql-agent/initial-interface.png",
+                            "alt": "Start Screen",
+                            "caption": "Start Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/sql-agent/chat.png",
+                            "alt": "Live table browser",
+                            "caption": "Browsing a table alongside the chat"
+                        },
+                        {
+                            "src": "assets/media/MIS/sql-agent/chat_side-ar.png",
+                            "alt": "Arabic chat with right-to-left layout",
+                            "caption": "Arabic question, right-to-left answer"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "At most companies, getting an answer out of a database means asking an engineer or waiting on a BI request. I built a chat tool that removes that step. You connect a database, type a question in English or Arabic, and an AI agent finds the right tables, writes the SQL, checks it, runs it, and explains the result in plain language."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built it as an internal proof of concept for the Saudi Water Conversion Company (SWCC), where users work in both languages and most of them don't write SQL."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Dashboards only answer the questions someone thought of in advance. Everything else becomes a ticket to an engineer. I wanted domain experts to ask the database anything, in the language they already use, without waiting."
+                },
+                {
+                    "type": "heading",
+                    "text": "How the agent works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Every question runs through a six-step LangGraph pipeline:"
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "items": [
+                        "Table discovery: list every table in the connected database. No LLM needed.",
+                        "Schema fetching: the model picks the relevant tables and pulls their DDL and a few sample rows.",
+                        "SQL generation: the model writes dialect-correct SQL with fuzzy name matching, no SELECT *, and a default cap of 5 rows.",
+                        "SQL validation: a second model pass reviews the query for common mistakes like NULLs in NOT IN, type mismatches, bad BETWEEN ranges, and wrong join columns.",
+                        "Execution: the checked query runs against the live database.",
+                        "Answer: the model reads the result and replies in plain language."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The agent reads the real schema at query time instead of relying on embeddings or hand-written mappings, so it works on a database it has never seen. Prompts also block DELETE and DROP unless the user explicitly asks for INSERT or UPDATE."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Key features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Works with any SQLAlchemy-compatible database (PostgreSQL, MySQL, SQLite and more). Users enter the connection URI at runtime, so no credentials live on the server.",
+                        "Multi-user sessions: each browser gets its own session ID, and its database URI sits in Redis with a 24-hour expiry. Concurrent users stay isolated.",
+                        "Arabic and English: the frontend detects Arabic text and switches the chat to right-to-left.",
+                        "Live table browser next to the chat, so users can see the data they're asking about."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Under the hood"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The frontend is Streamlit and the backend is FastAPI, with five endpoints: connect-db, disconnect-db, db-tables, db-table, and query. The agent is a LangGraph state graph that shares a running message list across nodes. A conditional edge loops the graph through check, run, and generate until the model returns a final answer instead of another tool call. Gemini 2.0 Flash on Vertex AI powers both the agent and the database toolkit."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "One small fix worth mentioning: Streamlit renders synchronously, so the loading spinner wouldn't show while the backend worked. I used a two-pass pattern (set a pending flag, rerun, then run the request on the second pass) so users see feedback while they wait."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built this end to end."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the full LangGraph pipeline: graph structure, the prompts for query generation and validation, and the routing logic.",
+                        "Built all five FastAPI endpoints and the Redis-backed session isolation.",
+                        "Wrote the per-session connection factory that resolves each user's database from Redis and builds a fresh toolkit per request.",
+                        "Built the whole Streamlit frontend: two-column layout, connection popover, table browser, chat with custom avatars, pinned input bar, and all the custom CSS.",
+                        "Integrated Vertex AI and Gemini 2.0 Flash into both the agent and the toolkit.",
+                        "Added Arabic detection and RTL rendering.",
+                        "Wrote the sample HR database (employees table with a self-referencing manager key) used for development and demos."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Answers come back in under 10 seconds, compared with a multi-day request cycle through BI.",
+                        "Works on any relational database without per-department setup or user training.",
+                        "Concurrent users stay on separate databases with no cross-session leakage.",
+                        "Live at dal-demo.live for stakeholder review."
+                    ]
+                }
+            ]
+        }
     }
 ]

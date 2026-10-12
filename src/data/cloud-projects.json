@@ -1,0 +1,169 @@
+[
+    {
+        "name": "Email Verifier & Guesser",
+        "categories": [
+            "fullstack",
+            "cloud"
+        ],
+        "description": "Turns a list of names and company websites into verified, deliverable email addresses. Fans the work out across up to 1,000 GCP VMs and shuts itself down when done. Tested on 37,000+ leads.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "asyncio",
+            "aiohttp",
+            "Docker",
+            "Redis",
+            "Google Cloud Storage",
+            "Compute Engine",
+            "Cloud Functions",
+            "Gunicorn",
+            "Uvicorn"
+        ],
+        "coverImage": "assets/media/MIS/email-verifier/cover.png",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Features",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/email-verifier/architecture.png",
+                            "alt": "Architecture",
+                            "caption": "Architecture"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/dashboard.png",
+                            "alt": "Dashboard",
+                            "caption": "Dashboard"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/verifier.png",
+                            "alt": "Verifier Page",
+                            "caption": "Verifier Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/guesser.png",
+                            "alt": "Guesser Page",
+                            "caption": "Guesser Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/stats.png",
+                            "alt": "Processed Stats",
+                            "caption": "Processed Stats"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/instances.png",
+                            "alt": "GCP Instances Management",
+                            "caption": "GCP Instances Management"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sales teams often have a contact's name and company website, but no email. Buying verified lists from tools like Apollo or Hunter is expensive, and unverified emails bounce, which hurts sender reputation. I built a pipeline that finds the right address and checks it's deliverable without sending a single message."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You upload a CSV and poll one endpoint. The system splits the file, spreads it across a fleet of VMs, merges the results, and scales back to zero. I've run it on 37,000+ leads in one job."
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Two engines do the work. The Email Guesser finds or builds each address. The Email Verifier checks it against the mail server and sorts it into one of nine categories."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Email Guesser"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Scrapes search results asynchronously for addresses on the target domain and fuzzy-matches them to the contact's name.",
+                        "Falls back to common patterns (first.last, flast, firstlast and more), ranked by score.",
+                        "Remembers which pattern each company uses, so repeat lookups for the same domain skip the guesswork.",
+                        "Checks every candidate with an SMTP handshake and tests for catch-all domains so it doesn't mark a whole company as valid by mistake."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Email Verifier"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Runs a full SMTP check (EHLO, MAIL FROM, RCPT TO) and classifies results as valid, invalid, catch-all, role account, disposable, inbox full, disabled, spam trap, or unknown.",
+                        "Randomizes worker counts, batch sizes, and delays, and warms up slowly to stay under rate-limit radars.",
+                        "Filters disposable domains using live blocklists and flags role accounts like support@ and sales@ separately.",
+                        "Caches results at three levels and retries temporary failures with exponential backoff."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/email-verifier/architecture.png",
+                    "alt": "Architecture diagram of the Email Verifier & Guesser platform",
+                    "caption": "One upload, chunked in Cloud Storage, processed by up to 1,000 stateless VMs, merged into one file.",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "Orchestration"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A FastAPI backend (Dockerized, served with Gunicorn and Uvicorn) runs the whole job lifecycle. A Cloud Function splits the CSV into 25-row chunks and tags each one in GCS. The API then scales a Managed Instance Group to up to 1,000 VMs, tracks progress, merges the output, scales the group back to zero, and hands back a 15-minute signed download link. Redis stores job state with a 30-day TTL. The verifier and guesser run as separate pipelines with their own buckets and VM groups."
+                },
+                {
+                    "type": "heading",
+                    "text": "Hard problems I solved"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "No double-claimed work. VMs claim chunks using GCS generation-match conditions (optimistic locking), so two machines never grab the same chunk and I didn't need a separate lock service.",
+                        "Protecting IP reputation. Every SMTP response is scanned for Spamhaus blocklist signals, and a periodic probe tests the IP against a strict mail server. If a block is confirmed, the VM returns its chunk to the queue and deletes itself.",
+                        "Surviving crashes. Both engines checkpoint state to disk, so a restart or preemption picks up where it stopped.",
+                        "Learning from results. The pattern generator tracks confirmed addresses per domain and gets faster and more accurate on repeat companies."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Built the whole system solo: architecture, both engines, the API, and the serverless splitter.",
+                        "Designed the GCS-based work queue and stateless worker model.",
+                        "Wrote the IP safety and self-destruct system.",
+                        "Built the pattern-learning and checkpoint/resume systems.",
+                        "Shipped the FastAPI backend with Redis job tracking and signed-URL delivery."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Processed 37,000+ leads in a single distributed run.",
+                        "Scales to 1,000 concurrent VMs per job, then drops to zero, so there's no idle cost.",
+                        "Replaces paid lead-verification tools for this use case.",
+                        "Runs hands-off: upload a CSV, poll the status endpoint, download the result.",
+                        "Nine result categories give outreach teams more to work with than a plain valid/invalid."
+                    ]
+                }
+            ]
+        }
+    }
+]

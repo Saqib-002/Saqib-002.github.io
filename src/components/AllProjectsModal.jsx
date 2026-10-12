@@ -1,9 +1,9 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import useModal from '../hooks/useModal';
 import allProjects from '../data/projects';
 import ProjectCard from './ProjectCard';
 import '../assets/styles/AllProjectsModal.css';
-import { Bot, Layers, Menu, Monitor, Palette, Smartphone, X } from 'lucide-react';
+import { Bot, ChevronLeft, ChevronRight, Code, Layers, Menu, Monitor, Palette, Server, Smartphone, X } from 'lucide-react';
 
 const CATEGORIES = [
   {
@@ -12,6 +12,11 @@ const CATEGORIES = [
     icon: (
       <Menu />
     ),
+  },
+  {
+    id: 'technical-showcase',
+    label: 'Technical Showcase',
+    icon: <Code />,
   },
   {
     id: 'ai',
@@ -28,13 +33,6 @@ const CATEGORIES = [
     ),
   },
   {
-    id: 'desktop',
-    label: 'Desktop',
-    icon: (
-      <Monitor />
-    ),
-  },
-  {
     id: 'app',
     label: 'Apps',
     icon: (
@@ -48,6 +46,20 @@ const CATEGORIES = [
       <Palette />
     ),
   },
+  {
+    id: 'cloud',
+    label: 'Cloud / Automation',
+    icon: (
+      <Server />
+    ),
+  },
+  {
+    id: 'desktop',
+    label: 'Desktop',
+    icon: (
+      <Monitor />
+    ),
+  }
 ];
 
 const PROJECT_DATA = Object.fromEntries(CATEGORIES.map(({ id }) => [
@@ -58,7 +70,34 @@ const PROJECT_DATA = Object.fromEntries(CATEGORIES.map(({ id }) => [
 export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const ref = useRef(null);
+  const tabsRef = useRef(null);
+  const [scrollEdges, setScrollEdges] = useState({ left: false, right: false });
   useModal(isOpen, onClose, ref);
+
+  useEffect(() => {
+    const tabs = tabsRef.current;
+    if (!tabs || !isOpen) return;
+    const updateEdges = () => setScrollEdges({
+      left: tabs.scrollLeft > 1,
+      right: tabs.scrollWidth - tabs.clientWidth - tabs.scrollLeft > 1,
+    });
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(tabs);
+    tabs.addEventListener('scroll', updateEdges, { passive: true });
+    updateEdges();
+    return () => {
+      observer.disconnect();
+      tabs.removeEventListener('scroll', updateEdges);
+    };
+  }, [isOpen]);
+
+  const scrollCategories = (direction) => {
+    const tabs = tabsRef.current;
+    tabs?.scrollBy({
+      left: direction * tabs.clientWidth * 0.65,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
+  };
 
   const projects = PROJECT_DATA[activeCategory] || [];
 
@@ -74,12 +113,14 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDet
         </div>
 
         {/* Category Tabs */}
-        <div className="all-projects-tabs">
+        <div className="all-projects-tabs-wrapper">
+        <div className="all-projects-tabs" ref={tabsRef}>
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               className={`all-projects-tab ${activeCategory === cat.id ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat.id)}
+              onFocus={(event) => event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' })}
               aria-pressed={activeCategory === cat.id}
             >
               <span className="tab-icon">{cat.icon}</span>
@@ -87,6 +128,13 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDet
               <span className="tab-count">{PROJECT_DATA[cat.id].length}</span>
             </button>
           ))}
+        </div>
+        {scrollEdges.left && <div className="all-projects-tabs-edge left">
+          <button className="all-projects-tabs-arrow" aria-label="Scroll categories left" onClick={() => scrollCategories(-1)}><ChevronLeft size={14} aria-hidden="true" /></button>
+        </div>}
+        {scrollEdges.right && <div className="all-projects-tabs-edge right">
+          <button className="all-projects-tabs-arrow" aria-label="Scroll categories right" onClick={() => scrollCategories(1)}><ChevronRight size={14} aria-hidden="true" /></button>
+        </div>}
         </div>
 
         {/* Projects Grid */}

@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 0.75rem 1.25rem;
   border-bottom: 1px solid #2d3846;
   flex-shrink: 0;
 }
@@ -41,14 +41,72 @@
 }
 
 /* Category Tabs */
+.all-projects-tabs-wrapper {
+  position: relative;
+  min-width: 0;
+  flex-shrink: 0;
+  border-bottom: 1px solid #2d3846;
+}
+
 .all-projects-tabs {
   display: flex;
   gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #2d3846;
+  padding: 0.5rem 1.25rem;
   flex-shrink: 0;
   flex-wrap: nowrap;
   overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.all-projects-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.all-projects-tabs-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.all-projects-tabs-edge.left {
+  left: 0;
+  padding-left: 4px;
+  background: linear-gradient(to right, #101923 65%, transparent);
+}
+
+.all-projects-tabs-edge.right {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 4px;
+  background: linear-gradient(to left, #101923 65%, transparent);
+}
+
+.all-projects-tabs-arrow {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2d3846;
+  border-radius: 50%;
+  background: #192431;
+  color: #56b0bb;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.all-projects-tabs-arrow:hover {
+  background: #293949;
+  border-color: #56b0bb;
+}
+
+.all-projects-tabs-arrow:focus-visible {
+  outline: 2px solid #56b0bb;
+  outline-offset: 2px;
 }
 
 .all-projects-tab {
@@ -134,13 +192,13 @@
 @media screen and (max-width: 640px) {
   .all-projects-modal-content { height: 100dvh; max-height: 100dvh; border-radius: 0; }
   .all-projects-modal-header {
-    padding: 1rem 1.25rem;
+    padding: 0.5rem 1rem;
   }
   .all-projects-modal-title {
     font-size: 1rem;
   }
   .all-projects-tabs {
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 1rem;
     gap: 0.4rem;
   }
   .all-projects-tab {
