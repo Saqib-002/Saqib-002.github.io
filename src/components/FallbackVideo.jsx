@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-const FALLBACK_IMAGE = `${import.meta.env.BASE_URL}assets/no-image.png`;
+const FALLBACK_IMAGE = `${import.meta.env.BASE_URL}assets/no-video.png`;
 
-export default function FallbackVideo({ poster, ...props }) {
+export default function FallbackVideo({ poster, onError, ...props }) {
   const ref = useRef(null);
   useEffect(() => {
     if (!poster) return;
@@ -12,5 +12,9 @@ export default function FallbackVideo({ poster, ...props }) {
     image.src = poster;
     return () => { image.onerror = null; };
   }, [poster]);
-  return <video {...props} ref={ref} poster={poster} />;
+  return <video {...props} ref={ref} poster={poster || FALLBACK_IMAGE}
+    onError={event => {
+      event.currentTarget.poster = FALLBACK_IMAGE;
+      onError?.(event);
+    }} />;
 }

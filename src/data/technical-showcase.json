@@ -459,5 +459,255 @@
                 }
             ]
         }
+    },
+    {
+        "name": "SapIA: AI CV Reformatter",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "Drop in a candidate's PDF CV, click once, and get a branded Word document in under 90 seconds. Cuts about 45 minutes of manual reformatting per CV.",
+        "techStack": [
+            "React",
+            "TypeScript",
+            "NestJS",
+            "OpenAI GPT-4",
+            "docxtemplater",
+            "Mantine",
+            "AWS S3",
+            "AWS Elastic Beanstalk"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Every candidate sends a CV in a different layout. Before a recruitment firm can send one to a client, someone rebuilds it by hand in the agency template. That takes 30 to 60 minutes per CV. SapIA does it in under 90 seconds: drop in a PDF, click, download a formatted .docx."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The users are recruitment consultants, not developers, so the whole thing had to be as simple as drag, click, download."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "How it works"
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "items": [
+                        "Upload the PDF. The backend reads it in memory with pdf-parse.",
+                        "GPT-4 in JSON mode turns the raw text into structured data: experience, skills, education, certifications, languages.",
+                        "The backend builds the Word file from the company template, adding one experience table per job.",
+                        "The browser downloads the finished .docx."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "The hard part: generating the Word file"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A .docx is a ZIP of XML files. The experience section needs one table per job, and every candidate has a different number of jobs. Docxtemplater's loops couldn't handle that nested table layout, so I edit word/document.xml directly. I clone the template table, fill each copy, insert it at the right spot, then hand the file back to docxtemplater for the simple placeholders. Fonts, shading, bullets and the blue technology tags all survive."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "One-click pipeline from PDF to branded Word file.",
+                        "A \"split steps\" mode lets users check and edit the extracted text before it goes to GPT-4. Useful for scanned or messy PDFs.",
+                        "French prompt with a strict JSON schema, so the output is always parseable.",
+                        "Deployed on AWS: React on S3, NestJS on Elastic Beanstalk."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I built it alone, end to end. It started as a Python script using python-docx that wiped the formatting, moved to a Django API, and ended as a full TypeScript rewrite with NestJS and React."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Result"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "About 45 minutes down to under 90 seconds per CV, roughly 30x faster.",
+                        "No more copy-paste errors in candidate profiles.",
+                        "Used in production by the team at VoiLabs."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "CourseGen: AI Course Generator with RAG",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "Pick a topic, a level and a module count, and get a full course with objectives, content, code examples and quizzes in seconds. Can generate from your own uploaded documents using RAG.",
+        "techStack": [
+            "Next.js 14",
+            "TypeScript",
+            "OpenAI",
+            "Dewy",
+            "Vercel AI SDK",
+            "AWS S3",
+            "Tailwind CSS",
+            "DaisyUI"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Outlining and writing a multi-module course normally takes hours. CourseGen does it in under 30 seconds. You pick a topic, your level (beginner, intermediate or advanced) and 1 to 15 modules, and it returns a structured curriculum, not a wall of text."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I also built it to learn RAG properly. You can upload your own source material and have the course grounded in that instead of the model's general knowledge."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What each module includes"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Overview, learning objectives and prerequisites.",
+                        "Content sections with headings and paragraphs.",
+                        "A code example with language and explanation.",
+                        "A short knowledge-check quiz."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Three AI patterns in one app"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Function calling for structured output. I defined a nested JSON schema so the model returns the same parseable course shape every time. No free-text parsing.",
+                        "RAG with Dewy. Uploaded files go to S3 and get indexed. On generation, the 10 most relevant chunks are pulled and injected into the prompt as a context block.",
+                        "Streaming chat. Built with the Vercel AI SDK (OpenAIStream and useChat), so tokens show up in real time. The RAG and chat routes run on the Edge runtime to keep latency low."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Built the whole app solo.",
+                        "Designed the 3-step wizard with plain React state and no form library.",
+                        "Designed the function-calling schema.",
+                        "Wired up the Dewy ingestion and retrieval pipeline.",
+                        "Built the S3 integration: uploads, bucket listing and presigned URLs for secure file access.",
+                        "Added a dark/light theme toggle that persists between visits."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Result"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A course that used to take hours now takes seconds, and because the output is structured JSON, it can be rendered, exported or fed into other systems as is."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Pix2Struct DSL: Document Question Answering",
+        "categories": [
+            "technical-showcase"
+        ],
+        "description": "Fine-tuned Google's Pix2Struct on a custom dataset of technical forms so it answers questions like \"what is the test duration?\" straight from the image. Exported to ONNX and TFLite.",
+        "techStack": [
+            "Python",
+            "PyTorch",
+            "HuggingFace Transformers",
+            "Pix2Struct",
+            "ONNX",
+            "TFLite",
+            "Google Colab"
+        ],
+        "hideImage": true,
+        "details": {
+            "blocks": [
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "OCR reads the text on a form, but it doesn't know that \"47\" is the value of the test duration field. Document question answering fixes that: you give the model an image and a plain-language question, and it returns the answer."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Off-the-shelf models did poorly on our industrial documents, which have a consistent but complex layout. So I fine-tuned one on our own data."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "What I built"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Started from the pix2struct-docvqa-base checkpoint on HuggingFace.",
+                        "Cleaned and organized a custom dataset of document images with question-answer pairs.",
+                        "Fine-tuned the model with a PyTorch training loop.",
+                        "Wrote an inference script that handles GPU/CPU detection, image loading and answer decoding.",
+                        "Exported the trained model to ONNX and TFLite so it can run without PyTorch, in browsers, on mobile and on edge devices."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "The tricky part"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Pix2Struct doesn't take raw pixel tensors. It takes flattened image patches plus an attention mask, so standard image augmentation pipelines don't apply. I had to build the training loop around the processor's output format."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Result"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A fine-tuned vision-language model that answers questions about our domain documents where the generic model fell short.",
+                        "ONNX and TFLite exports remove the need for GPU infrastructure at inference time.",
+                        "The full pipeline, from data prep to training to export, is reproducible in notebooks."
+                    ]
+                }
+            ]
+        }
     }
 ]

@@ -18,7 +18,7 @@
     }
   },
   "summary": {
-    "profile": "Software Engineer with a proven track record of architecting scalable full-stack systems and high-performance Agentic RAG workflows. Specialized in engineering intelligent infrastructure, such as B2B lead platforms and secure natural language database interfaces, using <span class=\"highlight\">FastAPI</span>, <span class=\"highlight\">React</span>, and <span class=\"highlight\">Gemini Vertex AI</span>. Focused on transforming complex data bottlenecks into production-ready, AI-driven products that deliver measurable cost savings and sub-second performance."
+    "profile": "Software Engineer who builds web, mobile and AI products from start to finish, from the database and APIs to the screens people use. Has worked on B2B platforms, online stores, restaurant ordering systems, and admin tools that let business owners manage their own content. Also works with AI, adding smart features like document search, chat assistants, and voice agents to real products, including apps that work in both Multiple Languages, and is comfortable owning a project from the first idea to launch. Cares most about building things that are fast, simple to use, and actually get used."
   },
   "education": [
     {
@@ -103,22 +103,28 @@
   ],
   "experience": [
     {
+      "title": "Full Stack Developer",
+      "company": "Freelance",
+      "timeline": "01 Jan 2026 - Present",
+      "description": "Build websites, online stores, and web and mobile apps for small and mid-sized businesses, mostly in Spain. Handle everything from design and development to payments, delivery, and deployment. Work includes bilingual sites, admin panels that let owners manage their own content, and ordering systems for restaurants. Work directly with clients, turn rough ideas into working products, and ship on time."
+    },
+    {
       "title": "Software Engineer",
       "company": "Modern Intelligent Solutions",
-      "timeline": "Jul 2024-Dec 2025",
-      "description": "Architected 'Imagini,' a high-performance B2B leads platform housing millions of records, featuring streaming upload pipelines and a credit-based access system. Engineered a multi-agent RAG framework using LangGraph and Gemini to navigate 1.5M Arabic documents with hierarchical workflows. Developed a secure natural language database interface for SWCC and an RFM-based customer segmentation engine for premium airport services."
+      "timeline": "01 Jul 2024- 31 Dec 2025",
+      "description": "Built and shipped full stack products from database design and APIs to the UI and deployment. Handled large datasets with fast search, bulk imports, and role-based access. Added AI features where they fit, including document search, chat-based assistants, and voice interfaces, with full Arabic and English support, and took projects from first prototype to live demo."
     },
     {
       "title": "Software Engineer",
       "company": "Voilabs",
-      "timeline": "Nov 2023 - Feb 2024",
-      "description": "Fine-tuned DONUT transformer models for OCR-free extraction of French bill data, optimizing for mobile via ONNX conversion. Integrated transformer-based ML models into Next.js applications and built robust data processing pipelines using Python, Pandas, and NumPy, improving use-case accuracy by 25%."
+      "timeline": "01 Nov 2023 - 01 Feb 2024",
+      "description": "Built and deployed web applications and connected AI models to them through clean APIs. Set up the data pipelines behind those features. Owned features end to end, from prototype to production, and cut manual work for the team from tens of minutes to under two."
     },
     {
       "title": "Software Engineer Intern",
       "company": "Ksoft",
-      "timeline": "Aug 2023 - Sep 2023",
-      "description": "Implemented real-time object detection solutions using YOLO. Designed intuitive user interfaces using Figma and contributed to mobile application development using Kotlin."
+      "timeline": "07 Aug 2023 - 15 Sep 2023",
+      "description": "Built a real-time object detection feature using YOLO. Designed app screens in Figma and contributed to a Kotlin mobile app."
     }
   ],
   "certifications": [
@@ -160,183 +166,102 @@
   ],
   "projects": [
     {
-      "name": "Mandumah Multi-Doc Agent",
-      "description": "An agentic RAG system designed to navigate 1.5M Arabic academic documents using a hierarchical meta-agent architecture and graph-based traversal. Optimized for complex linguistic nuances with automated summarization tools.",
-      "techStack": [
-        "LlamaIndex",
-        "Gemini Vertex AI",
-        "FastAPI",
-        "Python",
-        "Docker"
+      "name": "Brothers Mart",
+      "categories": [
+        "fullstack",
+        "app"
       ],
-      "details": {
-        "blocks": [
-          {
-            "type": "gallery",
-            "caption": "Mandumah Multi-Doc Agent",
-            "images": [
-              {
-                "src": "assets/media/MIS/mandumah/intro.png",
-                "alt": "Mandumah Multi-Doc Agent — Project introduction",
-                "caption": "Project introduction"
-              },
-              {
-                "src": "assets/media/MIS/mandumah/initial_view.png",
-                "alt": "Mandumah Multi-Doc Agent — Initial application view",
-                "caption": "Initial application view"
-              },
-              {
-                "src": "assets/media/MIS/mandumah/chat_sample.png",
-                "alt": "Mandumah Multi-Doc Agent — Sample chat",
-                "caption": "Sample chat"
-              }
-            ]
-          },
-          {
-            "type": "heading",
-            "text": "Overview"
-          },
-          {
-            "type": "paragraph",
-            "text": "This project involved developing an advanced agentic RAG system for a major Saudi Arabian academic platform to navigate a corpus of 1.5 million documents. It focuses on extracting insights from unstructured Arabic textual data using a hierarchical meta-agent architecture."
-          },
-          {
-            "type": "heading",
-            "text": "Project highlights"
-          },
-          {
-            "type": "list",
-            "items": [
-              "Architecture: Implemented a hierarchical meta-agent using graph-based traversal to orchestrate document-level agents.",
-              "Technical Innovation: Engineered tool-calling mechanisms for real-time Arabic summarization and query answering.",
-              "Scaling: Optimized performance for large-scale Arabic text, handling morphological complexity and right-to-left scripting."
-            ]
-          }
-        ]
-      },
-      "coverImage": "assets/media/MIS/mandumah/intro.png"
-    },
-    {
-      "name": "High-Scale Email Verification System",
-      "description": "Multi-layered validation pipeline utilizing DNS resolution, SMTP probing, and heuristics to reduce verification costs by 90%. Supports concurrent processing of hundreds of thousands of emails.",
+      "description": "Trilingual e-commerce platform for a Spanish wholesale grocer: web store, iOS/Android app, admin dashboard and REST API, with Redsys payments, MRW shipping and PDF invoicing.",
       "techStack": [
-        "Python (asyncio)",
-        "GCP",
-        "Docker",
-        "Celery",
-        "FastAPI",
-        "Redis"
-      ],
-      "details": {
-        "blocks": [
-          {
-            "type": "gallery",
-            "caption": "High-Scale Email Verification System",
-            "images": [
-              {
-                "src": "assets/media/MIS/verifier/dashboard.png",
-                "alt": "High-Scale Email Verification System — Verification dashboard",
-                "caption": "Verification dashboard"
-              },
-              {
-                "src": "assets/media/MIS/verifier/verifier.png",
-                "alt": "High-Scale Email Verification System — Email verification",
-                "caption": "Email verification"
-              },
-              {
-                "src": "assets/media/MIS/verifier/guesser.png",
-                "alt": "High-Scale Email Verification System — Email guessing",
-                "caption": "Email guessing"
-              },
-              {
-                "src": "assets/media/MIS/verifier/stats.png",
-                "alt": "High-Scale Email Verification System — Verification statistics",
-                "caption": "Verification statistics"
-              },
-              {
-                "src": "assets/media/MIS/verifier/instances.png",
-                "alt": "High-Scale Email Verification System — Worker instances",
-                "caption": "Worker instances"
-              }
-            ]
-          },
-          {
-            "type": "heading",
-            "text": "Overview"
-          },
-          {
-            "type": "paragraph",
-            "text": "Designed as a cost-effective alternative to commercial services, this system processes hundreds of thousands of email addresses with extreme concurrency. It utilizes a multi-layered validation pipeline to ensure high deliverability for large-scale cold outreach campaigns."
-          },
-          {
-            "type": "heading",
-            "text": "Project highlights"
-          },
-          {
-            "type": "list",
-            "items": [
-              "Cost Efficiency: Built a high-concurrency pipeline that reduced verification costs by 90% compared to commercial services.",
-              "Verification Pipeline: Developed multi-layered checks including DNS resolution, SMTP probing, and deliverability heuristics.",
-              "Scale: Leveraged asynchronous workers and distributed task queues to process hundreds of thousands of emails concurrently.",
-              "Feature Addition: Created an email-guessing module to generate and validate probable corporate email permutations."
-            ]
-          }
-        ]
-      },
-      "coverImage": "assets/media/MIS/verifier/dashboard.png"
-    },
-    {
-      "name": "ThunderJaw Restaurant POS",
-      "description": "Developed a high-performance desktop POS system using Electron and React 19, streamlining restaurant operations through real-time order tracking and kitchen management. I engineered a robust architecture featuring Role-Based Access Control, automated PostgreSQL migrations with Knex.js, and multi-language support.",
-      "techStack": [
-        "Electron",
+        "Next.js",
         "React",
         "TypeScript",
-        "PostgreSQL",
-        "Knex",
+        "React Native",
+        "Expo",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redux Toolkit",
         "Tailwind CSS",
-        "Shadcn"
+        "Docker",
+        "Puppeteer",
+        "Cloudinary",
+        "Codemagic",
+        "GitHub Actions"
       ],
+      "coverImage": "assets/media/Freelance/brothers-mart/cover.png",
+      "liveLink": "https://mart.b-brothers.es",
+      "iosLink": "https://apps.apple.com/us/app/brothers-mart/id6783842077",
       "details": {
         "blocks": [
           {
             "type": "gallery",
-            "caption": "ThunderJaw Restaurant POS",
+            "caption": "Mobile app screens",
             "images": [
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png",
-                "alt": "ThunderJaw Restaurant POS — Add products while taking an order",
-                "caption": "Add products while taking an order"
+                "src": "assets/media/Freelance/brothers-mart/storefront.png",
+                "alt": "home screen",
+                "caption": "Home"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/configurations.png",
-                "alt": "ThunderJaw Restaurant POS — System configuration",
-                "caption": "System configuration"
+                "src": "assets/media/Freelance/brothers-mart/catalog.png",
+                "alt": "Catalog",
+                "caption": "Explore and filters"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/kitchen_view.png",
-                "alt": "ThunderJaw Restaurant POS — Kitchen view",
-                "caption": "Kitchen view"
+                "src": "assets/media/Freelance/brothers-mart/product-page.png",
+                "alt": "Product Page",
+                "caption": "Product Page"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/manage_orders.png",
-                "alt": "ThunderJaw Restaurant POS — Order management",
-                "caption": "Order management"
+                "src": "assets/media/Freelance/brothers-mart/cart-page.png",
+                "alt": "Cart Page",
+                "caption": "Cart Page"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/menu_management.png",
-                "alt": "ThunderJaw Restaurant POS — Menu management",
-                "caption": "Menu management"
+                "src": "assets/media/Freelance/brothers-mart/checkout.png",
+                "alt": "Checkout",
+                "caption": "Checkout Page"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/Reports.png",
-                "alt": "ThunderJaw Restaurant POS — Reports",
-                "caption": "Reports"
+                "src": "assets/media/Freelance/brothers-mart/brands-page.png",
+                "alt": "Brands Page",
+                "caption": "Brands Page"
               },
               {
-                "src": "assets/media/MIS/thunderJaw_restaurant/taking_order.png",
-                "alt": "ThunderJaw Restaurant POS — Take an order",
-                "caption": "Take an order"
+                "src": "assets/media/Freelance/brothers-mart/app-1.png",
+                "alt": "App Screens",
+                "caption": "Home, Explore & Favourite Screen"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/app-2.png",
+                "alt": "App Screens",
+                "caption": "Product, Cart & Order Status Screen"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/app-3.png",
+                "alt": "App Screens",
+                "caption": "Brands, Profile & FAQs Screen"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
+                "alt": "Admin Dashboard",
+                "caption": "Admin Dashboard"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/general-platform-settings.png",
+                "alt": "Admin General Settings",
+                "caption": "Admin General Settings (Dark Theme)"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/multi-step-product-editor.png",
+                "alt": "Admin Product Editor",
+                "caption": "Admin Product Editor (Dark Theme)"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/cms.png",
+                "alt": "CMS",
+                "caption": "CMS (Dark Theme)"
               }
             ]
           },
@@ -346,90 +271,239 @@
           },
           {
             "type": "paragraph",
-            "text": "ThunderJaw is a high-performance, cross-platform desktop application designed to streamline complex restaurant operations, including real-time order tracking and kitchen management. The system integrates inventory control and financial reporting into a unified interface, bridging the gap between core system logic and the user experience via real-time IPC."
+            "text": "Brothers Mart is a production e-commerce platform I built for a Spanish wholesale grocery business. Before this, they took orders by phone and wrote invoices by hand. Now customers can order from the web or a mobile app in English, Spanish or Portuguese, and the team runs everything from one admin panel."
+          },
+          {
+            "type": "paragraph",
+            "text": "The platform is four connected codebases: a Next.js storefront, an Expo/React Native app for iOS and Android, a Next.js admin panel, and a Node.js/Express API behind all three."
+          },
+          {
+            "type": "image",
+            "src": "assets/media/Freelance/brothers-mart/storefront.png",
+            "alt": "Brothers Mart web storefront",
+            "caption": "Customer web storefront with URL-synced filters",
+            "width": "wide"
           },
           {
             "type": "heading",
-            "text": "Project highlights"
+            "text": "The problem"
+          },
+          {
+            "type": "paragraph",
+            "text": "The business had no online catalog and no way to scale past phone orders. They needed a store that handled Spanish payment rules, local courier shipping, VAT (IVA) pricing and GDPR cookie consent, and an admin panel the team could run without calling a developer."
+          },
+          {
+            "type": "heading",
+            "text": "What it does"
           },
           {
             "type": "list",
             "items": [
-              "System Architecture: Developed a cross-platform desktop application using Electron and React 19, utilizing TypeScript for robust type safety.",
-              "Database Management: Leveraged Knex.js with PostgreSQL to handle advanced relational data, automated migrations, and seeding.",
-              "Security & Access: Implemented a secure authentication system featuring role-based access control (RBAC) to manage worker permissions and logistics.",
-              "Technical Features: Integrated multi-language support (i18next), real-time IPC handlers, and Excel exporting for comprehensive business reporting."
+              "Trilingual catalog (EN/ES/PT). Every product name, slug, description and CMS block is stored per language, with locale-aware URLs.",
+              "Redsys card payments on web and mobile, including server-to-server webhook verification and automatic refunds when an order is cancelled.",
+              "MRW courier automation. Shipping labels are generated from the admin in one click, and customers get a public tracking page with a 4-step delivery timeline.",
+              "IVA price engine. Products are priced with tax included or added on top, and customers can switch between Inc. IVA and Excl. IVA across the whole UI.",
+              "Shipping cost calculator based on package dimensions, with provincial and national rates and a free-shipping threshold. It runs client-side, so checkout totals update instantly.",
+              "Trilingual PDF invoices with IVA breakdown and coupon lines, generated automatically for every order.",
+              "Guest cart and wishlist that survive reloads, then merge with the server cart on login.",
+              "GDPR cookie consent with four categories. Nothing is written to local storage without the right consent."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Customer web app"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Product catalog filtered by category, subcategory, brand, restaurant type and price, with all filter state kept in the URL so back/forward restores the exact view.",
+              "4-step checkout: contact, shipping, billing, payment, with coupon validation and an IVA breakdown.",
+              "Redux Toolkit store with a custom sync middleware that pushes cart and wishlist changes to the server and ignores rehydration actions.",
+              "PWA support with a service worker and web app manifest."
+            ]
+          },
+          {
+            "type": "gallery",
+            "caption": "Web storefront",
+            "images": [
+              {
+                "src": "assets/media/Freelance/brothers-mart/catalog.png",
+                "alt": "Product catalog with filters",
+                "caption": "Catalog with filters"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/checkout.png",
+                "alt": "Checkout page",
+                "caption": "Checkout with IVA breakdown"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Mobile app"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Built on Expo SDK 54 with file-based routing, NativeWind and Gluestack UI. Five tabs: Home, Explore, Cart, Wishlist, Profile.",
+              "Explore screen with infinite scroll, multi-select filters, a price slider and debounced search.",
+              "Guest cart saved to AsyncStorage, full server sync once logged in.",
+              "Redsys checkout opens in an in-app browser and returns to the app through a deep link.",
+              "Universal Links on iOS and intent filters on Android, so product links from the browser open straight in the app.",
+              "Automated iOS pipeline on Codemagic: every push to main builds, signs and ships to TestFlight with no manual Xcode steps."
+            ]
+          },
+          {
+            "type": "gallery",
+            "caption": "Mobile app screens",
+            "images": [
+              {
+                "src": "assets/media/Freelance/brothers-mart/app-home.png",
+                "alt": "App home screen",
+                "caption": "Home"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/app-explore.png",
+                "alt": "App explore screen with filters",
+                "caption": "Explore and filters"
+              },
+              {
+                "src": "assets/media/Freelance/brothers-mart/app-cart.png",
+                "alt": "Order Cart",
+                "caption": "Order Cart"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Admin panel"
+          },
+          {
+            "type": "list",
+            "items": [
+              "17 sections covering products, categories, brands, coupons, orders, users, blogs, policies, reviews, subscribers and site content.",
+              "Analytics dashboard with sales history, order status breakdown, revenue and customer KPIs, and low-stock alerts.",
+              "One-click auto-translate on every multilingual field, using the Google Translate API. Long HTML content is split on tag boundaries and all languages are translated in parallel.",
+              "Image uploads go straight to Cloudinary with backend-signed requests, so files never pass through the Next.js server.",
+              "Rich text editing for blogs and policies, 11 color themes, and list pages that remember search, filters and pagination when you come back from an edit form.",
+              "Zod validation with translated error messages."
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
+            "alt": "Admin analytics dashboard",
+            "caption": "Admin dashboard with sales, orders and low-stock alerts",
+            "width": "wide"
+          },
+          {
+            "type": "heading",
+            "text": "Backend API"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Express 5 and TypeScript, with 24 route modules and 17 Mongoose models.",
+              "Order creation runs in a MongoDB transaction. It checks stock, deducts it, writes inventory logs, creates the order and updates coupon usage. If any step fails, everything rolls back.",
+              "Full Redsys lifecycle: HMAC-SHA256 signed parameters, webhook verification, mobile redirect pages and refunds through the Redsys REST API.",
+              "MRW SOAP integration for creating and cancelling shipments and downloading labels, which are then stored on Cloudinary.",
+              "Puppeteer renders branded PDF invoices from HTML, using Chromium installed in the Docker image.",
+              "Password reset with hashed 6-digit OTPs that expire after 10 minutes, with emails in the user's language.",
+              "Role-aware login for the admin panel and the customer apps on shared JWT infrastructure.",
+              "Multi-stage Docker build, deployed to a VPS with Docker Compose through GitHub Actions."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "My contribution"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Designed the trilingual data model and carried it through all 17 models and all four codebases.",
+              "Built the full Redsys payment flow for web and mobile, including webhooks and refunds.",
+              "Integrated the MRW SOAP API for shipments, labels and tracking.",
+              "Wrote the Redux persistence middleware and the guest-to-account cart merge logic shared by web and mobile.",
+              "Built the transactional order flow in MongoDB.",
+              "Set up the Puppeteer invoice pipeline and the Docker image that runs it.",
+              "Built the auto-translate Server Action and the reusable TranslateButton in the admin panel.",
+              "Set up the Codemagic CI/CD pipeline for iOS, including scripts that patch Xcode signing settings.",
+              "Built the GDPR cookie consent system and the client-side shipping calculator."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Results"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Took the business from phone orders to a working online store that sells across Spain in three languages.",
+              "Orders now flow from checkout to payment to shipping label to live tracking without manual steps.",
+              "Invoices generate automatically, which removed handwritten paperwork.",
+              "The team manages products, orders, pricing, coupons and site content on their own, with no developer needed.",
+              "iOS builds ship to TestFlight on every push to main."
             ]
           }
         ]
-      },
-      "coverImage": "assets/media/MIS/thunderJaw_restaurant/add_product_while_taking_order.png"
+      }
     },
     {
-      "name": "B2B Leads Platform (Imagini)",
-      "description": "Architected a scalable platform managing millions of leads, featuring streaming data ingestion and a credit-based access system for B2B users. Optimized database indexing and caching to maintain sub-second search and filtering performance across massive datasets.",
+      "name": "Al-Mandumah AI Research Agent",
+      "categories": [
+        "fullstack",
+        "ai"
+      ],
+      "description": "A bilingual Arabic/English research assistant for Al-Mandumah. Ask a question in plain language and get an answer with the document, page number, and exact passage it came from. Covers 547+ scholarly Arabic documents.",
       "techStack": [
-        "React",
+        "Python",
         "FastAPI",
-        "PostgreSQL",
-        "Redis",
-        "Celery"
+        "Streamlit",
+        "LlamaIndex",
+        "Gemini 2.0 Flash",
+        "Vertex AI",
+        "Sentence Transformers",
+        "Tesseract OCR",
+        "Docker"
+      ],
+      "coverImage": "assets/media/MIS/mandumah/sources.png",
+      "liveLink": "",
+      "githubLink": "",
+      "videos": [
+        {
+          "src": "https://res.cloudinary.com/dbnmksj82/video/upload/v1791831152/demo_oiyetp.mp4",
+          "title": "Project demo",
+          "caption": "Asking a question in Arabic and checking the cited sources.",
+          "poster": "assets/media/MIS/mandumah/demo-poster.png"
+        }
       ],
       "details": {
         "blocks": [
           {
             "type": "gallery",
-            "caption": "B2B Leads Platform (Imagini)",
+            "caption": "Application screens",
             "images": [
               {
-                "src": "assets/media/MIS/imagini/admin_dashboard.png",
-                "alt": "B2B Leads Platform (Imagini) — Admin dashboard",
-                "caption": "Admin dashboard"
+                "src": "assets/media/MIS/mandumah/initial-view.png",
+                "alt": "Start Screen",
+                "caption": "Start Screen"
               },
               {
-                "src": "assets/media/MIS/imagini/admin_data.png",
-                "alt": "B2B Leads Platform (Imagini) — Lead data management",
-                "caption": "Lead data management"
+                "src": "assets/media/MIS/mandumah/chat-sample.png",
+                "alt": "Chat Sample",
+                "caption": "Chat Sample"
               },
               {
-                "src": "assets/media/MIS/imagini/admin_data_2.png",
-                "alt": "B2B Leads Platform (Imagini) — Lead data management — additional view",
-                "caption": "Lead data management — additional view"
+                "src": "assets/media/MIS/mandumah/sources.png",
+                "alt": "Expanded sources panel with page numbers and passages",
+                "caption": "Paginated sources with page numbers"
               },
               {
-                "src": "assets/media/MIS/imagini/admin_data_3.png",
-                "alt": "B2B Leads Platform (Imagini) — Lead data management — detail view",
-                "caption": "Lead data management — detail view"
-              },
-              {
-                "src": "assets/media/MIS/imagini/admin_user.png",
-                "alt": "B2B Leads Platform (Imagini) — User management",
-                "caption": "User management"
-              },
-              {
-                "src": "assets/media/MIS/imagini/create_new_user.png",
-                "alt": "B2B Leads Platform (Imagini) — Create a new user",
-                "caption": "Create a new user"
-              },
-              {
-                "src": "assets/media/MIS/imagini/job_and_activity.png",
-                "alt": "B2B Leads Platform (Imagini) — Jobs and activity",
-                "caption": "Jobs and activity"
-              },
-              {
-                "src": "assets/media/MIS/imagini/user_details_1.png",
-                "alt": "B2B Leads Platform (Imagini) — User details",
-                "caption": "User details"
-              },
-              {
-                "src": "assets/media/MIS/imagini/user_details_2.png",
-                "alt": "B2B Leads Platform (Imagini) — User details — additional view",
-                "caption": "User details — additional view"
-              },
-              {
-                "src": "assets/media/MIS/imagini/user_side.png",
-                "alt": "B2B Leads Platform (Imagini) — User dashboard",
-                "caption": "User dashboard"
+                "src": "assets/media/MIS/mandumah/doc-source.png",
+                "alt": "Sidebar showing API status and loaded documents",
+                "caption": "System status and document list"
               }
             ]
           },
@@ -439,24 +513,541 @@
           },
           {
             "type": "paragraph",
-            "text": "This comprehensive B2B data platform manages millions of professional leads. It features a robust credit-based access system and a high-performance streaming ingestion pipeline."
+            "text": "Al-Mandumah is one of the largest academic research databases in the Arab world. Researchers there had to open documents one by one and read through them to find an answer. I built a chat-based research agent that does that search for them. You ask in Arabic or English, and it replies with a cited answer in the same language."
           },
           {
             "type": "heading",
-            "text": "Project highlights"
+            "text": "The problem"
           },
           {
             "type": "list",
             "items": [
-              "Data Management: Architected a scalable platform hosting millions of professional leads with a focus on the KSA market.",
-              "Performance: Engineered streaming data ingestion and optimized indexing to maintain sub-second search responses.",
-              "Security & Monetization: Designed a secure credit-based access system with granular admin controls and audit trails.",
-              "Full-Stack Development: Built a responsive React dashboard integrated with a high-performance FastAPI backend."
+              "Most AI search tools are built for English. Arabic needs multilingual models at every step: embedding, reranking, and generation.",
+              "One big vector index across hundreds of documents loses precision and can't say which document an answer came from.",
+              "Researchers can't use an answer they can't verify, so every response needed a document, a page, and a passage.",
+              "Querying an LLM across the whole corpus on every question would be slow and expensive."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How it works"
+          },
+          {
+            "type": "paragraph",
+            "text": "I used a two-tier agent setup on LlamaIndex. Every document gets its own ReAct agent with two tools: vector search for specific facts and a summary tool for overviews. A top-level agent sits above them. For each question, it picks the most relevant document agents (top 5 by embedding similarity, narrowed to 3 by a multilingual reranker) and only calls those."
+          },
+          {
+            "type": "paragraph",
+            "text": "That cap means a query costs roughly the same whether the library holds 50 documents or 500."
+          },
+          {
+            "type": "image",
+            "src": "assets/media/MIS/mandumah/architecture.png",
+            "alt": "Architecture diagram of the two-tier agent pipeline",
+            "caption": "Orchestration agent routing to per-document agents",
+            "width": "wide"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Key features"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Bilingual chat with automatic RTL/LTR switching per message, including the input box.",
+              "Sources panel on every answer: document name, page number, exact passage, relevance score, and a direct link to the original in the Al-Mandumah database.",
+              "Resumable batch indexing with 12 parallel workers. If the server crashes mid-run, it picks up where it stopped.",
+              "Indices and summaries saved to disk, so restarts load all agents without any LLM or embedding calls.",
+              "REST API for queries, status, document listing, and file upload (.pdf, .docx, .txt) with background re-indexing.",
+              "Docker Compose deployment with Arabic OCR, LibreOffice, and Poppler built in."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "My contribution"
+          },
+          {
+            "type": "paragraph",
+            "text": "I was the only engineer on this. I designed and built everything from the indexing pipeline to the UI."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Designed the two-tier agent architecture and wrote the system prompts that cap tool calls at 3, keep answers in the user's language, and force source attribution.",
+              "Built a custom LlamaIndex retriever that reranks tool candidates with gte-multilingual-reranker-base before the orchestration agent chooses.",
+              "Wrote a page-mapping step that turns character offsets into page numbers, so every chunk carries an accurate page citation.",
+              "Built the parallel indexing pipeline: threaded agent building, process-based document parsing, and a checkpoint file for resuming. Fixed Docker multiprocessing issues by switching to spawn context and standalone worker functions.",
+              "Picked the multilingual model stack: Vertex text-multilingual-embedding-002, the Alibaba reranker, and Gemini 2.0 Flash.",
+              "Built the FastAPI backend with startup model loading, background upload handling, a 600s query timeout, and rotating logs.",
+              "Built the Streamlit frontend: Arabic detection by Unicode range, per-message text direction, paginated sources, a live API status sidebar, and a paginated document list.",
+              "Wrote the Dockerfile and Compose setup with persistent volumes."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Results"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Indexes and answers questions across 547+ Arabic documents, searchable in natural language for the first time.",
+              "Live LLM calls per query are capped at 3 document agents, so cost and latency stay flat as the library grows.",
+              "Restarts load every document agent from disk with no LLM or embedding calls.",
+              "Arabic queries return Arabic results and English queries return English, with no translation step.",
+              "Every answer links back to the exact page in the original document."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Python 3.11, FastAPI, Streamlit, LlamaIndex, Gemini 2.0 Flash and text-multilingual-embedding-002 on Vertex AI, gte-multilingual-reranker-base, unstructured, Tesseract (Arabic), Docker Compose."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Email Verifier & Guesser",
+      "categories": [
+        "fullstack",
+        "cloud"
+      ],
+      "description": "Turns a list of names and company websites into verified, deliverable email addresses. Fans the work out across up to 1,000 GCP VMs and shuts itself down when done. Tested on 37,000+ leads.",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "asyncio",
+        "aiohttp",
+        "Docker",
+        "Redis",
+        "Google Cloud Storage",
+        "Compute Engine",
+        "Cloud Functions",
+        "Gunicorn",
+        "Uvicorn"
+      ],
+      "videos": [
+        {
+          "src": "https://res.cloudinary.com/dbnmksj82/video/upload/v1791837551/demo_xkdqmb.mp4",
+          "title": "Project demo",
+          "caption": "Verifying & Guessing Leads",
+          "poster": "assets/media/MIS/email-verifier/demo-poster.jpg"
+        }
+      ],
+      "coverImage": "assets/media/MIS/email-verifier/cover.png",
+      "details": {
+        "blocks": [
+          {
+            "type": "gallery",
+            "caption": "Features",
+            "images": [
+              {
+                "src": "assets/media/MIS/email-verifier/architecture.png",
+                "alt": "Architecture",
+                "caption": "Architecture"
+              },
+              {
+                "src": "assets/media/MIS/email-verifier/dashboard.png",
+                "alt": "Dashboard",
+                "caption": "Dashboard"
+              },
+              {
+                "src": "assets/media/MIS/email-verifier/verifier.png",
+                "alt": "Verifier Page",
+                "caption": "Verifier Page"
+              },
+              {
+                "src": "assets/media/MIS/email-verifier/guesser.png",
+                "alt": "Guesser Page",
+                "caption": "Guesser Page"
+              },
+              {
+                "src": "assets/media/MIS/email-verifier/stats.png",
+                "alt": "Processed Stats",
+                "caption": "Processed Stats"
+              },
+              {
+                "src": "assets/media/MIS/email-verifier/instances.png",
+                "alt": "GCP Instances Management",
+                "caption": "GCP Instances Management"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sales teams often have a contact's name and company website, but no email. Buying verified lists from tools like Apollo or Hunter is expensive, and unverified emails bounce, which hurts sender reputation. I built a pipeline that finds the right address and checks it's deliverable without sending a single message."
+          },
+          {
+            "type": "paragraph",
+            "text": "You upload a CSV and poll one endpoint. The system splits the file, spreads it across a fleet of VMs, merges the results, and scales back to zero. I've run it on 37,000+ leads in one job."
+          },
+          {
+            "type": "heading",
+            "text": "How it works"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two engines do the work. The Email Guesser finds or builds each address. The Email Verifier checks it against the mail server and sorts it into one of nine categories."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Email Guesser"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Scrapes search results asynchronously for addresses on the target domain and fuzzy-matches them to the contact's name.",
+              "Falls back to common patterns (first.last, flast, firstlast and more), ranked by score.",
+              "Remembers which pattern each company uses, so repeat lookups for the same domain skip the guesswork.",
+              "Checks every candidate with an SMTP handshake and tests for catch-all domains so it doesn't mark a whole company as valid by mistake."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Email Verifier"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Runs a full SMTP check (EHLO, MAIL FROM, RCPT TO) and classifies results as valid, invalid, catch-all, role account, disposable, inbox full, disabled, spam trap, or unknown.",
+              "Randomizes worker counts, batch sizes, and delays, and warms up slowly to stay under rate-limit radars.",
+              "Filters disposable domains using live blocklists and flags role accounts like support@ and sales@ separately.",
+              "Caches results at three levels and retries temporary failures with exponential backoff."
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/media/MIS/email-verifier/architecture.png",
+            "alt": "Architecture diagram of the Email Verifier & Guesser platform",
+            "caption": "One upload, chunked in Cloud Storage, processed by up to 1,000 stateless VMs, merged into one file.",
+            "width": "wide"
+          },
+          {
+            "type": "heading",
+            "text": "Orchestration"
+          },
+          {
+            "type": "paragraph",
+            "text": "A FastAPI backend (Dockerized, served with Gunicorn and Uvicorn) runs the whole job lifecycle. A Cloud Function splits the CSV into 25-row chunks and tags each one in GCS. The API then scales a Managed Instance Group to up to 1,000 VMs, tracks progress, merges the output, scales the group back to zero, and hands back a 15-minute signed download link. Redis stores job state with a 30-day TTL. The verifier and guesser run as separate pipelines with their own buckets and VM groups."
+          },
+          {
+            "type": "heading",
+            "text": "Hard problems I solved"
+          },
+          {
+            "type": "list",
+            "items": [
+              "No double-claimed work. VMs claim chunks using GCS generation-match conditions (optimistic locking), so two machines never grab the same chunk and I didn't need a separate lock service.",
+              "Protecting IP reputation. Every SMTP response is scanned for Spamhaus blocklist signals, and a periodic probe tests the IP against a strict mail server. If a block is confirmed, the VM returns its chunk to the queue and deletes itself.",
+              "Surviving crashes. Both engines checkpoint state to disk, so a restart or preemption picks up where it stopped.",
+              "Learning from results. The pattern generator tracks confirmed addresses per domain and gets faster and more accurate on repeat companies."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "My contribution"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Built the whole system solo: architecture, both engines, the API, and the serverless splitter.",
+              "Designed the GCS-based work queue and stateless worker model.",
+              "Wrote the IP safety and self-destruct system.",
+              "Built the pattern-learning and checkpoint/resume systems.",
+              "Shipped the FastAPI backend with Redis job tracking and signed-URL delivery."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Results"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Processed 37,000+ leads in a single distributed run.",
+              "Scales to 1,000 concurrent VMs per job, then drops to zero, so there's no idle cost.",
+              "Replaces paid lead-verification tools for this use case.",
+              "Runs hands-off: upload a CSV, poll the status endpoint, download the result.",
+              "Nine result categories give outreach teams more to work with than a plain valid/invalid."
             ]
           }
         ]
-      },
-      "coverImage": "assets/media/MIS/imagini/admin_dashboard.png"
+      }
+    },
+    {
+      "name": "Alí Doner",
+      "categories": [
+        "fullstack",
+        "app"
+      ],
+      "description": "Direct ordering platform for a kebab restaurant in Spain: a Next.js website, an Expo mobile app and an admin CMS, running on the same backend as the restaurant's ThunderJaw POS.",
+      "techStack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "Tailwind CSS",
+        "BlockNote",
+        "Google Maps API",
+        "i18next",
+        "WebSocket",
+        "Codemagic",
+        "GitHub Actions"
+      ],
+      "liveLink": "https://alikebabrivas.es/",
+      "coverImage": "assets/media/Freelance/ali-doner/cover.png",
+      "details": {
+        "blocks": [
+          {
+            "type": "gallery",
+            "caption": "Ali Doner Kebab",
+            "images": [
+              {
+                "src": "assets/media/Freelance/ali-doner/home.png",
+                "alt": "Home",
+                "caption": "Home Page"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/home-2.png",
+                "alt": "Home",
+                "caption": "Home Page"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/menu.png",
+                "alt": "Menu",
+                "caption": "Menu Page"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/adding-product.png",
+                "alt": "Adding Product",
+                "caption": "Adding Product Modal"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/adding-product-2.png",
+                "alt": "Adding Product",
+                "caption": "Adding Product Modal"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/address-filling.png",
+                "alt": "Filling Address",
+                "caption": "Filling Address Modal"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/my-orders.png",
+                "alt": "My Orders Page",
+                "caption": "My Orders Page"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/support.png",
+                "alt": "Support Page",
+                "caption": "Support Page"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/admin-cms.png",
+                "alt": "Admin CMS",
+                "caption": "Admin CMS"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-1.png",
+                "alt": "Menu & Order Placing Screen",
+                "caption": "Menu & Order Placing Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-2.png",
+                "alt": "Favourites, Profile & Initial Order Type Screen",
+                "caption": "Favourites, Profile & Initial Order Type Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-3.png",
+                "alt": "Adding Product Screen",
+                "caption": "Adding Product Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-my-orders.png",
+                "alt": "My Orders Screen",
+                "caption": "My Orders Screen"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Alí Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
+          },
+          {
+            "type": "paragraph",
+            "text": "Customers can browse the menu, order for delivery or pickup, customize items, save favorites, check past orders and message support in Spanish or English. The owner manages all of it from the admin panel without touching code. Everything runs on the same backend as the restaurant's ThunderJaw POS, so web and app orders land in the kitchen queue on their own."
+          },
+          {
+            "type": "image",
+            "src": "assets/media/Freelance/ali-doner/home.png",
+            "alt": "Alí Doner website home page",
+            "caption": "Customer website",
+            "width": "wide"
+          },
+          {
+            "type": "heading",
+            "text": "The problem"
+          },
+          {
+            "type": "paragraph",
+            "text": "The restaurant wanted its own ordering channel instead of depending on delivery marketplaces that take a commission. The owner also needed to change hero images, opening hours, FAQs, allergen info, announcements and legal pages without a developer. And the platform had to plug into the backend the restaurant's POS already used, so online orders would land in the kitchen queue on their own."
+          },
+          {
+            "type": "paragraph",
+            "text": "Other requirements: accept delivery orders only inside a defined zone (a polygon, not a simple radius), support Spanish and English throughout, and meet GDPR rules for a Spanish audience."
+          },
+          {
+            "type": "heading",
+            "text": "Customer website"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Menu with categories, subcategories, products, discount badges and allergen indicators. Category and search links work directly from the URL.",
+              "Delivery or pickup chosen upfront. Delivery addresses are checked against the zone polygon with Google Maps, so out-of-range customers find out before they fill the cart.",
+              "Cart with variants, complement groups, set menus, discounts and an IVA breakdown.",
+              "Three-step checkout: address and contact, payment (cash or card on delivery), then a summary with legal consent.",
+              "Accounts with email verification before ordering, silent token refresh, password reset, order history, saved favorites and profile settings.",
+              "Dark and light themes with no flash on load, and an ES/EN language toggle.",
+              "Legal, About, FAQ and allergen pages all render from the CMS, with nothing hardcoded."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Mobile app"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Catalog with a category bar, search and favorite toggles.",
+              "Product screen with variant selection and a complement builder, plus a combo builder for multi-page set menus.",
+              "Cart saved on the device, with haptic feedback and the full IVA breakdown.",
+              "Same three-step checkout as the web. The order payload is ported from the web version, so both channels send identical data.",
+              "Delivery zone check through a server-side geocoding proxy, so the Google Maps key never reaches the client, followed by a polygon test on the device.",
+              "Push notifications for order status, registered only after the customer gives marketing consent.",
+              "One-tap reorder from history, in-app support messages and location-based address autofill.",
+              "Built with EAS and Codemagic."
+            ]
+          },
+          {
+            "type": "gallery",
+            "caption": "Mobile app",
+            "images": [
+              {
+                "src": "assets/media/Freelance/ali-doner/app-home.png",
+                "alt": "Menu Screen",
+                "caption": "Menu Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-product.png",
+                "alt": "Product with variants and complements",
+                "caption": "Add Product Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-checkout.png",
+                "alt": "checkout Screen",
+                "caption": "Checkout Screen"
+              },
+              {
+                "src": "assets/media/Freelance/ali-doner/app-my-orders.png",
+                "alt": "My Orders Screen",
+                "caption": "My Orders Screen"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Admin panel"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Dashboard with customer counts, open support tickets, unread messages, web and app order totals, pending orders and menu counts.",
+              "CMS for the hero slider, footer and social links, Terms, Privacy Policy, FAQs, About, Contact and Allergen pages. Each field has side-by-side Spanish and English editors with a one-click translate button.",
+              "Settings for the logo, restaurant name, opening hours, an announcement bar shown on the website and the app, app store links, and a maintenance mode switch.",
+              "Customer list with filters for active, unverified and deleted accounts, plus search by name or email.",
+              "Support inbox with threaded conversations, replies, open and resolved status, and a live unread badge over WebSocket."
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/media/Freelance/ali-doner/admin-cms.png",
+            "alt": "Admin CMS with bilingual editor",
+            "caption": "Bilingual CMS editor with auto-translate",
+            "width": "wide"
+          },
+          {
+            "type": "heading",
+            "text": "How it works"
+          },
+          {
+            "type": "list",
+            "items": [
+              "All three apps use one versioned REST API, the same VPS backend that powers the restaurant's ThunderJaw POS.",
+              "Orders are tagged by source (web or app, delivery or pickup) and get W- or A- ticket numbers, so the kitchen sees where each one came from.",
+              "Customers use access and refresh tokens. On mobile, simultaneous 401 errors share a single refresh request. Admin uses its own token and secret.",
+              "Content flows from the admin into a site content table, and the web and mobile apps load it on start. The apps wait for the content before rendering, which is also how maintenance mode works."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "My contribution"
+          },
+          {
+            "type": "paragraph",
+            "text": "I built this with a partner and worked on these areas:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Admin panel architecture and every CMS page, including the BlockNote editor, the bilingual field design and the auto-translate flow.",
+              "Admin dashboard stats and the support inbox with live unread badges.",
+              "Website architecture: auth with silent refresh, cart pricing logic, delivery zone validation and the site content gate.",
+              "The mobile cart and pricing engine, ported from the web so both send the same order format.",
+              "Polygon-based delivery zone checks on web and mobile.",
+              "The 3-step mobile checkout.",
+              "Localization across all three apps.",
+              "Push notification registration tied to GDPR consent.",
+              "The theme system: dark and light with no flash on the web, dark-only on mobile."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Results"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Three production apps serving real customers of a live restaurant.",
+              "The restaurant takes orders directly, with no marketplace commission.",
+              "The owner edits every text, image and legal page in Spanish and English without a developer.",
+              "Customers learn right away whether their address is in the delivery zone, so fewer orders get rejected after checkout.",
+              "Web and app orders go straight into the ThunderJaw POS kitchen queue with no re-entry.",
+              "GDPR covered end to end: email verification, consent-gated push tokens, account deletion and token invalidation on password change."
+            ]
+          }
+        ]
+      }
     }
   ]
 }

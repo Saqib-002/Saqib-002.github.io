@@ -545,5 +545,210 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Imagini",
+        "categories": [
+            "fullstack"
+        ],
+        "description": "A B2B lead intelligence platform in the vein of Apollo.io. Search a contact database with 12 stacking filters, then spend credits to unlock verified emails. Includes a full admin panel and audit trail.",
+        "techStack": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "SQLAlchemy",
+            "Docker",
+            "GitHub Actions"
+        ],
+        "coverImage": "assets/media/MIS/imagini/user-side.png",
+        "videos": [
+            {
+                "src": "https://res.cloudinary.com/dbnmksj82/video/upload/v1791835913/user-demo_chayze.mp4",
+                "title": "Project demo",
+                "caption": "Filtering leads, revealing an email with credits, and exporting results.",
+                "poster": "assets/media/MIS/imagini/user-demo-poster.jpg"
+            },
+            {
+                "src": "https://res.cloudinary.com/dbnmksj82/video/upload/v1791834978/demo_ciksqg.mp4",
+                "title": "Admin panel walkthrough",
+                "caption": "Uploading a CSV, managing & adjusting user credits, and checking the audit log.",
+                "poster": "assets/media/MIS/imagini/demo-poster.jpg"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "User features",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/imagini/user-side.png",
+                            "alt": "User Panel",
+                            "caption": "User/Customer Panel"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-dashboard.png",
+                            "alt": "Admin Dashboard",
+                            "caption": "Admin Dashboard"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data-2.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-data-3.png",
+                            "alt": "Admin Data",
+                            "caption": "Admin Data"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/admin-user.png",
+                            "alt": "User Management Page",
+                            "caption": "User Management Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/create-new-user-admin.png",
+                            "alt": "Create User Modal",
+                            "caption": "Create User Modal"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/job-and-activity.png",
+                            "alt": "Audit Log Page",
+                            "caption": "Audit Log Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/user-details-admin.png",
+                            "alt": "User Details Page",
+                            "caption": "User Details Page"
+                        },
+                        {
+                            "src": "assets/media/MIS/imagini/user-update-admin.png",
+                            "alt": "Update User Page",
+                            "caption": "Update User Page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Imagini is a lead intelligence platform for sales teams, recruiters, and growth people. You search a database of professional contacts, narrow it down by company, role, seniority, and revenue, and pay with credits only when you want a verified email. Admins control the data, the users, and the credits, and every action gets logged. I built the whole thing on my own, frontend to database."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Tools like Apollo and ZoomInfo are expensive and don't work well with a custom dataset.",
+                        "Teams with their own lead lists needed to load big CSVs and search them fast.",
+                        "Access had to be pay-per-use: free to browse, credits to reveal an email.",
+                        "Operators needed a record of every search, unlock, and export for billing and compliance.",
+                        "None of this could slow down as the dataset grew."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A React single-page app talks to an async FastAPI backend over JWT. Contacts, users, unlocks, and audit logs live in PostgreSQL. Redis powers the autocomplete. Everything runs in Docker Compose, with GitHub Actions for CI/CD."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/imagini/architecture.png",
+                    "alt": "Architecture diagram of the React frontend, FastAPI backend, PostgreSQL, and Redis",
+                    "caption": "React SPA, FastAPI, PostgreSQL, and Redis",
+                    "width": "wide"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The credit system is the core of the product. Leads show masked emails like j*****@example.com. Revealing one costs 1 credit, but only if the lead actually has an email. Leads without one are free. Every unlock is saved in a junction table, so nobody is ever charged twice for the same lead."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Filter sets are hashed and stored as a query ID. That ID drives pagination, export, and returning to a search without resubmitting any filters. Page cursors are encrypted, so users can't guess offsets."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Key features"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "12 filters that stack: free-text, location, job title, seniority, role, email status, company, industry, HQ, headcount, and revenue.",
+                        "Instant autocomplete across 11 fields, backed by a Redis index. If Redis is down, it falls back to PostgreSQL.",
+                        "Credit-based email reveal, plus streaming CSV export that follows the same credit rules.",
+                        "Drag-and-drop column editor to reorder and hide any of 16 lead fields.",
+                        "Email verification on signup, with a 24-hour link and automatic re-send for unverified logins.",
+                        "Admin dashboard with KPI cards, a 30-day credit usage chart, and monthly exports.",
+                        "User management: add or subtract credits with a reason, toggle permissions, reset passwords.",
+                        "Data management: upload a CSV with a 5-row preview and column validation, then delete by file, by filter, or everything (typed confirmation required).",
+                        "Filterable audit log with structured metadata on every monetized and admin action."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Sole developer. I designed the product logic and built both sides of it."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed the credit economy: cost rules, idempotent unlocks, and an admin bypass.",
+                        "Built the Redis autocomplete using sorted sets and prefix range queries, with word-suffix indexing. Location fields split on commas so \"Riyadh\" ranks above \"Riyadh, Saudi Arabia\". New uploads index incrementally, and startup does a full refresh.",
+                        "Replaced row-by-row ORM inserts with asyncpg COPY through a temp staging table, so large CSV uploads don't hit HTTP timeouts.",
+                        "Built encrypted cursor pagination with Fernet, plus a client-side cursor stack for prev/next.",
+                        "Built search persistence: deterministic hashing of filter state into reusable query IDs.",
+                        "Designed the audit system: the action taxonomy, a JSONB metadata schema per action, and a rule that nullifies actor and target IDs on user deletion so history stays intact.",
+                        "Built all five admin pages, including the upload preview and guarded bulk-delete flows.",
+                        "Implemented email verification and role-based routing, with frontend guards that mirror the backend's get_current_user and get_current_admin dependencies.",
+                        "Wrote the schema, Alembic migrations, Docker Compose setup, and CI/CD pipeline."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Large CSV uploads finish without timeouts, using COPY instead of per-row inserts.",
+                        "Autocomplete lookups stay fast as the dataset grows, since Redis range queries scale logarithmically.",
+                        "Users are never billed twice for the same lead, on both reveal and export.",
+                        "Every monetized and admin action is logged, so billing can be reconciled from the audit log alone.",
+                        "CSV export streams row by row, so memory stays flat no matter how big the result set is.",
+                        "Paginating and exporting reuse a saved query ID instead of resending filters."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Frontend: React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui, React Router, Recharts, dnd-kit. Backend: Python 3.13, FastAPI, SQLAlchemy 2.0 (async), asyncpg, Alembic, Argon2, JWT. Data: PostgreSQL 15, Redis 7. Infra: Docker Compose, GitHub Actions."
+                }
+            ]
+        }
     }
 ]

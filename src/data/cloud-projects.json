@@ -19,6 +19,14 @@
             "Gunicorn",
             "Uvicorn"
         ],
+        "videos": [
+            {
+                "src": "https://res.cloudinary.com/dbnmksj82/video/upload/v1791837551/demo_xkdqmb.mp4",
+                "title": "Project demo",
+                "caption": "Verifying & Guessing Leads",
+                "poster": "assets/media/MIS/email-verifier/demo-poster.jpg"
+            }
+        ],
         "coverImage": "assets/media/MIS/email-verifier/cover.png",
         "details": {
             "blocks": [

@@ -144,7 +144,8 @@
         "name": "CalAI Backend",
         "categories": [
             "fullstack",
-            "app"
+            "app",
+            "ai"
         ],
         "description": "FastAPI backend for a calorie-tracking mobile app. Gemini analyzes meal photos, a diet engine builds plans from body data, and one API handles Apple and Google Play subscriptions.",
         "techStack": [
@@ -159,14 +160,6 @@
             "Pandas"
         ],
         "coverImage": "assets/media/MIS/calai/home.jpeg",
-        "videos": [
-            {
-                "src": "assets/media/MIS/calai/analysis-demo.mp4",
-                "title": "Photo to nutrition breakdown",
-                "caption": "Uploading a meal photo, getting the food items and macros back, then fixing a wrong guess.",
-                "poster": "assets/media/MIS/calai/analysis-demo-preview.png"
-            }
-        ],
         "details": {
             "blocks": [
                 {

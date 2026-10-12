@@ -39,7 +39,7 @@ export default function VideoModal({ project, onClose }) {
           <div className="video-playlist-items">{videos.map((video, index) => <button key={index} type="button"
             className={`video-playlist-item ${selectedIndex === index ? 'is-selected' : ''}`} aria-pressed={selectedIndex === index}
             onClick={() => { if (index !== selectedIndex) { setSelectedIndex(index); setFailed(false); } }}>
-            <span className="video-thumbnail">{video.poster ? <FallbackImage src={video.poster} alt="" loading="lazy" /> : <Film size={24} aria-hidden="true" />}<span className="video-thumbnail-play"><Play size={12} aria-hidden="true" /></span></span>
+            <span className="video-thumbnail"><FallbackImage src={video.poster} fallbackSrc={`${import.meta.env.BASE_URL}assets/no-video.png`} alt="" loading="lazy" /><span className="video-thumbnail-play"><Play size={12} aria-hidden="true" /></span></span>
             <span className="video-item-info"><span className="video-item-number">{selectedIndex === index ? 'SELECTED' : `VIDEO ${String(index + 1).padStart(2, '0')}`}</span><span className="video-item-title">{video.title || `Video ${index + 1}`}</span></span>
           </button>)}</div>
         </aside>
