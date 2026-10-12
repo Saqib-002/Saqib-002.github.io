@@ -1,6 +1,10 @@
 [
-  {
+    {
         "name": "Dynamic Subscription Planner",
+        "categories": [
+            "fullstack",
+            "ai"
+        ],
         "description": "ML-powered tool that segments chauffeur-service customers with K-Means and generates a personalized discount and free-trip plan for each member in seconds, with the full calculation shown.",
         "techStack": [
             "Python",

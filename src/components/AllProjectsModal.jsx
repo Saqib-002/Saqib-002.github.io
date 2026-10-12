@@ -1,10 +1,6 @@
 import { useState, useRef } from 'react';
 import useModal from '../hooks/useModal';
-import aiProjects from '../data/ai-projects.json';
-import fullstackProjects from '../data/fullstack-projects.json';
-import desktopProjects from '../data/desktop-projects.json';
-import appProjects from '../data/app-projects.json';
-import landingProjects from '../data/landing-pages.json';
+import allProjects from '../data/projects';
 import ProjectCard from './ProjectCard';
 import '../assets/styles/AllProjectsModal.css';
 import { Bot, Layers, Menu, Monitor, Palette, Smartphone, X } from 'lucide-react';
@@ -47,29 +43,17 @@ const CATEGORIES = [
   },
   {
     id: 'landing',
-    label: 'Langin Pages',
+    label: 'Landing Pages',
     icon: (
       <Palette />
     ),
   },
 ];
 
-const seenProjectNames = new Set();
-const allProjects = [...aiProjects, ...fullstackProjects, ...desktopProjects, ...appProjects, ...landingProjects].filter((project) => {
-  const name = project.name.trim().toLowerCase();
-  if (seenProjectNames.has(name)) return false;
-  seenProjectNames.add(name);
-  return true;
-});
-
-const PROJECT_DATA = {
-  all: allProjects,
-  ai: aiProjects,
-  fullstack: fullstackProjects,
-  desktop: desktopProjects,
-  app: appProjects,
-  landing: landingProjects
-};
+const PROJECT_DATA = Object.fromEntries(CATEGORIES.map(({ id }) => [
+  id,
+  id === 'all' ? allProjects : allProjects.filter(project => project.categories.includes(id)),
+]));
 
 export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {
   const [activeCategory, setActiveCategory] = useState('all');

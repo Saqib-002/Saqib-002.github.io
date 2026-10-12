@@ -7,11 +7,18 @@ This guide documents the properties currently supported by the portfolio. Edit t
 | File | Purpose | Root structure |
 | --- | --- | --- |
 | `src/data/data.json` | Main page: identity, summary, education, skills, experience, certifications, and featured projects | Object |
-| `src/data/ai-projects.json` | AI & ML tab in All Projects | Array of project objects |
-| `src/data/fullstack-projects.json` | Full Stack tab in All Projects | Array of project objects |
-| `src/data/desktop-projects.json` | Desktop tab in All Projects | Array of project objects |
+| `src/data/ai-projects.json` | Project source collection | Array of project objects |
+| `src/data/fullstack-projects.json` | Project source collection | Array of project objects |
+| `src/data/desktop-projects.json` | Project source collection | Array of project objects |
+| `src/data/app-projects.json` | Project source collection | Array of project objects |
+| `src/data/landing-pages.json` | Project source collection | Array of project objects |
+| `src/data/projects.js` | Merges and exports the All Projects catalog | JavaScript module |
 
-The All tab combines the three category arrays in that order. It does not read the main file's `projects` array. A project appearing on the homepage and in a category has separate copies: update both if you want matching content. Array order controls display order.
+`src/data/projects.js` concatenates the five source arrays in the order listed above. Every entry is preserved, including projects with the same name. Source array order controls display order.
+
+Category tabs and counts use only each project's top-level `categories` array, regardless of its source filename. Supported values are `ai`, `fullstack`, `desktop`, `app`, and `landing`. For example, `"categories": ["fullstack", "app"]` places a project in both tabs. An empty array shows the project only in All. Every source entry must provide this array; there is no filename-based fallback. Each entry uses its own categories independently, including entries with the same name.
+
+The catalog does not read the main file's featured `projects` array. Homepage projects remain separate copies: update both if you want matching content.
 
 `public/assets/data.json` is not the main application's data source; `src/App.jsx` imports `src/data/data.json`.
 
@@ -157,6 +164,7 @@ The same schema applies to featured projects in the main file and entries in all
 | Property | Type | Required? | Purpose |
 | --- | --- | --- | --- |
 | `name` | String | Yes | Project title on the card and in dialogs. |
+| `categories` | Array of strings | Yes for catalog entries | Tab membership: `ai`, `fullstack`, `desktop`, `app`, `landing`. Use `[]` for All only. Featured homepage selection does not use this field. |
 | `description` | String | Recommended | Short card summary; it is not automatically repeated in details. |
 | `techStack` | Array of strings | No | Technology tags. Defaults to `[]`; cards show the first four with a remaining count, details show all. |
 | `coverImage` | String | No | Card thumbnail. Without it, a placeholder with the project name appears. |
@@ -264,6 +272,7 @@ This example includes every supported project field and every block type. Media 
 ```json
 {
   "name": "Example Project",
+  "categories": ["fullstack", "app"],
   "description": "A short summary for the project card.",
   "techStack": ["React", "FastAPI", "PostgreSQL", "Docker", "Redis"],
   "coverImage": "assets/media/project/cover.png",

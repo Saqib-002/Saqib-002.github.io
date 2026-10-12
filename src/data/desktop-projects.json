@@ -1,6 +1,10 @@
 [
     {
         "name": "ThunderJaw Restaurant POS",
+        "categories": [
+            "fullstack",
+            "desktop"
+        ],
         "description": "Order-to-delivery system for a real restaurant: Electron POS with kitchen display and finance tools, a driver mobile app with live tracking and chat, and a custom API that also powers the restaurant's Alí Doner website and app.",
         "techStack": [
             "Electron",
