@@ -1,3 +1,160 @@
 [
-  
+  {
+        "name": "Dynamic Subscription Planner",
+        "description": "ML-powered tool that segments chauffeur-service customers with K-Means and generates a personalized discount and free-trip plan for each member in seconds, with the full calculation shown.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "scikit-learn",
+            "pandas",
+            "NumPy",
+            "Pydantic",
+            "Streamlit",
+            "Plotly"
+        ],
+        "coverImage": "assets/media/MIS/subscription-planner/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/MIS/subscription-planner/plan-demo.mp4",
+                "title": "Plan generation",
+                "caption": "Looking up a member, seeing their cluster and the step-by-step formula behind their plan.",
+                "poster": "assets/media/MIS/subscription-planner/plan-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Dashboard",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/subscription-planner/cluster-insight.png",
+                            "alt": "Cluster insights with bar charts",
+                            "caption": "Cluster insights"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/customer-segmentation.png",
+                            "alt": "Radar chart comparing the three clusters",
+                            "caption": "Cross-cluster comparison"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/data-entry.png",
+                            "alt": "New transaction submission form",
+                            "caption": "Adding new transactions"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/before-adding-entery-result.png",
+                            "alt": "Before Adding New Entery Results",
+                            "caption": "Before Adding New Entery Results"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/after-adding-entery-result.png",
+                            "alt": "After Adding New Entery Results",
+                            "caption": "After Adding New Entery Results"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The client is a premium chauffeur and airport-transfer service in Saudi Arabia and the GCC. I built a web app for them that studies how each customer travels, sorts customers into three groups with machine learning, and then calculates a personal subscription plan: a discount percentage and a number of free trips."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I designed and built the whole thing myself: the data pipeline, the model, the REST API and the dashboard."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/subscription-planner/after-adding-entery-result.png",
+                    "alt": "Generated subscription plan for a member",
+                    "caption": "A generated plan with cluster, discount, free trips and the formula breakdown",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Every member got the same subscription offer. Frequent, high-spending travelers received the same rewards as people who rode twice a year, so loyalty went unrewarded and the best customers were a churn risk. There was also no way to spot who was about to upgrade or drift away."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Account managers decided discounts by reading individual histories whenever they had time, with no consistent method. The business wanted something repeatable and explainable that could produce a plan for any member in seconds."
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "items": [
+                        "Each customer's trip history is reduced to three numbers: Recency (days since the last trip), Frequency (total trips) and Monetary value (total spend), plus their preferred service type and route.",
+                        "K-Means with k=3 groups members into Platinum (frequent, high value), Gold (premium but infrequent) and Silver (occasional).",
+                        "A custom scoring formula turns each member's numbers into a benefit score: B = (wM × Mnorm) + (wF × Fnorm) − (wR × Rnorm). Each cluster has its own weights, and the result is bounded to set a discount and a free-trip count.",
+                        "The dashboard shows the plan next to the exact formula with the member's real values filled in."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Plan lookup by membership ID, showing the cluster, a donut chart of the discount and a visual of the free trips.",
+                        "Live data intake. Submitting new transactions in the UI reruns the whole pipeline: clean, build RFM, retrain, refresh.",
+                        "Cluster insights dashboard with a tab for each cluster, bar charts of its typical behavior, a radar chart comparing all three clusters and a suggested engagement strategy for each tier.",
+                        "Explainable results. Every recommendation shows which weights were used and how the final numbers came out, so account managers can defend them to customers.",
+                        "Three tiers: Platinum gets up to 25% off and 5 free trips, Gold gets 20% and 3 trips, Silver gets 15% and 2 trips."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A Streamlit front end calls a FastAPI back end over HTTP, and the back end reads and writes a CSV data layer. The API has three endpoints: POST /data to add transactions, POST /recommend to generate a plan and GET /get-rfm to read the RFM table. Pydantic validates requests, scikit-learn runs K-Means and scaling, pandas and NumPy handle the data, joblib saves the model and Plotly draws the charts."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed and built everything from the data pipeline to the model, the API and the UI.",
+                        "Designed the weighted scoring formula, with separate weight sets per cluster for the discount and for the free-trip count.",
+                        "Built the cleaning step for messy real-world data: typos, mixed date formats and text in numeric columns.",
+                        "Structured the FastAPI back end in layers (models, services, routes, main) following SOLID principles.",
+                        "Designed the results screen so the formula and values are visible next to every plan.",
+                        "Built the retraining loop that runs on every new data submission.",
+                        "Built the analytics dashboard with its radar and bar charts.",
+                        "Styled the Streamlit app with custom CSS to match the client's brand."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Plans that used to need manual review by an account manager now appear in seconds.",
+                        "Three defined tiers with clear benefits, so rewards now follow customer behavior.",
+                        "Every recommendation can be traced back to a member's raw RFM numbers.",
+                        "The model updates itself as new transactions come in, with no data scientist needed.",
+                        "The segmentation can grow to more tiers, and reward rules can change without rebuilding the system."
+                    ]
+                }
+            ]
+        }
+    }
 ]

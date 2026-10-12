@@ -30,48 +30,48 @@
                     "images": [
                         {
                             "src": "assets/media/Freelance/brothers-mart/storefront.png",
-                            "alt": "Web home screen",
-                            "caption": "Web Home"
+                            "alt": "home screen",
+                            "caption": "Home"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/catalog.png",
-                            "alt": "Web Catalog",
-                            "caption": "Web Explore and filters"
+                            "alt": "Catalog",
+                            "caption": "Explore and filters"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/product-page.png",
-                            "alt": "Web Product Page",
-                            "caption": "Web Product Page"
+                            "alt": "Product Page",
+                            "caption": "Product Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/cart-page.png",
-                            "alt": "Web Cart Page",
-                            "caption": "Web Cart Page"
+                            "alt": "Cart Page",
+                            "caption": "Cart Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/checkout.png",
-                            "alt": "Web Checkout",
-                            "caption": "Web Checkout Page"
+                            "alt": "Checkout",
+                            "caption": "Checkout Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/brands-page.png",
-                            "alt": "Web Brands Page",
-                            "caption": "Web Brands Page"
+                            "alt": "Brands Page",
+                            "caption": "Brands Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-1.png",
                             "alt": "App Screens",
-                            "caption": "App Home, Explore & Favourite Screen"
+                            "caption": "Home, Explore & Favourite Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-2.png",
                             "alt": "App Screens",
-                            "caption": "App Product, Cart & Order Status Screen"
+                            "caption": "Product, Cart & Order Status Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-3.png",
                             "alt": "App Screens",
-                            "caption": "App Brands, Profile & FAQs Screen"
+                            "caption": "Brands, Profile & FAQs Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
@@ -316,18 +316,18 @@
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/web-home.png",
-                            "alt": "Web Home Page",
-                            "caption": "Web Home Page"
+                            "alt": "Home Page",
+                            "caption": "Home Page"
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/web-search-results.png",
-                            "alt": "Web Search Results Page",
-                            "caption": "Web Search Results Page"
+                            "alt": "Search Results Page",
+                            "caption": "Search Results Page"
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/car-details.png",
-                            "alt": "Web Car Details Page",
-                            "caption": "Web Car Details Page"
+                            "alt": "Car Details Page",
+                            "caption": "Car Details Page"
                         }
                     ]
                 },

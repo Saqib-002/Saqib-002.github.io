@@ -19,7 +19,7 @@ const CATEGORIES = [
   },
   {
     id: 'ai',
-    label: 'AI & ML',
+    label: 'AI & ML / Data Science',
     icon: (
       <Bot />
     ),
@@ -55,7 +55,7 @@ const CATEGORIES = [
 ];
 
 const seenProjectNames = new Set();
-const allProjects = [...aiProjects, ...fullstackProjects, ...desktopProjects].filter((project) => {
+const allProjects = [...aiProjects, ...fullstackProjects, ...desktopProjects, ...appProjects, ...landingProjects].filter((project) => {
   const name = project.name.trim().toLowerCase();
   if (seenProjectNames.has(name)) return false;
   seenProjectNames.add(name);
@@ -86,7 +86,7 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDet
         {/* Header */}
         <div className="all-projects-modal-header">
           <h2 className="all-projects-modal-title" id="all-projects-title">All projects</h2>
-          <button className="modal-close" onClick={onClose} aria-label="Close all projects"><X size={18} strokeWidth={4} aria-hidden="true"/></button>
+          <button className="modal-close" onClick={onClose} aria-label="Close all projects"><X size={18} strokeWidth={4} aria-hidden="true" /></button>
         </div>
 
         {/* Category Tabs */}

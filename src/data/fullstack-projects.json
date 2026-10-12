@@ -30,48 +30,48 @@
                     "images": [
                         {
                             "src": "assets/media/Freelance/brothers-mart/storefront.png",
-                            "alt": "Web home screen",
-                            "caption": "Web Home"
+                            "alt": "home screen",
+                            "caption": "Home"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/catalog.png",
-                            "alt": "Web Catalog",
-                            "caption": "Web Explore and filters"
+                            "alt": "Catalog",
+                            "caption": "Explore and filters"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/product-page.png",
-                            "alt": "Web Product Page",
-                            "caption": "Web Product Page"
+                            "alt": "Product Page",
+                            "caption": "Product Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/cart-page.png",
-                            "alt": "Web Cart Page",
-                            "caption": "Web Cart Page"
+                            "alt": "Cart Page",
+                            "caption": "Cart Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/checkout.png",
-                            "alt": "Web Checkout",
-                            "caption": "Web Checkout Page"
+                            "alt": "Checkout",
+                            "caption": "Checkout Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/brands-page.png",
-                            "alt": "Web Brands Page",
-                            "caption": "Web Brands Page"
+                            "alt": "Brands Page",
+                            "caption": "Brands Page"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-1.png",
                             "alt": "App Screens",
-                            "caption": "App Home, Explore & Favourite Screen"
+                            "caption": "Home, Explore & Favourite Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-2.png",
                             "alt": "App Screens",
-                            "caption": "App Product, Cart & Order Status Screen"
+                            "caption": "Product, Cart & Order Status Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/app-3.png",
                             "alt": "App Screens",
-                            "caption": "App Brands, Profile & FAQs Screen"
+                            "caption": "Brands, Profile & FAQs Screen"
                         },
                         {
                             "src": "assets/media/Freelance/brothers-mart/admin-dashboard.png",
@@ -316,18 +316,18 @@
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/web-home.png",
-                            "alt": "Web Home Page",
-                            "caption": "Web Home Page"
+                            "alt": "Home Page",
+                            "caption": "Home Page"
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/web-search-results.png",
-                            "alt": "Web Search Results Page",
-                            "caption": "Web Search Results Page"
+                            "alt": "Search Results Page",
+                            "caption": "Search Results Page"
                         },
                         {
                             "src": "assets/media/Freelance/carfig-buyer/car-details.png",
-                            "alt": "Web Car Details Page",
-                            "caption": "Web Car Details Page"
+                            "alt": "Car Details Page",
+                            "caption": "Car Details Page"
                         }
                     ]
                 },
@@ -890,6 +890,339 @@
                         "Customers learn right away whether their address is in the delivery zone, so fewer orders get rejected after checkout.",
                         "Web and app orders go straight into the ThunderJaw POS kitchen queue with no re-entry.",
                         "GDPR covered end to end: email verification, consent-gated push tokens, account deletion and token invalidation on password change."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Dynamic Subscription Planner",
+        "description": "ML-powered tool that segments chauffeur-service customers with K-Means and generates a personalized discount and free-trip plan for each member in seconds, with the full calculation shown.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "scikit-learn",
+            "pandas",
+            "NumPy",
+            "Pydantic",
+            "Streamlit",
+            "Plotly"
+        ],
+        "coverImage": "assets/media/MIS/subscription-planner/cover.png",
+        "videos": [
+            {
+                "src": "assets/media/MIS/subscription-planner/plan-demo.mp4",
+                "title": "Plan generation",
+                "caption": "Looking up a member, seeing their cluster and the step-by-step formula behind their plan.",
+                "poster": "assets/media/MIS/subscription-planner/plan-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Dashboard",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/subscription-planner/cluster-insight.png",
+                            "alt": "Cluster insights with bar charts",
+                            "caption": "Cluster insights"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/customer-segmentation.png",
+                            "alt": "Radar chart comparing the three clusters",
+                            "caption": "Cross-cluster comparison"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/data-entry.png",
+                            "alt": "New transaction submission form",
+                            "caption": "Adding new transactions"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/before-adding-entery-result.png",
+                            "alt": "Before Adding New Entery Results",
+                            "caption": "Before Adding New Entery Results"
+                        },
+                        {
+                            "src": "assets/media/MIS/subscription-planner/after-adding-entery-result.png",
+                            "alt": "After Adding New Entery Results",
+                            "caption": "After Adding New Entery Results"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The client is a premium chauffeur and airport-transfer service in Saudi Arabia and the GCC. I built a web app for them that studies how each customer travels, sorts customers into three groups with machine learning, and then calculates a personal subscription plan: a discount percentage and a number of free trips."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I designed and built the whole thing myself: the data pipeline, the model, the REST API and the dashboard."
+                },
+                {
+                    "type": "image",
+                    "src": "assets/media/MIS/subscription-planner/after-adding-entery-result.png",
+                    "alt": "Generated subscription plan for a member",
+                    "caption": "A generated plan with cluster, discount, free trips and the formula breakdown",
+                    "width": "wide"
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Every member got the same subscription offer. Frequent, high-spending travelers received the same rewards as people who rode twice a year, so loyalty went unrewarded and the best customers were a churn risk. There was also no way to spot who was about to upgrade or drift away."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Account managers decided discounts by reading individual histories whenever they had time, with no consistent method. The business wanted something repeatable and explainable that could produce a plan for any member in seconds."
+                },
+                {
+                    "type": "heading",
+                    "text": "How it works"
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "items": [
+                        "Each customer's trip history is reduced to three numbers: Recency (days since the last trip), Frequency (total trips) and Monetary value (total spend), plus their preferred service type and route.",
+                        "K-Means with k=3 groups members into Platinum (frequent, high value), Gold (premium but infrequent) and Silver (occasional).",
+                        "A custom scoring formula turns each member's numbers into a benefit score: B = (wM × Mnorm) + (wF × Fnorm) − (wR × Rnorm). Each cluster has its own weights, and the result is bounded to set a discount and a free-trip count.",
+                        "The dashboard shows the plan next to the exact formula with the member's real values filled in."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Plan lookup by membership ID, showing the cluster, a donut chart of the discount and a visual of the free trips.",
+                        "Live data intake. Submitting new transactions in the UI reruns the whole pipeline: clean, build RFM, retrain, refresh.",
+                        "Cluster insights dashboard with a tab for each cluster, bar charts of its typical behavior, a radar chart comparing all three clusters and a suggested engagement strategy for each tier.",
+                        "Explainable results. Every recommendation shows which weights were used and how the final numbers came out, so account managers can defend them to customers.",
+                        "Three tiers: Platinum gets up to 25% off and 5 free trips, Gold gets 20% and 3 trips, Silver gets 15% and 2 trips."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A Streamlit front end calls a FastAPI back end over HTTP, and the back end reads and writes a CSV data layer. The API has three endpoints: POST /data to add transactions, POST /recommend to generate a plan and GET /get-rfm to read the RFM table. Pydantic validates requests, scikit-learn runs K-Means and scaling, pandas and NumPy handle the data, joblib saves the model and Plotly draws the charts."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Designed and built everything from the data pipeline to the model, the API and the UI.",
+                        "Designed the weighted scoring formula, with separate weight sets per cluster for the discount and for the free-trip count.",
+                        "Built the cleaning step for messy real-world data: typos, mixed date formats and text in numeric columns.",
+                        "Structured the FastAPI back end in layers (models, services, routes, main) following SOLID principles.",
+                        "Designed the results screen so the formula and values are visible next to every plan.",
+                        "Built the retraining loop that runs on every new data submission.",
+                        "Built the analytics dashboard with its radar and bar charts.",
+                        "Styled the Streamlit app with custom CSS to match the client's brand."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Plans that used to need manual review by an account manager now appear in seconds.",
+                        "Three defined tiers with clear benefits, so rewards now follow customer behavior.",
+                        "Every recommendation can be traced back to a member's raw RFM numbers.",
+                        "The model updates itself as new transactions come in, with no data scientist needed.",
+                        "The segmentation can grow to more tiers, and reward rules can change without rebuilding the system."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "CalAI Backend",
+        "description": "FastAPI backend for a calorie-tracking mobile app. Gemini analyzes meal photos, a diet engine builds plans from body data, and one API handles Apple and Google Play subscriptions.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "SQLAlchemy",
+            "Google Vertex AI",
+            "Gemini",
+            "Supabase",
+            "JWT",
+            "Pandas"
+        ],
+        "coverImage": "assets/media/MIS/calai/home.jpeg",
+        "videos": [
+            {
+                "src": "assets/media/MIS/calai/analysis-demo.mp4",
+                "title": "Photo to nutrition breakdown",
+                "caption": "Uploading a meal photo, getting the food items and macros back, then fixing a wrong guess.",
+                "poster": "assets/media/MIS/calai/analysis-demo-preview.png"
+            }
+        ],
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "API in action",
+                    "images": [
+                        {
+                            "src": "assets/media/MIS/calai/home.jpeg",
+                            "alt": "Home Screen",
+                            "caption": "Home Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/goal-settings.jpeg",
+                            "alt": "Adjust/Generate Goal",
+                            "caption": "Adjust/Generate Goal"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/daily-weight.jpeg",
+                            "alt": "Daily Weight",
+                            "caption": "Daily Weight"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/goal-weight.jpeg",
+                            "alt": "Goal Weight",
+                            "caption": "Goal Weight"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/progress.jpeg",
+                            "alt": "Progress Screen",
+                            "caption": "Progress Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/progress-2.jpeg",
+                            "alt": "Progress Screen",
+                            "caption": "Progress Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/personal-details.jpeg",
+                            "alt": "Personal Details Screen",
+                            "caption": "Personal Details Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/settings.jpeg",
+                            "alt": "Settings Screen",
+                            "caption": "Settings Screen"
+                        },
+                        {
+                            "src": "assets/media/MIS/calai/settings-week.jpeg",
+                            "alt": "Week Settings",
+                            "caption": "Week Settings"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "CalAI is the backend for a Flutter app that tracks calories and nutrition. A user takes a photo of a meal and gets back every food item, its estimated weight, and the full macro breakdown. The app then tracks the day's intake against a plan built from the user's own body data."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the only backend engineer. I designed and built the whole API, the database, the AI pipeline and the subscription system for both iOS and Android."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Logging food by hand is slow, and most people quit within weeks. A photo takes a second.",
+                        "A flat 2,000 calorie target ignores gender, age, weight, height and activity. Plans need to come from the person's actual body data.",
+                        "A cross-platform app needs subscription checks for Apple StoreKit 2 and the Google Play API, which work in completely different ways."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "AI food analysis. Photos go to Gemini 2.0 Flash through Vertex AI. The model lists each food, estimates its weight in grams, returns macros per 100 g, scores the meal's health from 1 to 10 and writes a short overview. The backend scales the numbers by grams and totals the meal.",
+                        "Fix flow. If the AI got something wrong, the user can type a correction like \"that's brown rice, not white rice.\" The backend reloads the original photo, reruns Gemini with the earlier result and the correction, and updates the meal.",
+                        "Personal diet plans. From gender, birth date, height, weight, goal (lose, gain or maintain), workout frequency and target weight, it works out BMR with the Mifflin-St Jeor equation, applies an activity factor, adds a deficit or surplus for the goal, and splits calories 25/50/25 across protein, carbs and fat. It accepts metric and imperial units. Changing any body detail recalculates the plan.",
+                        "Daily macro tracking. Each day's remaining macros start from the plan on the first log. Logging a meal subtracts from them and deleting a meal adds them back. A streak counter resets if the user skips more than a day.",
+                        "Ingredient search and manual entry. A 50,000+ row nutrition CSV loads into memory at startup. Users can search with pagination, add an ingredient to a meal by grams, change quantities or remove items, and the totals update straight away.",
+                        "Accounts. Email and password sign-up, Google and Apple sign-in, JWT access and refresh tokens, password reset by emailed 6-digit code that expires in 15 minutes, and soft-delete for accounts.",
+                        "Subscriptions for iOS and Android, described below."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Subscriptions on both stores"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Apple: the backend signs an ES256 JWT, calls the App Store Server API, decodes the signed transaction, checks the expiry and saves the subscription.",
+                        "Google Play: it validates the purchase token through the Play Developer API, acknowledges the purchase and stores the expiry.",
+                        "Google lifecycle events (renewals, cancellations, grace periods) arrive through a Pub/Sub webhook. They run as background tasks, so the endpoint answers Google right away."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack and structure"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "FastAPI on Python 3.11 with PostgreSQL through SQLAlchemy. Code is layered: routes call services, which use utilities and schemas, and FastAPI dependency injection handles database sessions and auth. Business logic sits in service classes (user, food analysis, Google Play, ingredients), which keeps the routes thin. The API is versioned under /api/v0 and /api/v1, with /api/latest pointing to v0. Meal images are stored in Supabase Storage, and their URLs are encrypted with Fernet before they go into the database. Passwords use bcrypt."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the sole backend engineer. I built:"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The Gemini pipeline. I wrote the prompt so the model returns consistent JSON, with temperature 0.3, a fixed seed and a forced JSON response type. I wrapped the synchronous Vertex AI SDK in a thread pool so it doesn't block the event loop under load.",
+                        "The BMR, TDEE and macro engine, including unit conversion and automatic plan recalculation on any body-data change.",
+                        "Apple StoreKit 2 and Google Play verification, including the JWT signing, the JWS decoding and the Pub/Sub webhook.",
+                        "The v1 additions: Apple Sign In, the AI fix flow and ingredient search and editing. v1 extends v0 without breaking existing app versions.",
+                        "Security: Fernet-encrypted image URLs, bcrypt hashing, two-token JWT rotation and soft-delete accounts.",
+                        "The database design: 8 PostgreSQL tables with relationships, cascade rules and indexes, plus a connection pool sized for many parallel AI analyses.",
+                        "The versioned API structure that lets v0 and v1 change independently."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Logging a meal now takes one photo, instead of searching and typing for each food.",
+                        "The backend is set up to run up to 100 image analyses at the same time, using a 100-worker thread pool and a semaphore.",
+                        "Subscriptions work on both stores from one backend, so the app can earn revenue on iOS and Android.",
+                        "Every user gets a plan calculated from their own body data and goal.",
+                        "The daily macro ledger starts safely on the first log, so retries and logins from several devices don't corrupt a user's day."
                     ]
                 }
             ]

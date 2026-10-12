@@ -1,1 +1,381 @@
-[]
+[
+    {
+        "name": "Best Chef",
+        "description": "Bilingual B2B website for a Spanish food distributor selling bulk oil, mayonnaise, ketchup and spices to restaurants. Includes CSS-only animations, an interactive map and a working inquiry form.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Nodemailer",
+            "MapLibre GL"
+        ],
+        "liveLink": "https://bestchef.b-brothers.es/",
+        "coverImage": "assets/media/Freelance/best-chef/cover.png",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Site pages",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/best-chef/home.png",
+                            "alt": "Home page",
+                            "caption": "Home page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/best-chef/product.png",
+                            "alt": "Product page",
+                            "caption": "Product page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/best-chef/about.png",
+                            "alt": "About page",
+                            "caption": "About page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/best-chef/contact.png",
+                            "alt": "Contact page",
+                            "caption": "Contact page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Best Chef is a Spanish distributor that supplies bulk ingredients to restaurants and the food industry: 25 L refined seed oil, mayonnaise, ketchup and spices. I built their marketing and lead-generation site as the only developer, from the brand files to a deploy-ready build."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The site has four pages (Home, Products, About, Contact) and a serverless contact API that sends wholesale inquiries straight to the company's inbox."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Best Chef sells to procurement staff and restaurant operators, who want proof before they get in touch: halal certification, bulk pack sizes, delivery capacity. Their brand files (PSD, PDF and SVG logos) weren't connected to any website, so buyers had nowhere to look at the range or send an inquiry."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Animated hero with floating lemon, eggs, sunflower seeds, oil and mayo. Built with Tailwind keyframes only, with no animation library.",
+                        "English and Spanish content with browser language detection and a saved preference. All copy lives in typed translation objects, so adding a language is simple.",
+                        "Navbar that starts transparent and turns frosted glass after 60 px of scroll, and adjusts its link colors to each page's background.",
+                        "Products page with a section for each product showing bulk pack sizes, certification badges and Request a Quote buttons.",
+                        "Why Choose Us section with cards for capacity, quality and logistics that reveal on scroll.",
+                        "About page with a timeline of the company's milestones.",
+                        "Contact form that sends email through Nodemailer. In development, without SMTP credentials, it logs submissions instead of failing.",
+                        "Interactive MapLibre map with a custom animated gold pin and brand-matched road and label colors. Scroll zoom only turns on while hovering, so it doesn't hijack page scrolling.",
+                        "SEO setup: per-page metadata, Open Graph and Twitter tags, a sitemap and a robots file."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Next.js (App Router), React and TypeScript, with Tailwind CSS for styling. Pages are server-rendered, with client components only where interaction needs them. Contact emails go out through a Next.js route handler and Nodemailer. Maps use MapLibre GL, and fonts load through next/font."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the only developer on this project."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Turned the brand files into a consistent web design.",
+                        "Built the English/Spanish system with typed translations and language detection.",
+                        "Wrote all animations from scratch with CSS keyframes and a reusable useInView hook.",
+                        "Built the scroll-aware, route-aware navbar.",
+                        "Set up the contact API with a development fallback and an HTML email template.",
+                        "Configured metadata, sitemap and robots for SEO.",
+                        "Embedded and styled the MapLibre map with its animated marker."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "The company went from no web presence to a live site with a working inquiry form that lands in their inbox.",
+                        "Buyers can read the site in English or Spanish.",
+                        "Search engines get a sitemap and robots rules from day one, and social links show proper previews.",
+                        "No animation library, so the JavaScript bundle stays small and pages load fast."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Chand",
+        "description": "Luxury brand website for a premium Basmati rice and flour company, with a navy and gold design system, CSS lantern animations and an interactive map.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Nodemailer",
+            "MapLibre GL"
+        ],
+        "liveLink": "https://chand.b-brothers.es/",
+        "coverImage": "assets/media/Freelance/chand/cover.png",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Site pages",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/chand/home.png",
+                            "alt": "Home page",
+                            "caption": "Home page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/chand/product.png",
+                            "alt": "Product page",
+                            "caption": "Product page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/chand/about.png",
+                            "alt": "About page",
+                            "caption": "About page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/chand/contact.png",
+                            "alt": "Contact page",
+                            "caption": "Contact page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Chand is a premium food brand selling Basmati rice and authentic flours. I designed and built its website on my own: a dark, luxury look in deep navy and gold, with hanging lanterns and ornate patterns that nod to South Asian heritage."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The site has four pages (Home, Products, About, Contact) and a contact form that sends email through a serverless route."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Rice and flour are commodities, and Chand wanted to look like anything but. The packaging and brand identity had to become a web experience that felt premium and culturally rooted rather than generic. Visitors also needed to understand the range, the quality claims and the brand story in a single scroll, without feeling overloaded."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Hero with two hanging lanterns that glow and pulse. The right lantern is the left one mirrored in CSS, so the pair needs only one image file.",
+                        "Staggered entrance animation on the hero that avoids layout flash.",
+                        "Features strip with three quality points: Longest Grains, Best Fields and Premium Quality, over a damask pattern background.",
+                        "From Field to Feast section that walks through harvest, selection and milling with animated arrows and staggered cards.",
+                        "Kitchen Staples grid with Fried Chicken Flour, Whole Wheat Atta and Premium Basmati Rice in warm cream cards with hover effects.",
+                        "Brand story section with a tilted product photo that straightens on hover, next to a decorative SVG wheel.",
+                        "Interactive map on the Contact page with a dark base style, blue roads, gold labels and an animated gold pin.",
+                        "Contact form with animated fields, sending email through Nodemailer."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Next.js (App Router), React and TypeScript, with Tailwind CSS. Motion comes from CSS keyframes, an IntersectionObserver hook and requestAnimationFrame, with no animation library. Pages are server-rendered, with client components only for the interactive parts. Contact email runs through a Next.js route handler and Nodemailer, and the map uses MapLibre GL."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the only designer and developer on this project."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Created the design system: midnight navy backgrounds, a gold accent palette, a serif type hierarchy and gold gradient text.",
+                        "Built the lantern glow with CSS drop-shadow and blend modes, with no external libraries.",
+                        "Made the tilted story photo that straightens on hover.",
+                        "Wrote all scroll-reveal animation with a shared useInView hook and staggered delays.",
+                        "Set up the MapLibre map and overrode its road and label colors to match the brand.",
+                        "Designed the From Field to Feast flow with directional SVG arrows."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A premium look that sets the brand apart from ordinary rice and flour suppliers.",
+                        "Server-rendered pages with small interactive sections, which gives fast first loads and a solid SEO base.",
+                        "Each section is its own component with its own scroll observer, so adding or reordering sections is easy.",
+                        "A map on the contact page gives wholesale buyers a real location to check."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Nariza",
+        "description": "Bilingual wholesale catalog for a sparkling water brand, with a quote cart for multi-product inquiries, a per-flavor animated hero and Framer Motion transitions.",
+        "techStack": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Nodemailer",
+            "Lucide"
+        ],
+        "coverImage": "assets/media/Freelance/nariza/cover.png",
+        "liveLink": "https://nariza.b-brothers.es/",
+        "details": {
+            "blocks": [
+                {
+                    "type": "gallery",
+                    "caption": "Site pages",
+                    "images": [
+                        {
+                            "src": "assets/media/Freelance/nariza/home.png",
+                            "alt": "Home page",
+                            "caption": "Home page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/nariza/home-2.png",
+                            "alt": "Home page",
+                            "caption": "Home page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/nariza/product.png",
+                            "alt": "Product page",
+                            "caption": "Product page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/nariza/about.png",
+                            "alt": "About page",
+                            "caption": "About page"
+                        },
+                        {
+                            "src": "assets/media/Freelance/nariza/contact.png",
+                            "alt": "Contact page",
+                            "caption": "Contact page"
+                        }
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Overview"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nariza is a premium sparkling mineral water in three flavors (Clásico, Limón & Menta and Granada), sold to distributors and trade accounts. A second brand is distributed alongside it. I built the wholesale site on my own, with a catalog, a quote cart and a bilingual interface in English and Spanish."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Of the three brand sites I built, this is the most complex: closer to a light e-commerce app than a brochure page."
+                },
+                {
+                    "type": "heading",
+                    "text": "The problem"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nariza had two jobs at once. It needed to look like a premium consumer brand, and it needed to win trade buyers who want to browse products, check pack formats and ask for quantities. A contact form or a static brochure would have failed both groups."
+                },
+                {
+                    "type": "heading",
+                    "text": "What it does"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Hero slider with a metallic gradient, spotlight and wash effect computed for each flavor, and staggered text and bottle reveals when the flavor changes.",
+                        "Quote cart with add, remove, change quantity and clear, plus a slide-in drawer where buyers review the list before sending. The cart is available from any component.",
+                        "Distribution catalog in a three-column grid. Each product has its own glow color that lights up on hover, and upcoming Nariza products show as Coming Soon.",
+                        "Wholesale benefits section with custom SVG icons for pricing, delivery and support.",
+                        "Brand story with an editorial 12-column layout, a four-milestone timeline and a faint monogram watermark behind it.",
+                        "Brand logos banner as a trust signal for distributors.",
+                        "English and Spanish through a typed translation tree. Both the interface text and the product data switch language together.",
+                        "Quote requests go out by email through Nodemailer, with the mail logic kept in its own module.",
+                        "Cormorant Garamond and Jost as the type pairing, for an editorial, premium feel."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "text": "Stack"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Next.js (App Router), React and TypeScript, with Tailwind CSS and Framer Motion. State lives in React context providers for the quote cart and the language. Quote emails are sent from a Next.js route handler with Nodemailer. Server components handle most rendering, with client components only where needed."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "My contribution"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "I was the only developer on this project."
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "Built the quote cart and its drawer.",
+                        "Built the hero slider, with gradients computed from per-flavor color data rather than fixed CSS classes.",
+                        "Created a reusable Reveal component on Framer Motion's whileInView, so every scroll animation on the site uses one wrapper.",
+                        "Typed the full translation tree and wrote a function that localizes product data, so interface text and products change language together.",
+                        "Built the editorial layouts: a 12-column hero grid, a four-column timeline and a three-column catalog.",
+                        "Moved the email transport into its own mailer module to keep the API route clean.",
+                        "Chose and set up the Cormorant Garamond and Jost pairing with CSS variable tokens."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Results"
+                },
+                {
+                    "type": "list",
+                    "items": [
+                        "A passive brochure became a wholesale tool where buyers build a multi-product quote and send it in one request.",
+                        "English and Spanish cover both Spanish and Latin American distributor markets.",
+                        "Adding a new product takes one data entry. The card glow, catalog grid and quote drawer all pick it up on their own.",
+                        "Any new section can get scroll animation with a single Reveal wrapper."
+                    ]
+                }
+            ]
+        }
+    }
+]
