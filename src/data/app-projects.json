@@ -1,6 +1,7 @@
 [
     {
         "name": "CarFig Buyer",
+        "dateRange": "Mar 2026 – Mar 2026",
         "categories": [
             "fullstack",
             "app"
@@ -142,6 +143,7 @@
     },
     {
         "name": "CalAI Backend",
+        "dateRange": "Jul 2025 – Aug 2025",
         "categories": [
             "fullstack",
             "app",

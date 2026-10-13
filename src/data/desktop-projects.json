@@ -1,6 +1,7 @@
 [
     {
         "name": "ThunderJaw Restaurant POS",
+        "dateRange": "Jan 2026 – Apr 2026",
         "categories": [
             "fullstack",
             "desktop"

@@ -36,7 +36,7 @@ export default function ProjectModal({ isOpen, project, onClose, onOpenVideos, i
   const closeImage = useCallback(() => setEnlargedImage(null), []);
   useModal(isOpen && !!project, onClose, ref);
   if (!isOpen || !project) return null;
-  const { name, techStack = [], details } = project;
+  const { name, dateRange, techStack = [], details } = project;
   const blocks = details.blocks;
   return <><div className="modal active" id="project-modal" inert={!!enlargedImage || isVideoOpen}>
     <div className="modal-backdrop" onClick={onClose} />
@@ -45,6 +45,7 @@ export default function ProjectModal({ isOpen, project, onClose, onOpenVideos, i
         <div className="project-modal-heading">
           <span className="modal-eyebrow">PROJECT DETAILS</span>
           <h2 id="modal-title">{name}</h2>
+          {dateRange && <p className="project-date-range">{dateRange}</p>}
         </div>
         <button className="modal-close" onClick={onClose} aria-label="Close project details"><X size={18} strokeWidth={4} aria-hidden="true" /></button>
       </div>

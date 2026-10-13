@@ -66,6 +66,12 @@
     gap: 14px
 }
 
+.project-card-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
 .project-card-title {
     font: 700 1.15rem/1.4 Inter, sans-serif;
     letter-spacing: -0.025em;
@@ -86,6 +92,13 @@
 .project-card-title button:hover,
 .project-card-title button:focus-visible {
     color: #edfdff
+}
+
+.project-date-range {
+    color: #94a1b2;
+    font-size: .8rem;
+    line-height: 1.5;
+    margin: 0
 }
 
 .project-card-desc {

@@ -1,6 +1,7 @@
 [
     {
         "name": "AI Cold Outreach Automation",
+        "dateRange": "Aug 2025 – Aug 2025",
         "categories": [
             "technical-showcase"
         ],
@@ -135,6 +136,7 @@
     },
     {
         "name": "Large-Scale Data Extraction Engine",
+        "dateRange": "Sept 2025 – Sept 2025",
         "categories": [
             "technical-showcase"
         ],
@@ -232,6 +234,7 @@
     },
     {
         "name": "Shazia: Arabic Voice Agent on a Real Phone Line",
+        "dateRange": "Dec 2025 – Dec 2025",
         "categories": [
             "technical-showcase"
         ],
@@ -351,6 +354,7 @@
     },
     {
         "name": "Jeddah & Riyadh Real Estate Maps",
+        "dateRange": "Jan 2025 – Feb 2025",
         "categories": [
             "technical-showcase"
         ],
@@ -461,6 +465,7 @@
     },
     {
         "name": "SapIA: AI CV Reformatter",
+        "dateRange": "Nov 2023 – Nov 2023",
         "categories": [
             "technical-showcase"
         ],
@@ -555,6 +560,7 @@
     },
     {
         "name": "CourseGen: AI Course Generator with RAG",
+        "dateRange": "Nov 2023 – Dec 2023",
         "categories": [
             "technical-showcase"
         ],
@@ -641,6 +647,7 @@
     },
     {
         "name": "Pix2Struct DSL: Document Question Answering",
+        "dateRange": "Jan 2024 – Jan 2024",
         "categories": [
             "technical-showcase"
         ],

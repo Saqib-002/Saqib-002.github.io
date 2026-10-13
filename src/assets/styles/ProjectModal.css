@@ -86,6 +86,10 @@
     color: #94a1b2
 }
 
+.project-modal-heading .project-date-range {
+    margin-top: 4px
+}
+
 #modal-title {
     font: 700 clamp(1.25rem, 3vw, 1.85rem)/1.25 Inter, sans-serif;
     color: #9bd5dd;

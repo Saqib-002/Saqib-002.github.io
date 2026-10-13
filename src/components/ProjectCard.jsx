@@ -4,7 +4,7 @@ import TechTag from './TechTag';
 import '../assets/styles/ProjectCard.css';
 import { ArrowRight } from 'lucide-react';
 export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
-  const { name, description, techStack = [], coverImage, hideImage = false } = project;
+  const { name, description, dateRange, techStack = [], coverImage, hideImage = false } = project;
   return <article className="hud-panel project-card">
     {!hideImage && <div className="project-card-media">
     <button className="project-card-preview" onClick={() => onOpenModal(project)} aria-label={`View ${name}`}>
@@ -14,7 +14,10 @@ export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
       <div className="project-card-links"><ProjectLinks project={project} compact onOpenVideos={onOpenVideos} /></div>
     </div>}
     <div className="project-card-body">
-      <h4 className="project-card-title"><button onClick={() => onOpenModal(project)}>{name}</button></h4>
+      <div className="project-card-heading">
+        <h4 className="project-card-title"><button onClick={() => onOpenModal(project)}>{name}</button></h4>
+        {dateRange && <p className="project-date-range">{dateRange}</p>}
+      </div>
       <p className="project-card-desc">{description}</p>
       <div className="project-tech">{techStack.slice(0, 4).map(tag => <TechTag key={tag} name={tag} />)}
         {techStack.length > 4 && <span className="skill-tag tech-more">+{techStack.length - 4}</span>}

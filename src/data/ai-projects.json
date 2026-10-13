@@ -1,6 +1,7 @@
 [
     {
         "name": "Dynamic Subscription Planner",
+        "dateRange": "Mar 2025 – Mar 2025",
         "categories": [
             "fullstack",
             "ai"
@@ -169,6 +170,7 @@
     },
     {
         "name": "Dal Copilot",
+        "dateRange": "Jul 2024 – Dec 2024",
         "categories": [
             "ai",
             "fullstack"
@@ -372,6 +374,7 @@
     },
     {
         "name": "Al-Mandumah AI Research Agent",
+        "dateRange": "Apr 2025 – May 2025",
         "categories": [
             "fullstack",
             "ai"
@@ -534,6 +537,7 @@
     },
     {
         "name": "Natural Language SQL Agent",
+        "dateRange": "Jun 2025 – Jun 2025",
         "categories": [
             "fullstack",
             "ai"

@@ -18,7 +18,11 @@ This guide documents the properties currently supported by the portfolio. Edit t
 
 Category tabs and counts use only each project's top-level `categories` array, regardless of its source filename. Supported values are `ai`, `fullstack`, `desktop`, `app`, and `landing`. For example, `"categories": ["fullstack", "app"]` places a project in both tabs. An empty array shows the project only in All. Every source entry must provide this array; there is no filename-based fallback. Each entry uses its own categories independently, including entries with the same name.
 
-The catalog does not read the main file's featured `projects` array. Homepage projects remain separate copies: update both if you want matching content.
+The All tab excludes entries whose `categories` includes `technical-showcase`; those entries remain available in the Technical Showcase tab. Tab counts reflect the filtered entries.
+
+Projects support an optional top-level `dateRange` string, such as `"dateRange": "Jan 2025 – Mar 2025"` or `"dateRange": "Jun 2025 – Present"`. It appears below the title on project cards and in project details. Omit it when dates are unknown.
+
+The catalog does not read the main file's featured `projects` array. Homepage projects remain separate copies: update both if you want matching content, including date ranges.
 
 `public/assets/data.json` is not the main application's data source; `src/App.jsx` imports `src/data/data.json`.
 

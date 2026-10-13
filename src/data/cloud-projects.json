@@ -1,6 +1,7 @@
 [
     {
         "name": "Email Verifier & Guesser",
+        "dateRange": "Oct 2025 – Nov 2025",
         "categories": [
             "fullstack",
             "cloud"
@@ -38,6 +39,11 @@
                             "src": "assets/media/MIS/email-verifier/architecture.png",
                             "alt": "Architecture",
                             "caption": "Architecture"
+                        },
+                        {
+                            "src": "assets/media/MIS/email-verifier/results.png",
+                            "alt": "Results",
+                            "caption": "Results"
                         },
                         {
                             "src": "assets/media/MIS/email-verifier/dashboard.png",

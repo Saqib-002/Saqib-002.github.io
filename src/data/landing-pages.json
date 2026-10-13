@@ -1,7 +1,10 @@
 [
     {
         "name": "Best Chef",
-        "categories": ["landing"],
+        "dateRange": "Apr 2026 – Apr 2026",
+        "categories": [
+            "landing"
+        ],
         "description": "Bilingual B2B website for a Spanish food distributor selling bulk oil, mayonnaise, ketchup and spices to restaurants. Includes CSS-only animations, an interactive map and a working inquiry form.",
         "techStack": [
             "Nextjs",
@@ -127,7 +130,10 @@
     },
     {
         "name": "Chand",
-        "categories": ["landing"],
+        "dateRange": "Apr 2026 – Apr 2026",
+        "categories": [
+            "landing"
+        ],
         "description": "Luxury brand website for a premium Basmati rice and flour company, with a navy and gold design system, CSS lantern animations and an interactive map.",
         "techStack": [
             "Nextjs",
@@ -251,7 +257,10 @@
     },
     {
         "name": "Nariza",
-        "categories": ["landing"],
+        "dateRange": "Apr 2026 – Apr 2026",
+        "categories": [
+            "landing"
+        ],
         "description": "Bilingual wholesale catalog for a sparkling water brand, with a quote cart for multi-product inquiries, a per-flavor animated hero and Framer Motion transitions.",
         "techStack": [
             "Nextjs",

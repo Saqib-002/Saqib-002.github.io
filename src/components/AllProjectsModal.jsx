@@ -64,7 +64,9 @@ const CATEGORIES = [
 
 const PROJECT_DATA = Object.fromEntries(CATEGORIES.map(({ id }) => [
   id,
-  id === 'all' ? allProjects : allProjects.filter(project => project.categories.includes(id)),
+  allProjects.filter(project => id === 'all'
+    ? !project.categories.includes('technical-showcase')
+    : project.categories.includes(id)),
 ]));
 
 export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {
