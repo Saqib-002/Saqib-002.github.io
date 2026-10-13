@@ -42,4 +42,6 @@
   .project-search-cover { width: 72px; height: 64px; }
   .project-search-footer { padding: 14px 18px; }
 }
-@media (prefers-reduced-motion: reduce) { .project-search-result { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .project-search-result { transition: none; }
+}
