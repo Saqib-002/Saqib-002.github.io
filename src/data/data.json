@@ -50,54 +50,141 @@
       ]
     },
     {
-      "category": "FRONTEND & Desktop",
+      "category": "FRONTEND & UI",
       "items": [
         "React",
-        "Next.js",
-        "Vite",
-        "Tailwind CSS",
+        "Nextjs",
+        "TailwindCSS",
         "Bootstrap",
-        "Material-UI",
-        "Ant Design",
+        "MaterialUI",
+        "Mantine",
+        "Shadcn",
+        "DaisyUI",
+        "HTMX",
         "Redux",
-        "Electron"
+        "ReduxToolkit",
+        "Zustand",
+        "ReactRouter",
+        "Axios",
+        "FramerMotion",
+        "Lucide",
+        "BlockNote",
+        "i18next",
+        "Recharts",
+        "dndkit"
       ]
     },
     {
-      "category": "BACKEND & CLOUD",
+      "category": "MOBILE & DESKTOP",
       "items": [
-        "Node.js",
-        "Express.js",
-        "Python",
-        "Docker",
-        "SQL",
+        "ReactNative",
+        "Expo",
+        "Electron",
+        "ReactNavigation",
+        "FlashList",
+        "Reanimated"
+      ]
+    },
+    {
+      "category": "BACKEND & APIS",
+      "items": [
+        "Nodejs",
+        "Expressjs",
         "FastAPI",
         "Flask",
-        "AWS",
-        "Google Cloud Platform (GCP)"
+        "NestJS",
+        "Pydantic",
+        "aiohttp",
+        "Gunicorn",
+        "Uvicorn",
+        "WebSocket",
+        "JWT",
+        "NextAuth",
+        "Zod",
+        "Nodemailer",
+        "Twilio"
       ]
     },
     {
       "category": "AI & MACHINE LEARNING",
       "items": [
         "PyTorch",
+        "Scikitlearn",
         "LangChain",
-        "Gemini Vertex AI",
         "LangGraph",
-        "Scikit-learn",
-        "RAG Pipelines"
+        "LlamaIndex",
+        "Gemini",
+        "VertexAI",
+        "OpenAI",
+        "Cohere",
+        "Ollama",
+        "HuggingFaceTransformers",
+        "TesseractOCR",
+        "TFLite"
       ]
     },
     {
-      "category": "DATABASES & TOOLS",
+      "category": "DATA & VISUALIZATION",
+      "items": [
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "joblib",
+        "Streamlit",
+        "Plotly",
+        "Folium",
+        "Leafletjs",
+        "branca",
+        "MapLibreGL",
+        "GoogleMapsAPI",
+        "GoogleColab"
+      ]
+    },
+    {
+      "category": "DATABASES & SEARCH",
       "items": [
         "PostgreSQL",
         "MongoDB",
+        "SQLite",
         "Supabase",
+        "Firebase",
+        "Elasticsearch",
         "Weaviate",
         "Redis",
         "Pinecone",
-        "Knex.js"
+        "Dewy",
+        "SQLAlchemy",
+        "Knexjs",
+        "Alembic"
+      ]
+    },
+    {
+      "category": "CLOUD & DEVOPS",
+      "items": [
+        "AWS",
+        "AWSS3",
+        "AWSElasticBeanstalk",
+        "GoogleCloudPlatform",
+        "GoogleCloudStorage",
+        "GoogleComputeEngine",
+        "GoogleCloudFunctions",
+        "Cloudinary",
+        "Docker",
+        "DockerCompose",
+        "GitHubActions",
+        "Codemagic",
+        "ngrok",
+        "uv"
+      ]
+    },
+    {
+      "category": "SCRAPING & AUTOMATION",
+      "items": [
+        "Selenium",
+        "Puppeteer",
+        "Crawlee",
+        "BeautifulSoup",
+        "ChromeDevToolsProtocol"
       ]
     }
   ],
@@ -116,7 +203,7 @@
     },
     {
       "title": "Software Engineer",
-      "company": "Voilabs",
+      "company": "Voilabs - Freelance",
       "timeline": "01 Nov 2023 - 01 Feb 2024",
       "description": "Built and deployed web applications and connected AI models to them through clean APIs. Set up the data pipelines behind those features. Owned features end to end, from prototype to production, and cut manual work for the team from tens of minutes to under two."
     },
@@ -173,21 +260,21 @@
       ],
       "description": "Trilingual e-commerce platform for a Spanish wholesale grocer: web store, iOS/Android app, admin dashboard and REST API, with Redsys payments, MRW shipping and PDF invoicing.",
       "techStack": [
-        "Next.js",
+        "Nextjs",
         "React",
         "TypeScript",
-        "React Native",
+        "ReactNative",
         "Expo",
-        "Node.js",
-        "Express",
+        "Nodejs",
+        "Expressjs",
         "MongoDB",
-        "Redux Toolkit",
-        "Tailwind CSS",
+        "ReduxToolkit",
+        "TailwindCSS",
         "Docker",
         "Puppeteer",
         "Cloudinary",
         "Codemagic",
-        "GitHub Actions"
+        "GitHubActions"
       ],
       "coverImage": "assets/media/Freelance/brothers-mart/cover.png",
       "liveLink": "https://mart.b-brothers.es",
@@ -462,10 +549,10 @@
         "FastAPI",
         "Streamlit",
         "LlamaIndex",
-        "Gemini 2.0 Flash",
-        "Vertex AI",
-        "Sentence Transformers",
-        "Tesseract OCR",
+        "Gemini",
+        "VertexAI",
+        "SentenceTransformers",
+        "TesseractOCR",
         "Docker"
       ],
       "coverImage": "assets/media/MIS/mandumah/sources.png",
@@ -626,9 +713,9 @@
         "aiohttp",
         "Docker",
         "Redis",
-        "Google Cloud Storage",
-        "Compute Engine",
-        "Cloud Functions",
+        "GoogleCloudStorage",
+        "GoogleComputeEngine",
+        "GoogleCloudFunctions",
         "Gunicorn",
         "Uvicorn"
       ],
@@ -788,25 +875,25 @@
       }
     },
     {
-      "name": "Alí Doner",
+      "name": "Ali Doner",
       "categories": [
         "fullstack",
         "app"
       ],
       "description": "Direct ordering platform for a kebab restaurant in Spain: a Next.js website, an Expo mobile app and an admin CMS, running on the same backend as the restaurant's ThunderJaw POS.",
       "techStack": [
-        "Next.js",
+        "Nextjs",
         "React",
         "TypeScript",
-        "React Native",
+        "ReactNative",
         "Expo",
-        "Tailwind CSS",
+        "TailwindCSS",
         "BlockNote",
-        "Google Maps API",
+        "GoogleMapsAPI",
         "i18next",
         "WebSocket",
         "Codemagic",
-        "GitHub Actions"
+        "GitHubActions"
       ],
       "liveLink": "https://alikebabrivas.es/",
       "coverImage": "assets/media/Freelance/ali-doner/cover.png",
@@ -889,7 +976,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Alí Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
+            "text": "Ali Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
           },
           {
             "type": "paragraph",
@@ -898,7 +985,7 @@
           {
             "type": "image",
             "src": "assets/media/Freelance/ali-doner/home.png",
-            "alt": "Alí Doner website home page",
+            "alt": "Ali Doner website home page",
             "caption": "Customer website",
             "width": "wide"
           },

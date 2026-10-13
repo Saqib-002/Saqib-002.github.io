@@ -4,12 +4,12 @@
         "categories": ["landing"],
         "description": "Bilingual B2B website for a Spanish food distributor selling bulk oil, mayonnaise, ketchup and spices to restaurants. Includes CSS-only animations, an interactive map and a working inquiry form.",
         "techStack": [
-            "Next.js",
+            "Nextjs",
             "React",
             "TypeScript",
-            "Tailwind CSS",
+            "TailwindCSS",
             "Nodemailer",
-            "MapLibre GL"
+            "MapLibreGL"
         ],
         "liveLink": "https://bestchef.b-brothers.es/",
         "coverImage": "assets/media/Freelance/best-chef/cover.png",
@@ -130,12 +130,12 @@
         "categories": ["landing"],
         "description": "Luxury brand website for a premium Basmati rice and flour company, with a navy and gold design system, CSS lantern animations and an interactive map.",
         "techStack": [
-            "Next.js",
+            "Nextjs",
             "React",
             "TypeScript",
-            "Tailwind CSS",
+            "TailwindCSS",
             "Nodemailer",
-            "MapLibre GL"
+            "MapLibreGL"
         ],
         "liveLink": "https://chand.b-brothers.es/",
         "coverImage": "assets/media/Freelance/chand/cover.png",
@@ -254,11 +254,11 @@
         "categories": ["landing"],
         "description": "Bilingual wholesale catalog for a sparkling water brand, with a quote cart for multi-product inquiries, a per-flavor animated hero and Framer Motion transitions.",
         "techStack": [
-            "Next.js",
+            "Nextjs",
             "React",
             "TypeScript",
-            "Tailwind CSS",
-            "Framer Motion",
+            "TailwindCSS",
+            "FramerMotion",
             "Nodemailer",
             "Lucide"
         ],

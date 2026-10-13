@@ -67,17 +67,25 @@
 }
 
 .project-card-title {
-    font: 600 1.1rem/1.4 Inter, sans-serif
+    font: 700 1.15rem/1.4 Inter, sans-serif;
+    letter-spacing: -0.025em;
+    text-wrap: balance
 }
 
 .project-card-title button {
     font: inherit;
-    color: #edf4fa;
+    color: #9bd5dd;
     background: none;
     border: 0;
     padding: 0;
     text-align: left;
-    cursor: pointer
+    cursor: pointer;
+    transition: color .2s
+}
+
+.project-card-title button:hover,
+.project-card-title button:focus-visible {
+    color: #edfdff
 }
 
 .project-card-desc {

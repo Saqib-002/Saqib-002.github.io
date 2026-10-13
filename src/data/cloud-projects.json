@@ -13,9 +13,9 @@
             "aiohttp",
             "Docker",
             "Redis",
-            "Google Cloud Storage",
-            "Compute Engine",
-            "Cloud Functions",
+            "GoogleCloudStorage",
+            "GoogleComputeEngine",
+            "GoogleCloudFunctions",
             "Gunicorn",
             "Uvicorn"
         ],

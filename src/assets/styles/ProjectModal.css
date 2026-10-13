@@ -87,8 +87,10 @@
 }
 
 #modal-title {
-    font: 600 clamp(1.25rem, 3vw, 1.85rem)/1.25 Inter, sans-serif;
-    color: #f0f5fa;
+    font: 700 clamp(1.25rem, 3vw, 1.85rem)/1.25 Inter, sans-serif;
+    color: #9bd5dd;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
     margin-top: 8px
 }
 
@@ -142,8 +144,11 @@
     max-width: 76ch;
     width: 100%;
     margin: 12px auto 0;
-    color: #edf4fa;
-    font-weight: 600
+    color: #9bd5dd;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-wrap: balance
 }
 
 .project-detail-blocks>h3 {

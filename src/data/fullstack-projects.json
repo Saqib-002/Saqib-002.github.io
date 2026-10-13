@@ -7,21 +7,21 @@
         ],
         "description": "Trilingual e-commerce platform for a Spanish wholesale grocer: web store, iOS/Android app, admin dashboard and REST API, with Redsys payments, MRW shipping and PDF invoicing.",
         "techStack": [
-            "Next.js",
+            "Nextjs",
             "React",
             "TypeScript",
-            "React Native",
+            "ReactNative",
             "Expo",
-            "Node.js",
+            "Nodejs",
             "Express",
             "MongoDB",
-            "Redux Toolkit",
-            "Tailwind CSS",
+            "ReduxToolkit",
+            "TailwindCSS",
             "Docker",
             "Puppeteer",
             "Cloudinary",
             "Codemagic",
-            "GitHub Actions"
+            "GitHubActions"
         ],
         "coverImage": "assets/media/Freelance/brothers-mart/cover.png",
         "liveLink": "https://mart.b-brothers.es",
@@ -285,25 +285,25 @@
         }
     },
     {
-        "name": "Alí Doner",
+        "name": "Ali Doner",
         "categories": [
             "fullstack",
             "app"
         ],
         "description": "Direct ordering platform for a kebab restaurant in Spain: a Next.js website, an Expo mobile app and an admin CMS, running on the same backend as the restaurant's ThunderJaw POS.",
         "techStack": [
-            "Next.js",
+            "Nextjs",
             "React",
             "TypeScript",
-            "React Native",
+            "ReactNative",
             "Expo",
-            "Tailwind CSS",
+            "TailwindCSS",
             "BlockNote",
-            "Google Maps API",
+            "GoogleMapsAPI",
             "i18next",
             "WebSocket",
             "Codemagic",
-            "GitHub Actions"
+            "GitHubActions"
         ],
         "liveLink": "https://alikebabrivas.es/",
         "coverImage": "assets/media/Freelance/ali-doner/cover.png",
@@ -386,7 +386,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Alí Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
+                    "text": "Ali Doner is a kebab restaurant in Rivas-Vaciamadrid, Spain. I built its customer platform with a partner: a Next.js website, a React Native app for iOS and Android, and an admin panel, all running on one REST backend."
                 },
                 {
                     "type": "paragraph",
@@ -395,7 +395,7 @@
                 {
                     "type": "image",
                     "src": "assets/media/Freelance/ali-doner/home.png",
-                    "alt": "Alí Doner website home page",
+                    "alt": "Ali Doner website home page",
                     "caption": "Customer website",
                     "width": "wide"
                 },
@@ -555,13 +555,13 @@
         "techStack": [
             "React",
             "TypeScript",
-            "Tailwind CSS",
+            "TailwindCSS",
             "FastAPI",
             "PostgreSQL",
             "Redis",
             "SQLAlchemy",
             "Docker",
-            "GitHub Actions"
+            "GitHubActions"
         ],
         "coverImage": "assets/media/MIS/imagini/user-side.png",
         "videos": [

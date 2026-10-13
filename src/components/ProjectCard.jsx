@@ -1,5 +1,6 @@
 import FallbackImage from './FallbackImage';
 import ProjectLinks from './ProjectLinks';
+import TechTag from './TechTag';
 import '../assets/styles/ProjectCard.css';
 import { ArrowRight } from 'lucide-react';
 export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
@@ -15,7 +16,7 @@ export default function ProjectCard({ project, onOpenModal, onOpenVideos }) {
     <div className="project-card-body">
       <h4 className="project-card-title"><button onClick={() => onOpenModal(project)}>{name}</button></h4>
       <p className="project-card-desc">{description}</p>
-      <div className="project-tech">{techStack.slice(0, 4).map(tag => <span key={tag} className="skill-tag">{tag}</span>)}
+      <div className="project-tech">{techStack.slice(0, 4).map(tag => <TechTag key={tag} name={tag} />)}
         {techStack.length > 4 && <span className="skill-tag tech-more">+{techStack.length - 4}</span>}
       </div>
       {hideImage && <ProjectLinks project={project} compact onOpenVideos={onOpenVideos} />}

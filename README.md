@@ -1,5 +1,7 @@
 # React + Vite
 
+For adding skill and project technology icons, see [the icon guide](docs/tech-icons.md).
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

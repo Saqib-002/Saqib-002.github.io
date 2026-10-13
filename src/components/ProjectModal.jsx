@@ -1,4 +1,5 @@
 import FallbackImage from './FallbackImage';
+import TechTag from './TechTag';
 import { useRef, useState, useCallback } from 'react';
 import ImageViewer from './ImageViewer';
 import Carousel from './Carousel';
@@ -49,7 +50,7 @@ export default function ProjectModal({ isOpen, project, onClose, onOpenVideos, i
       </div>
       <div className="project-modal-scroll">
         <div className="project-modal-meta">
-          <div className="project-tech">{techStack.map(tag => <span key={tag} className="skill-tag">{tag}</span>)}</div>
+          <div className="project-tech">{techStack.map(tag => <TechTag key={tag} name={tag} />)}</div>
           <ProjectLinks project={project} compact onOpenVideos={onOpenVideos} />
         </div>
         <div className="project-detail-blocks">{blocks.map((block, index) => <DetailBlock key={index} block={block} onEnlarge={setEnlargedImage} />)}</div>

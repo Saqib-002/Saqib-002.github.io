@@ -9,15 +9,15 @@
             "Python",
             "Flask",
             "LangChain",
-            "Gemini 2.5 Flash Lite",
+            "Gemini",
             "Pydantic",
-            "Node.js",
+            "Nodejs",
             "TypeScript",
             "Crawlee",
             "PostgreSQL",
             "Redis",
             "HTMX",
-            "Tailwind CSS",
+            "TailwindCSS",
             "Docker"
         ],
         "hideImage": true,
@@ -143,8 +143,8 @@
             "Python",
             "Selenium",
             "JavaScript",
-            "Chrome DevTools Protocol",
-            "pandas",
+            "ChromeDevToolsProtocol",
+            "Pandas",
             "BeautifulSoup"
         ],
         "hideImage": true,
@@ -240,9 +240,8 @@
             "Python",
             "FastAPI",
             "Twilio",
-            "Gemini 2.5 Flash",
-            "Google Calendar API",
-            "Amazon Polly",
+            "Gemini",
+            "GoogleCalendarAPI",
             "ngrok",
             "uv"
         ],
@@ -358,11 +357,11 @@
         "description": "Interactive maps of property sale prices, rents and plot sizes across 50+ neighborhoods in Jeddah and Riyadh, built to help a business pick a location. Satellite basemap, hand-drawn neighborhood boundaries, and every map exports as a standalone HTML file.",
         "techStack": [
             "Python",
-            "pandas",
+            "Pandas",
             "Folium",
-            "Leaflet.js",
+            "Leafletjs",
             "branca",
-            "Google Colab"
+            "GoogleColab"
         ],
         "hideImage": true,
         "details": {
@@ -470,11 +469,11 @@
             "React",
             "TypeScript",
             "NestJS",
-            "OpenAI GPT-4",
+            "OpenAI",
             "docxtemplater",
             "Mantine",
-            "AWS S3",
-            "AWS Elastic Beanstalk"
+            "AWSS3",
+            "AWSElasticBeanstalk"
         ],
         "hideImage": true,
         "details": {
@@ -561,13 +560,13 @@
         ],
         "description": "Pick a topic, a level and a module count, and get a full course with objectives, content, code examples and quizzes in seconds. Can generate from your own uploaded documents using RAG.",
         "techStack": [
-            "Next.js 14",
+            "Nextjs",
             "TypeScript",
             "OpenAI",
             "Dewy",
-            "Vercel AI SDK",
-            "AWS S3",
-            "Tailwind CSS",
+            "VercelAISDK",
+            "AWSS3",
+            "TailwindCSS",
             "DaisyUI"
         ],
         "hideImage": true,
@@ -649,11 +648,11 @@
         "techStack": [
             "Python",
             "PyTorch",
-            "HuggingFace Transformers",
+            "HuggingFaceTransformers",
             "Pix2Struct",
             "ONNX",
             "TFLite",
-            "Google Colab"
+            "GoogleColab"
         ],
         "hideImage": true,
         "details": {
