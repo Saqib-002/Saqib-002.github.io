@@ -9,6 +9,7 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import ProjectModal from './components/ProjectModal';
 import AllProjectsModal from './components/AllProjectsModal';
+import ProjectSearchModal from './components/ProjectSearchModal';
 import VideoModal from './components/VideoModal';
 import PageNav from './components/PageNav';
 import MobileNav from './components/MobileNav';
@@ -18,6 +19,8 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const handleCloseSearch = useCallback(() => setIsSearchOpen(false), []);
   const [videoProject, setVideoProject] = useState(null);
   const handleCloseVideos = useCallback(() => setVideoProject(null), []);
   const handleOpenVideos = (project) => {
@@ -48,7 +51,7 @@ export default function App() {
       <BackgroundCanvas />
 
       {/* Fixed section navigator */}
-      <div inert={isModalOpen || isAllProjectsOpen || !!videoProject}><PageNav />
+      <div inert={isModalOpen || isAllProjectsOpen || isSearchOpen || !!videoProject}><PageNav />
 
       {/* Mobile bottom navigation bar */}
       <MobileNav />
@@ -66,6 +69,7 @@ export default function App() {
               onOpenModal={handleOpenModal}
               onViewAll={handleOpenAllProjects}
               onOpenVideos={handleOpenVideos}
+              onSearch={() => setIsSearchOpen(true)}
             />
             <Skills skills={portfolioData.skills} />
             <Education education={portfolioData.education} />
@@ -73,6 +77,12 @@ export default function App() {
           </div>
         </div>
       </main></div>
+
+      {isSearchOpen && <ProjectSearchModal
+        onClose={handleCloseSearch}
+        onOpenProject={handleOpenModal}
+        isDetailOpen={isModalOpen || !!videoProject}
+      />}
 
       {/* Detail View Project Modal */}
       <ProjectModal

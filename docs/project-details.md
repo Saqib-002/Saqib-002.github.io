@@ -24,6 +24,12 @@ Projects support an optional top-level `dateRange` string, such as `"dateRange":
 
 The catalog does not read the main file's featured `projects` array. Homepage projects remain separate copies: update both if you want matching content, including date ranges.
 
+### Project search
+
+The homepage's **Search Projects** button searches the entire catalog from `src/data/projects.js`, including Technical Showcase entries. Results filter immediately by `name`, `techStack`, and an optional top-level `keywords` array of strings. Selecting a result opens its existing project detail modal; closing details returns to the current search.
+
+You can add `"keywords": ["ecommerce", "payments", "automation"]` to any catalog project later. Missing or empty keywords are supported; no keywords are required to enable search. Search is case-insensitive and ignores punctuation and spacing within fields, so `Next.js` matches `Nextjs`. For multi-word queries, every word must match at least one searchable field, allowing queries such as `Brothers React`. Descriptions are displayed for context but are not searched.
+
 `public/assets/data.json` is not the main application's data source; `src/App.jsx` imports `src/data/data.json`.
 
 ## Main data file

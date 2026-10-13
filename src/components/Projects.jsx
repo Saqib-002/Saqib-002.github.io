@@ -1,7 +1,8 @@
 import ProjectCard from './ProjectCard';
+import { Search } from 'lucide-react';
 import '../assets/styles/Projects.css';
 
-export default function Projects({ projects, onOpenModal, onViewAll, onOpenVideos }) {
+export default function Projects({ projects, onOpenModal, onViewAll, onOpenVideos, onSearch }) {
   if (!projects) return null;
 
   return (
@@ -21,6 +22,10 @@ export default function Projects({ projects, onOpenModal, onViewAll, onOpenVideo
 
         {/* View All Button */}
         <div className="projects-view-all-wrap">
+          <button className="projects-view-all-btn projects-search-btn" onClick={onSearch}>
+            <Search aria-hidden="true" />
+            Search Projects
+          </button>
           <button className="projects-view-all-btn" onClick={onViewAll}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z" />

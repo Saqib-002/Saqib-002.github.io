@@ -17,10 +17,23 @@
 /* View All Button */
 .projects-view-all-wrap {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   justify-content: center;
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #2d3846;
+}
+
+.projects-search-btn {
+  color: #9bd5dd;
+  border-color: #56b0bb;
+  background: rgba(86, 176, 187, 0.08);
+}
+
+.projects-view-all-btn:focus-visible {
+  outline: 2px solid #56b0bb;
+  outline-offset: 4px;
 }
 
 .projects-view-all-btn {

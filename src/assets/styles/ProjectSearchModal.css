@@ -1,0 +1,45 @@
+.project-search-modal { z-index: 1250; }
+.project-search-content { width: min(92%, 760px); max-height: 86dvh; background: #101923; border: 1px solid #34505e; border-radius: 18px; box-shadow: 0 24px 90px #0009; }
+.project-search-header { display: flex; justify-content: space-between; gap: 20px; padding: 24px 26px 12px; background: linear-gradient(120deg, #56b0bb12, transparent); }
+.project-search-header { margin-bottom: 24px; }
+.project-search-header .modal-close { position: static; }
+.project-search-eyebrow { font: 10px 'Space Mono', monospace; letter-spacing: 2px; color: #56b0bb; }
+.project-search-header h2 { margin: 8px 0; font: 700 1.65rem Inter, sans-serif; color: #c9edf0; }
+.project-search-header p { margin: 0; color: #94a1b2; font-size: .875rem; }
+.project-search-controls { padding: 0 26px 16px; border-bottom: 1px solid #2d3846; }
+.project-search-input-wrap { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid #3d5968; border-radius: 12px; background: #09121c; color: #56b0bb; }
+.project-search-input-wrap:focus-within { border-color: #56b0bb; box-shadow: 0 0 0 3px #56b0bb15; }
+.project-search-input-wrap input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #e0edf2; font: inherit; font-size: 1rem; }
+.project-search-input-wrap input::placeholder { color: #7f92a4; }
+.project-search-input-wrap input::-webkit-search-cancel-button { display: none; }
+.project-search-input-wrap button { display: flex; padding: 5px; border: 0; border-radius: 6px; color: #94a1b2; background: #192431; cursor: pointer; }
+.project-search-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; color: #94a1b2; font-size: .75rem; }
+.project-search-meta > :first-child { color: #9bd5dd; }
+.project-search-results { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 10px 14px; }
+.project-search-result { display: flex; align-items: center; gap: 18px; width: 100%; text-align: left; padding: 17px 12px; border: 1px solid transparent; border-bottom-color: #2d3846; border-radius: 10px; background: transparent; color: #c9d1d9; font: inherit; cursor: pointer; transition: background .2s, border-color .2s; }
+.project-search-result:hover { background: #56b0bb0c; border-color: #56b0bb50; }
+.project-search-cover { width: 112px; height: 84px; flex-shrink: 0; object-fit: cover; border: 1px solid #34505e; border-radius: 8px; background: #09121c; }
+.project-search-result-body { display: flex; flex-direction: column; gap: 9px; min-width: 0; flex: 1; }
+.project-search-result-title { color: #d5e7ec; font-weight: 600; font-size: 1rem; overflow-wrap: anywhere; }
+.project-search-description { color: #94a1b2; font-size: .8rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.project-search-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+.project-search-stack > span { padding: 3px 7px; border: 1px solid #56b0bb25; border-radius: 5px; background: #56b0bb0a; color: #9bd5dd; font: 10px 'Space Mono', monospace; overflow-wrap: anywhere; }
+.project-search-arrow { flex-shrink: 0; color: #56b0bb; }
+.project-search-result:focus-visible, .project-search-content button:focus-visible { outline: 2px solid #56b0bb; outline-offset: -2px; }
+.project-search-empty { padding: 50px 20px; text-align: center; color: #94a1b2; }
+.project-search-empty svg { color: #56b0bb; margin-bottom: 14px; }
+.project-search-empty h3 { color: #c9d1d9; margin: 0 0 8px; }
+.project-search-empty p { font-size: .875rem; }
+.project-search-footer { display: flex; justify-content: space-between; gap: 12px; padding: 14px 26px; border-top: 1px solid #2d3846; color: #94a1b2; font-size: .7rem; }
+.project-search-footer span { white-space: nowrap; color: #9bd5dd; }
+@media (max-width: 640px) {
+  .project-search-content { width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+  .project-search-header { padding: 20px 18px 12px; }
+  .project-search-controls { padding: 0 18px 14px; }
+  .project-search-meta { flex-wrap: wrap; }
+  .project-search-results { flex: 1; padding: 8px; }
+  .project-search-result { gap: 12px; }
+  .project-search-cover { width: 72px; height: 64px; }
+  .project-search-footer { padding: 14px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .project-search-result { transition: none; } }
