@@ -1,6 +1,7 @@
 [
     {
         "name": "Email Verifier & Guesser",
+        "keywords": ["email verification", "email guessing", "deliverability", "lead generation", "bulk processing", "cloud automation", "gcp", "virtual machines", "parallel processing"],
         "dateRange": "Oct 2025 – Nov 2025",
         "categories": [
             "fullstack",

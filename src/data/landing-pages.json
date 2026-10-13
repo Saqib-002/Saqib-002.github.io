@@ -1,6 +1,7 @@
 [
     {
         "name": "Best Chef",
+        "keywords": ["food distributor", "b2b", "wholesale", "restaurants", "bulk food", "inquiry form", "interactive map", "css animations", "bilingual", "spain"],
         "dateRange": "Apr 2026 – Apr 2026",
         "categories": [
             "landing"
@@ -130,6 +131,7 @@
     },
     {
         "name": "Chand",
+        "keywords": ["luxury brand", "basmati rice", "flour", "premium food", "branding", "navy and gold", "css animations", "interactive map", "brand website"],
         "dateRange": "Apr 2026 – Apr 2026",
         "categories": [
             "landing"
@@ -257,6 +259,7 @@
     },
     {
         "name": "Nariza",
+        "keywords": ["sparkling water", "beverages", "wholesale", "product catalog", "quote cart", "product inquiries", "animation", "bilingual", "brand website"],
         "dateRange": "Apr 2026 – Apr 2026",
         "categories": [
             "landing"

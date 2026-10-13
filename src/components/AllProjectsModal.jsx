@@ -3,7 +3,7 @@ import useModal from '../hooks/useModal';
 import allProjects from '../data/projects';
 import ProjectCard from './ProjectCard';
 import '../assets/styles/AllProjectsModal.css';
-import { Bot, ChevronLeft, ChevronRight, Code, Layers, Menu, Monitor, Palette, Server, Smartphone, X } from 'lucide-react';
+import { Bot, ChevronLeft, ChevronRight, Code, Layers, Menu, Monitor, Palette, Search, Server, Smartphone, X } from 'lucide-react';
 
 const CATEGORIES = [
   {
@@ -69,7 +69,7 @@ const PROJECT_DATA = Object.fromEntries(CATEGORIES.map(({ id }) => [
     : project.categories.includes(id)),
 ]));
 
-export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos }) {
+export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDetailOpen, onOpenVideos, onSearch }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const ref = useRef(null);
   const tabsRef = useRef(null);
@@ -111,6 +111,10 @@ export default function AllProjectsModal({ isOpen, onClose, onOpenProject, isDet
         {/* Header */}
         <div className="all-projects-modal-header">
           <h2 className="all-projects-modal-title" id="all-projects-title">All projects</h2>
+          <button className="all-projects-search-btn" onClick={onSearch}>
+            <Search size={16} aria-hidden="true" />
+            <span>Search Projects</span>
+          </button>
           <button className="modal-close" onClick={onClose} aria-label="Close all projects"><X size={18} strokeWidth={4} aria-hidden="true" /></button>
         </div>
 

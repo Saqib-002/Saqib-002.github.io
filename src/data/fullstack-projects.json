@@ -1,6 +1,7 @@
 [
     {
         "name": "Brothers Mart",
+        "keywords": ["ecommerce", "online store", "wholesale", "grocery", "payments", "shipping", "invoicing", "admin dashboard", "multilingual"],
         "dateRange": "Apr 2026 – Jun 2026",
         "categories": [
             "fullstack",
@@ -287,6 +288,7 @@
     },
     {
         "name": "Ali Doner",
+        "keywords": ["restaurant", "food ordering", "kebab", "delivery", "mobile app", "content management", "cms", "pos", "spain"],
         "dateRange": "Jun 2026 – Aug 2026",
         "categories": [
             "fullstack",
@@ -550,6 +552,7 @@
     },
     {
         "name": "Imagini",
+        "keywords": ["b2b", "lead generation", "sales intelligence", "contact database", "email verification", "search filters", "credits", "admin panel", "audit trail"],
         "dateRange": "Sept 2025 – Sept 2025",
         "categories": [
             "fullstack"

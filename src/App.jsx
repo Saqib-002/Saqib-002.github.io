@@ -96,9 +96,10 @@ export default function App() {
       {/* All Projects Modal with Category Tabs */}
       <AllProjectsModal
         key={isAllProjectsOpen ? 'open' : 'closed'}
-        isDetailOpen={isModalOpen || !!videoProject}
+        isDetailOpen={isModalOpen || isSearchOpen || !!videoProject}
         isOpen={isAllProjectsOpen}
         onClose={handleCloseAllProjects}
+        onSearch={() => setIsSearchOpen(true)}
         onOpenProject={handleOpenModal}
         onOpenVideos={handleOpenVideos}
       />

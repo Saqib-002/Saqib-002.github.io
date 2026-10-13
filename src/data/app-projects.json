@@ -1,6 +1,7 @@
 [
     {
         "name": "CarFig Buyer",
+        "keywords": ["used cars", "automotive", "marketplace", "price prediction", "ai", "vehicle comparison", "better deals", "ios", "android", "bug fixes", "production stability"],
         "dateRange": "Mar 2026 – Mar 2026",
         "categories": [
             "fullstack",
@@ -143,6 +144,7 @@
     },
     {
         "name": "CalAI Backend",
+        "keywords": ["calorie tracking", "nutrition", "meal photos", "image analysis", "ai", "diet plans", "health", "subscriptions", "apple", "google play", "api"],
         "dateRange": "Jul 2025 – Aug 2025",
         "categories": [
             "fullstack",

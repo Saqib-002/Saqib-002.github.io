@@ -1,6 +1,7 @@
 [
     {
         "name": "Dynamic Subscription Planner",
+        "keywords": ["machine learning", "customer segmentation", "clustering", "kmeans", "personalization", "subscriptions", "discounts", "chauffeur", "free trips"],
         "dateRange": "Mar 2025 – Mar 2025",
         "categories": [
             "fullstack",
@@ -170,6 +171,7 @@
     },
     {
         "name": "Dal Copilot",
+        "keywords": ["ai assistant", "chatbot", "rag", "document search", "pdf", "word", "natural language", "database queries", "arabic", "english", "rtl", "streaming"],
         "dateRange": "Jul 2024 – Dec 2024",
         "categories": [
             "ai",
@@ -374,6 +376,7 @@
     },
     {
         "name": "Al-Mandumah AI Research Agent",
+        "keywords": ["research assistant", "ai", "scholarly documents", "academic research", "document search", "citations", "source passages", "arabic", "english", "bilingual"],
         "dateRange": "Apr 2025 – May 2025",
         "categories": [
             "fullstack",
@@ -537,6 +540,7 @@
     },
     {
         "name": "Natural Language SQL Agent",
+        "keywords": ["text to sql", "natural language", "database queries", "ai agent", "schema discovery", "sql validation", "arabic", "english", "swcc"],
         "dateRange": "Jun 2025 – Jun 2025",
         "categories": [
             "fullstack",

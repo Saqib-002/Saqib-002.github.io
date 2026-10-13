@@ -1,6 +1,7 @@
 [
     {
         "name": "ThunderJaw Restaurant POS",
+        "keywords": ["point of sale", "pos", "restaurant", "order management", "kitchen display", "finance", "delivery", "driver app", "live tracking", "chat", "desktop app"],
         "dateRange": "Jan 2026 – Apr 2026",
         "categories": [
             "fullstack",

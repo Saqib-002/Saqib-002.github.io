@@ -254,6 +254,7 @@
   "projects": [
     {
       "name": "Brothers Mart",
+      "keywords": ["ecommerce", "online store", "wholesale", "grocery", "payments", "shipping", "invoicing", "admin dashboard", "multilingual"],
       "dateRange": "Apr 2026 – Jun 2026",
       "categories": [
         "fullstack",
@@ -540,6 +541,7 @@
     },
     {
       "name": "Al-Mandumah AI Research Agent",
+      "keywords": ["research assistant", "ai", "scholarly documents", "academic research", "document search", "citations", "source passages", "arabic", "english", "bilingual"],
       "dateRange": "Apr 2025 – May 2025",
       "categories": [
         "fullstack",
@@ -703,6 +705,7 @@
     },
     {
       "name": "Email Verifier & Guesser",
+      "keywords": ["email verification", "email guessing", "deliverability", "lead generation", "bulk processing", "cloud automation", "gcp", "virtual machines", "parallel processing"],
       "dateRange": "Oct 2025 – Nov 2025",
       "categories": [
         "fullstack",
@@ -884,6 +887,7 @@
     },
     {
       "name": "Ali Doner",
+      "keywords": ["restaurant", "food ordering", "kebab", "delivery", "mobile app", "content management", "cms", "pos", "spain"],
       "dateRange": "Jun 2026 – Aug 2026",
       "categories": [
         "fullstack",

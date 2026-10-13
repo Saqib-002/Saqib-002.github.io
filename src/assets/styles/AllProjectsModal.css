@@ -20,6 +20,7 @@
 /* Modal Header */
 .all-projects-modal-header {
   display: flex;
+  gap: 12px;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.25rem;
@@ -46,6 +47,32 @@
   min-width: 0;
   flex-shrink: 0;
   border-bottom: 1px solid #2d3846;
+}
+
+.all-projects-search-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 10px 12px;
+  min-height: 44px;
+  border: 1px solid #56b0bb70;
+  border-radius: 10px;
+  background: #56b0bb12;
+  color: #9bd5dd;
+  font: 600 .8rem 'Space Mono', monospace;
+  cursor: pointer;
+}
+
+.all-projects-search-btn:hover {
+  background: #56b0bb25;
+  border-color: #56b0bb;
+}
+
+.all-projects-search-btn:focus-visible {
+  outline: 2px solid #56b0bb;
+  outline-offset: 3px;
 }
 
 .all-projects-tabs {
@@ -196,6 +223,11 @@
   }
   .all-projects-modal-title {
     font-size: 1rem;
+  }
+  .all-projects-search-btn {
+    gap: 6px;
+    padding: 8px;
+    font-size: .65rem;
   }
   .all-projects-tabs {
     padding: 0.5rem 1rem;

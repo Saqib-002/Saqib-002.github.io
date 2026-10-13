@@ -1,6 +1,7 @@
 [
     {
         "name": "AI Cold Outreach Automation",
+        "keywords": ["cold email", "outreach", "sales automation", "lead generation", "website crawling", "ai copywriting", "email sequences", "sms", "lead scoring", "csv"],
         "dateRange": "Aug 2025 – Aug 2025",
         "categories": [
             "technical-showcase"
@@ -136,6 +137,7 @@
     },
     {
         "name": "Large-Scale Data Extraction Engine",
+        "keywords": ["web scraping", "data extraction", "virtualized tables", "large datasets", "automation", "crash recovery", "resumable processing", "memory efficiency"],
         "dateRange": "Sept 2025 – Sept 2025",
         "categories": [
             "technical-showcase"
@@ -234,6 +236,7 @@
     },
     {
         "name": "Shazia: Arabic Voice Agent on a Real Phone Line",
+        "keywords": ["voice ai", "phone agent", "conversational ai", "real calls", "gulf arabic", "arabic", "meeting booking", "scheduling", "google calendar"],
         "dateRange": "Dec 2025 – Dec 2025",
         "categories": [
             "technical-showcase"
@@ -354,6 +357,7 @@
     },
     {
         "name": "Jeddah & Riyadh Real Estate Maps",
+        "keywords": ["real estate", "property prices", "rents", "plot sizes", "interactive maps", "geospatial", "neighborhoods", "saudi arabia", "satellite", "location analysis", "html export"],
         "dateRange": "Jan 2025 – Feb 2025",
         "categories": [
             "technical-showcase"
@@ -465,6 +469,7 @@
     },
     {
         "name": "SapIA: AI CV Reformatter",
+        "keywords": ["resume", "cv", "recruitment", "document automation", "pdf to word", "formatting", "branded documents", "ai", "time saving"],
         "dateRange": "Nov 2023 – Nov 2023",
         "categories": [
             "technical-showcase"
@@ -560,6 +565,7 @@
     },
     {
         "name": "CourseGen: AI Course Generator with RAG",
+        "keywords": ["education", "elearning", "course generation", "learning objectives", "quizzes", "code examples", "rag", "document upload", "ai", "curriculum"],
         "dateRange": "Nov 2023 – Dec 2023",
         "categories": [
             "technical-showcase"
@@ -647,6 +653,7 @@
     },
     {
         "name": "Pix2Struct DSL: Document Question Answering",
+        "keywords": ["document ai", "question answering", "technical forms", "image understanding", "fine tuning", "custom dataset", "machine learning", "model export", "onnx", "tflite"],
         "dateRange": "Jan 2024 – Jan 2024",
         "categories": [
             "technical-showcase"
